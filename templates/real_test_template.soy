@@ -8,11 +8,11 @@
     <h1>{$location.name.value}</h1>
     <div id='yext-address'>
       {$location.address.value} {$location.address2.value}<br>
-      {$location.city.value}, {$location.state.value} {$location.postal_code.value}<br>
+      {$location.city.value}, {$location.state.value} {$location.postalCode.value}<br>
       {$location.country.value}
    </div>
    <div id='yext-phones'>
-      {foreach $phone in $location.phones.phone}
+      {foreach $phone in $location.phones.phoneList}
         {$phone.type}: {$phone.number}<br>
       {/foreach}
    </div>
