@@ -460,15 +460,11 @@
     right: 0; /* there must be 'right' for ps-scrollbar-y */
     width: 5px;
     background-color: #aaa;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    @include border-radius(4px, 4px);
     opacity: 0;
     filter: alpha(opacity = 0);
-    -o-transition: opacity .2s linear;
-    -webkit-transition: opacity.2s linear;
-    -moz-transition: opacity .2s linear;
-    transition: opacity .2s linear;
+    @include transition-property(width);
+    @include transition-duration(2s);
 }
 
 .ps-container.ie .ps-scrollbar-y {
@@ -506,14 +502,150 @@
 
 /* scroller */
 
-ul.bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:none;}
-li.bjqs-slide{position:absolute; display:none;}
-ul.bjqs-controls{list-style:none;margin:0;padding:0;z-index:9999;}
-ul.bjqs-controls.v-centered li a{position:absolute;}
-ul.bjqs-controls.v-centered li.bjqs-next a{right:0;}
-ul.bjqs-controls.v-centered li.bjqs-prev a{left:0;}
-ol.bjqs-markers{list-style: none; padding: 0; margin: 0; width:100%;}
-ol.bjqs-markers.h-centered{text-align: center;}
-ol.bjqs-markers li{display:inline;}
-ol.bjqs-markers li a{display:inline-block;}
-p.bjqs-caption{display:block;width:96%;margin:0;padding:2%;position:absolute;bottom:0;}
+ul.bjqs {
+	position: relative; 
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	overflow: hidden; 
+	display: none;
+
+	.bjqs-slide {
+		position: absolute; 
+		display: none;
+	}
+
+	.bjqs-controls {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		z-index: 9999;
+
+		&.v-centered li { 
+			position: absolute; 
+			
+			&.bjqs-next a{ right: 0; }
+			&.bjqs-prev a{ left:0; }
+		}
+	}
+}
+
+ol {
+	&.bjqs-markers {
+		list-style: none; 
+		padding: 0; 
+		margin: 0; 
+		width:100%;
+
+		&.h-centered { text-align: center; }
+	}
+
+	&.bjqs-markers li{
+		display: inline;
+
+		a { display: inline-block; }
+	}
+}
+
+p.bjqs-caption {
+	display: block;
+	width: 96%;
+	margin: 0;
+	padding: 2%;
+	position: absolute;
+	bottom: 0;
+}
+
+/* Filter button - filter not added at this time 7/3/13 JAMIE */
+
+.filter-wrapper {
+	position: absolute;
+	width: 386px;
+	z-index: 9999;
+
+	.filter-btn {
+		display: inline-block;
+		float: right;
+	}
+
+	input[type="button"],
+	ul.filter-dropdown {
+		border: 1px solid #eee;
+		background: #eee; 
+		font-size: 12px;
+		outline: none;
+		padding: 6px 5px 6px 22px;
+		float: right;
+		margin: 3px 0px;
+		color: #0055a7;
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight: normal;
+	}
+
+	ul.filter-dropdown {
+		float:left;
+		list-style:none;
+		width:360px;
+		padding:6px 5px;
+		-moz-border-radius:0px 0px 10px 10px;
+		-webkit-border-bottom-right-radius:10px;
+		-webkit-border-bottom-left-radius:10px;
+		border-bottom-right-radius:10px;
+		border-bottom-left-radius:10px;
+
+		li {
+			font-size: 12px;
+			float: left;
+			width: 50%;
+
+			input[type="checkbox"] {
+				float:left;
+				margin:10px 4px 0 5px;
+			}
+
+			&.filter-title {
+				width: 348px;
+				border: 1px solid #fff;
+				clear: both;
+				background: #ddd;
+				font-size: 10px;
+				text-transform: uppercase;
+				color: #444;
+				height: 14px;
+				line-height: 14px;
+				padding: 5px;
+			}
+		}
+	}
+
+	span {
+		position: absolute;
+		top: 3.5px;
+		right: 45px;
+		width: 20px;
+		height: 25px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		z-index: 10;	
+
+		&.filter-up { background-image:url(../images/filter-up.png); }
+		&.filter-down { background-image:url(../images/filter-down.png); }
+	}
+
+	.filter-search {
+		background:#f2f2f2 url(../icons/search.png) no-repeat center center;
+		height:43px;
+		width:50px;
+		float:left;
+		border:none;
+		margin:3px 0px;
+		border:1px solid #fff;
+		-moz-box-shadow:1px 1px 3px #555;
+		-webkit-box-shadow:1px 1px 3px #555;
+		-box-shadow:1px 1px 3px #555;
+		outline:none;
+		cursor:pointer;
+
+		&:hover { background-color:#fff; }
+	}
+}

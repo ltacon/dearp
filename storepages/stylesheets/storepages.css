@@ -53,116 +53,6 @@ a img {
   border: none;
 }
 
-/* line 1, ../sass/_filter.scss */
-.filter_wrapper {
-  position: absolute;
-  width: 386px;
-  z-index: 9999;
-}
-/* line 6, ../sass/_filter.scss */
-.filter_wrapper .filter-btn {
-  display: inline-block;
-  float: right;
-}
-/* line 12, ../sass/_filter.scss */
-.filter_wrapper input[type="button"],
-.filter_wrapper ul.filter_dropdown {
-  border: 1px solid #eee;
-  background: #eee;
-  font-size: 12px;
-  outline: none;
-  padding: 6px 5px 6px 22px;
-  float: right;
-  margin: 3px 0px;
-  color: #0055a7;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: normal;
-}
-
-/* line 25, ../sass/_filter.scss */
-ul.filter_dropdown {
-  float: left;
-  list-style: none;
-  width: 360px;
-  padding: 6px 5px;
-  -moz-border-radius: 0px 0px 10px 10px;
-  -webkit-border-bottom-right-radius: 10px;
-  -webkit-border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-/* line 36, ../sass/_filter.scss */
-ul.filter_dropdown li {
-  font-size: 12px;
-  float: left;
-  width: 50%;
-}
-
-/* line 41, ../sass/_filter.scss */
-ul.filter_dropdown li input[type="checkbox"] {
-  float: left;
-  margin: 10px 4px 0 5px;
-}
-
-/* line 45, ../sass/_filter.scss */
-ul.filter_dropdown li.filter_title {
-  width: 348px;
-  border: 1px solid #fff;
-  clear: both;
-  background: #ddd;
-  font-size: 10px;
-  text-transform: uppercase;
-  color: #444;
-  height: 14px;
-  line-height: 14px;
-  padding: 5px;
-}
-
-/* line 58, ../sass/_filter.scss */
-span.filter_up,
-span.filter_down {
-  position: absolute;
-  top: 3.5px;
-  right: 45px;
-  width: 20px;
-  height: 25px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  z-index: 10;
-}
-
-/* line 68, ../sass/_filter.scss */
-span.filter_up {
-  background-image: url(../images/filter-up.png);
-}
-
-/* line 71, ../sass/_filter.scss */
-span.filter_down {
-  background-image: url(../images/filter-down.png);
-}
-
-/* line 74, ../sass/_filter.scss */
-input.filter_search {
-  background: #f2f2f2 url(../icons/search.png) no-repeat center center;
-  height: 43px;
-  width: 50px;
-  float: left;
-  border: none;
-  margin: 3px 0px;
-  border: 1px solid #fff;
-  -moz-box-shadow: 1px 1px 3px #555;
-  -webkit-box-shadow: 1px 1px 3px #555;
-  -box-shadow: 1px 1px 3px #555;
-  outline: none;
-  cursor: pointer;
-}
-
-/* line 88, ../sass/_filter.scss */
-input.filter_search:hover {
-  background-color: #fff;
-}
-
 /* line 6, ../sass/storepages.scss */
 .top-head {
   width: 100%;
@@ -671,31 +561,38 @@ input.filter_search:hover {
   /* there must be 'right' for ps-scrollbar-y */
   width: 5px;
   background-color: #aaa;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 4px 4px;
+  -moz-border-radius: 4px / 4px;
+  -o-border-radius: 4px / 4px;
+  -ms-border-radius: 4px / 4px;
+  -khtml-border-radius: 4px / 4px;
+  border-radius: 4px / 4px;
   opacity: 0;
   filter: alpha(opacity=0);
-  -o-transition: opacity .2s linear;
-  -webkit-transition: opacity.2s linear;
-  -moz-transition: opacity .2s linear;
-  transition: opacity .2s linear;
+  -moz-transition-property: width;
+  -webkit-transition-property: width;
+  -o-transition-property: width;
+  transition-property: width;
+  -moz-transition-duration: 2s;
+  -webkit-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  transition-duration: 2s;
 }
 
-/* line 474, ../sass/storepages.scss */
+/* line 470, ../sass/storepages.scss */
 .ps-container.ie .ps-scrollbar-y {
   font-size: 0;
   /* fixed scrollbar height in xp sp3 ie6 */
 }
 
-/* line 479, ../sass/storepages.scss */
+/* line 475, ../sass/storepages.scss */
 .ps-container:hover .ps-scrollbar-y,
 .ps-container.hover .ps-scrollbar-y {
   opacity: 0.6;
   filter: alpha(opacity=60);
 }
 
-/* line 485, ../sass/storepages.scss */
+/* line 481, ../sass/storepages.scss */
 .ps-container .ps-scrollbar-y:hover,
 .ps-container .ps-scrollbar-y.hover {
   opacity: 0.9;
@@ -703,28 +600,28 @@ input.filter_search:hover {
   cursor: default;
 }
 
-/* line 491, ../sass/storepages.scss */
+/* line 487, ../sass/storepages.scss */
 .ps-container .ps-scrollbar-y.in-scrolling {
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
 
-/* line 505, ../sass/storepages.scss */
+/* line 501, ../sass/storepages.scss */
 .cf {
   zoom: 1;
 }
-/* line 498, ../sass/storepages.scss */
+/* line 494, ../sass/storepages.scss */
 .cf:before, .cf:after {
   content: "";
   display: table;
 }
-/* line 502, ../sass/storepages.scss */
+/* line 498, ../sass/storepages.scss */
 .cf:after {
   clear: both;
 }
 
 /* scroller */
-/* line 509, ../sass/storepages.scss */
+/* line 505, ../sass/storepages.scss */
 ul.bjqs {
   position: relative;
   list-style: none;
@@ -733,60 +630,52 @@ ul.bjqs {
   overflow: hidden;
   display: none;
 }
-
-/* line 510, ../sass/storepages.scss */
-li.bjqs-slide {
+/* line 513, ../sass/storepages.scss */
+ul.bjqs .bjqs-slide {
   position: absolute;
   display: none;
 }
-
-/* line 511, ../sass/storepages.scss */
-ul.bjqs-controls {
+/* line 518, ../sass/storepages.scss */
+ul.bjqs .bjqs-controls {
   list-style: none;
   margin: 0;
   padding: 0;
   z-index: 9999;
 }
-
-/* line 512, ../sass/storepages.scss */
-ul.bjqs-controls.v-centered li a {
+/* line 524, ../sass/storepages.scss */
+ul.bjqs .bjqs-controls.v-centered li {
   position: absolute;
 }
-
-/* line 513, ../sass/storepages.scss */
-ul.bjqs-controls.v-centered li.bjqs-next a {
+/* line 527, ../sass/storepages.scss */
+ul.bjqs .bjqs-controls.v-centered li.bjqs-next a {
   right: 0;
 }
-
-/* line 514, ../sass/storepages.scss */
-ul.bjqs-controls.v-centered li.bjqs-prev a {
+/* line 528, ../sass/storepages.scss */
+ul.bjqs .bjqs-controls.v-centered li.bjqs-prev a {
   left: 0;
 }
 
-/* line 515, ../sass/storepages.scss */
+/* line 534, ../sass/storepages.scss */
 ol.bjqs-markers {
   list-style: none;
   padding: 0;
   margin: 0;
   width: 100%;
 }
-
-/* line 516, ../sass/storepages.scss */
+/* line 540, ../sass/storepages.scss */
 ol.bjqs-markers.h-centered {
   text-align: center;
 }
-
-/* line 517, ../sass/storepages.scss */
+/* line 543, ../sass/storepages.scss */
 ol.bjqs-markers li {
   display: inline;
 }
-
-/* line 518, ../sass/storepages.scss */
+/* line 546, ../sass/storepages.scss */
 ol.bjqs-markers li a {
   display: inline-block;
 }
 
-/* line 519, ../sass/storepages.scss */
+/* line 550, ../sass/storepages.scss */
 p.bjqs-caption {
   display: block;
   width: 96%;
@@ -794,4 +683,105 @@ p.bjqs-caption {
   padding: 2%;
   position: absolute;
   bottom: 0;
+}
+
+/* Filter button - filter not added at this time 7/3/13 JAMIE */
+/* line 561, ../sass/storepages.scss */
+.filter-wrapper {
+  position: absolute;
+  width: 386px;
+  z-index: 9999;
+}
+/* line 566, ../sass/storepages.scss */
+.filter-wrapper .filter-btn {
+  display: inline-block;
+  float: right;
+}
+/* line 572, ../sass/storepages.scss */
+.filter-wrapper input[type="button"],
+.filter-wrapper ul.filter-dropdown {
+  border: 1px solid #eee;
+  background: #eee;
+  font-size: 12px;
+  outline: none;
+  padding: 6px 5px 6px 22px;
+  float: right;
+  margin: 3px 0px;
+  color: #0055a7;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: normal;
+}
+/* line 585, ../sass/storepages.scss */
+.filter-wrapper ul.filter-dropdown {
+  float: left;
+  list-style: none;
+  width: 360px;
+  padding: 6px 5px;
+  -moz-border-radius: 0px 0px 10px 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+/* line 596, ../sass/storepages.scss */
+.filter-wrapper ul.filter-dropdown li {
+  font-size: 12px;
+  float: left;
+  width: 50%;
+}
+/* line 601, ../sass/storepages.scss */
+.filter-wrapper ul.filter-dropdown li input[type="checkbox"] {
+  float: left;
+  margin: 10px 4px 0 5px;
+}
+/* line 606, ../sass/storepages.scss */
+.filter-wrapper ul.filter-dropdown li.filter-title {
+  width: 348px;
+  border: 1px solid #fff;
+  clear: both;
+  background: #ddd;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #444;
+  height: 14px;
+  line-height: 14px;
+  padding: 5px;
+}
+/* line 621, ../sass/storepages.scss */
+.filter-wrapper span {
+  position: absolute;
+  top: 3.5px;
+  right: 45px;
+  width: 20px;
+  height: 25px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+/* line 631, ../sass/storepages.scss */
+.filter-wrapper span.filter-up {
+  background-image: url(../images/filter-up.png);
+}
+/* line 632, ../sass/storepages.scss */
+.filter-wrapper span.filter-down {
+  background-image: url(../images/filter-down.png);
+}
+/* line 635, ../sass/storepages.scss */
+.filter-wrapper .filter-search {
+  background: #f2f2f2 url(../icons/search.png) no-repeat center center;
+  height: 43px;
+  width: 50px;
+  float: left;
+  border: none;
+  margin: 3px 0px;
+  border: 1px solid #fff;
+  -moz-box-shadow: 1px 1px 3px #555;
+  -webkit-box-shadow: 1px 1px 3px #555;
+  -box-shadow: 1px 1px 3px #555;
+  outline: none;
+  cursor: pointer;
+}
+/* line 649, ../sass/storepages.scss */
+.filter-wrapper .filter-search:hover {
+  background-color: #fff;
 }
