@@ -1,7 +1,6 @@
 @import "reset";
 @include global-reset;
 @import "compass/css3";
-@import "slider";
 @import "filter";
 
 .top-head {
@@ -316,16 +315,17 @@
 		margin: 0 auto;
 	}
 	
-	.result { 
-		margin-bottom: 20px; 
-		margin-bottom: 10px;
-		padding-bottom: 20px;
-		border-bottom: 1px solid #ddd;
-	}
 	.results-sidebar {
 		float: left;
 		width: 372px;
 		font-size: 12px;
+
+		.result { 
+			margin-bottom: 20px; 
+			margin-bottom: 10px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #ddd;
+		}
 
 		.results-sidebar-header {
 			margin-bottom: 20px;
@@ -339,38 +339,7 @@
 			.large { font-size: 20px; }
 		}
 
-		.results-sidebar-content {
-			height: 437px;
-			overflow: hidden;
-	    position: absolute;
-
-	    h1, h2 {
-	    	color: #0055a7;
-	    	font-weight: bold;
-	    	font-size: 12px;
-	    	line-height: 14px;
-	    }
- 
-	    h2 { margin-bottom: 3px; }
-
-	    a { 
-	    	color: #0055a7;
-	    	text-decoration: none;
-	    	font-size: 11px;
-
-	    	&:hover { text-decoration: underline; }
-	    }
-	  }
-
-		.left { float: left; }
-		.right { 
-			float: right; 
-			padding: 0 10px 0 20px;
-			text-align: right;
-		}
-
 		.location { 
-			position: relative; 
 			margin-right: 10px;
 			padding: 1px;
 
@@ -385,18 +354,15 @@
 		.location-address{
 			background: url('../images/sears-location-pin.png') no-repeat;
 			padding: 10px 10px 10px 40px;
-			font-size: 11px;
-			line-height: 14px;
-			width: 210px;
-
+			
 			.number {
 				font-weight: bold;
 				font-size: 10px;
 				position: absolute;
 				left: 16px;
 				top: 15px;
-				padding: 1px;
 				color: #fff;
+				padding: 1px;
 			}
 
 			&:hover { 
@@ -404,28 +370,69 @@
 				cursor: pointer; 
 			}
 		}
+	}
 
-		.location-info { 
-			padding-top: 10px;
+	.results-sidebar-content {
+		height: 437px;
+		overflow: hidden;
+    position: absolute;
+  }
+
+  .result {
+    h1, h2 {
+    	color: #0055a7;
+    	font-weight: bold;
+    	font-size: 12px;
+    	line-height: 14px;
+    }
+
+    h2 { margin-bottom: 3px; }
+
+    a { 
+    	color: #0055a7;
+    	text-decoration: none;
+    	font-size: 11px;
+
+    	&:hover { text-decoration: underline; }
+    }
+  }
+
+	.left { float: left; }
+	.right { 
+		float: right; 
+		padding: 0 10px 0 20px;
+		text-align: right;
+	}
+
+	.location { position: relative; }
+
+	.result {
+		font-size: 11px;
+
+		h1, h2 {
+			line-height: 14px;
+			width: 210px;
 		}
+	}
 
-		.location-footer {
-			margin-top: 10px;
-			width: 320px;
-			padding-left: 40px;
+	.location-info { padding-top: 10px;	}
 
-			span {
-				background: #f7c433;
-				padding: 2px 5px;
-				font-size: 9px;
-				border-radius: 5px;
-				margin: 0 2px 2px 0;
-				color: white;
-				text-transform: uppercase;
-				font-weight: bold;
-				letter-spacing: 1px;
-				display: inline-block;
-			}
+	.location-footer {
+		margin-top: 10px;
+		width: 320px;
+		padding-left: 40px;
+
+		span {
+			background: #f7c433;
+			padding: 2px 5px;
+			font-size: 9px;
+			border-radius: 5px;
+			margin: 0 2px 2px 0;
+			color: white;
+			text-transform: uppercase;
+			font-weight: bold;
+			letter-spacing: 1px;
+			display: inline-block;
 		}
 	}
 
@@ -433,6 +440,13 @@
 		width: 580px;
 		float: right; 
 		height: 478px;
+
+		.result {
+			h1, h2 { 
+				font-size: 16px; 
+				line-height: 18px;
+			}
+		}
 	}
 }
 
@@ -489,3 +503,17 @@
   zoom: 1;
 }
 .cf { @include clear; }
+
+/* scroller */
+
+ul.bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:none;}
+li.bjqs-slide{position:absolute; display:none;}
+ul.bjqs-controls{list-style:none;margin:0;padding:0;z-index:9999;}
+ul.bjqs-controls.v-centered li a{position:absolute;}
+ul.bjqs-controls.v-centered li.bjqs-next a{right:0;}
+ul.bjqs-controls.v-centered li.bjqs-prev a{left:0;}
+ol.bjqs-markers{list-style: none; padding: 0; margin: 0; width:100%;}
+ol.bjqs-markers.h-centered{text-align: center;}
+ol.bjqs-markers li{display:inline;}
+ol.bjqs-markers li a{display:inline-block;}
+p.bjqs-caption{display:block;width:96%;margin:0;padding:2%;position:absolute;bottom:0;}
