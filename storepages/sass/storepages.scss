@@ -1,0 +1,491 @@
+@import "reset";
+@include global-reset;
+@import "compass/css3";
+@import "slider";
+@import "filter";
+
+.top-head {
+	width: 100%;
+	background: #e7e6e6;
+
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+#page-container { font-family: Arial,Helvetica,sans-serif; }
+
+#header { 
+	min-width: 1200px;
+	background: #fff;
+
+	.head-left { 
+		float: left; 
+		min-width: 900px;
+	}
+	.head-right { 
+		padding: 8px 15px 0 0;
+		float: right; 
+	}
+
+	.logo { 
+		padding: 38px 25.5px 0;
+		float: left;
+	}
+	.sub-head {
+		margin-top: 10px;
+		height: 25px;
+
+		ul {
+			height: 25px;
+			font-size: 12px; 
+
+			a { 
+				color: #999; 
+				text-decoration: none;
+			}
+
+			li {
+				float: left; 
+				border-right: 1px solid #999;
+				padding-right: 7px;
+				margin-right: 7px;
+
+				&:last-child { 
+					border: none;
+					margin: 0;
+					padding: 0; 
+				}
+			}
+		}
+	}
+
+	.search { 
+		background-color: #1985d1;
+		min-width: 725px;
+		position: relative;
+		float: left;
+		padding: 3px;
+		border-radius: 5px; 
+
+		.search-box { 
+			font-family: Arial,Helvetica,sans-serif;
+			width: 631px; 
+			height: 27px;
+			padding: 0 0 0 29px;
+			line-height: 28px;
+			font-size: 14px;
+			color: #999;
+			left: 0;
+			top: 0;
+			cursor: text;
+			margin: 0;
+			font-weight: normal;
+			border: none;
+			background-color: #fff;
+			float: left;
+		}
+
+		.search-btn {
+			cursor: pointer;
+			height: 27px;
+			width: 80px;
+			color: white;
+			text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+			border-color: #fdb173 #a4502c #a4502c #fdb173;
+			display: inline-block;
+			background: #fe9e43;
+			background: -moz-linear-gradient(top,#fe9e43 0,#ff7341 100%);
+			background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fe9e43),color-stop(100%,#ff7341));
+			background: -webkit-linear-gradient(top,#fe9e43 0,#ff7341 100%);
+			background: -o-linear-gradient(top,#fe9e43 0,#ff7341 100%);
+			background: -ms-linear-gradient(top,#fe9e43 0,#ff7341 100%);
+			background: linear-gradient(top,#fe9e43 0,#ff7341 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe9e43',endColorstr='#ff7341',GradientType=0);
+			border-radius: 3px 3px 3px 3px;
+			border-style: solid;
+			border-width: 1px;
+			display: inline-block;
+			font-size: 11px;
+			font-weight: bold;
+			padding: 3px 20px;
+			text-decoration: none;
+			float: left;
+			position: absolute;
+			right: 4px;
+
+			&:hover {
+				background: #f4963d;
+				background: -moz-linear-gradient(top,#ff7341 0,#fe9e43 99%);
+				background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#ff7341),color-stop(99%,#fe9e43));
+				background: -webkit-linear-gradient(top,#ff7341 0,#fe9e43 99%);
+				background: -o-linear-gradient(top,#ff7341 0,#fe9e43 99%);
+				background: -ms-linear-gradient(top,#ff7341 0,#fe9e43 99%);
+				background: linear-gradient(top,#ff7341 0,#fe9e43 99%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7341',endColorstr='#fe9e43',GradientType=0);
+			}
+		}
+	}
+}
+
+#page-content {
+	.content { background: #fff; }
+
+	.search-content {
+		h2 {
+			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+			font-weight: 300;
+			color: #0055a7;
+		}
+	}
+
+	.find-sears {
+
+			h2 { margin-bottom: 0; }
+
+			h3 {
+				color: #499cb5;
+				font-size: 10px;
+			}
+		}
+
+		.find-sears-search {
+
+			input { 
+				float: left;
+				margin: 0 8px 0 0;
+				padding: 6.5px;
+				font-family: arial;
+				font-size: 11px;
+
+				&.zip-city-state { width: 250px; }
+			}
+
+			::-webkit-input-placeholder { /* WebKit browsers */
+	  		font-weight: normal;
+			}
+			:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+				font-weight: normal;
+			}
+			::-moz-placeholder { /* Mozilla Firefox 19+ */
+				font-weight: normal;
+			}
+			:-ms-input-placeholder { /* Internet Explorer 10+ */
+				font-weight: normal;
+			}
+
+			.go {
+				cursor: pointer;
+				background: #f7c433;
+				width: 16px;
+				height: 12px;
+				padding: 7px 5px;
+				color: #fff;
+				font-size: 10px;
+				border-radius: 20px;
+				float: left;
+				margin: 1.5px 8px 0 0;
+				font-weight: bold;
+
+				&:hover { background: #eb833a; }
+			}
+		}
+}
+
+.store-search-page{
+	h2 {
+		font-size: 25px;
+		margin-bottom: 20px;
+	}
+
+	#search-content-body {
+		width: 980px;
+		margin: 0 auto;
+		font-size: 11px;
+		color: #666;
+		height: 414px;
+
+		li { height: 414px; }
+		.sears-appliances { background: url('../images/sears-appliances.png') no-repeat; }
+		.sears-sports { background: url('../images/sears-sport-fitness.png') no-repeat; }
+		.sears-electronics { background: url('../images/sears-electronics.png') no-repeat; }
+		.sears-family { background: url('../images/sears-family.png') no-repeat; }
+		.sears-garden { background: url('../images/sears-garden.png') no-repeat; }
+		.sears-outdoors { background: url('../images/sears-outdoors.png') no-repeat; }
+		.sears-fashion { background: url('../images/sears-fashion.png') no-repeat; }
+
+	}
+
+	.find-sears {
+		position: absolute;
+		top: 100px;
+		left: 25.5px;
+	}
+
+	.find-sears-search {
+		float: left;
+		width: 775px;
+	}
+
+	.sears-nearby { 
+		font-size: 11px;
+		width: 100%;
+		background: url('../images/sears-nearby-bg.png') repeat; 
+		padding: 15px 25.5px 20px;
+		position: absolute;
+		top: 283px;
+
+		.sears-nearby-content {
+			width: 980px;
+			margin: 0 auto;
+		}
+
+		.sears-store {
+			float: left;
+			padding: 0 35px;
+			
+			&.sears-store-1 { padding-left: 0; }
+			&.sears-store-4 { padding-right: 0; }
+
+			h1{ 
+				font-weight: bold;
+				font-size: 12px;
+				position: relative;
+
+				a { 
+					text-decoration: none;
+					color: #0055a7; 
+
+					&:hover { color: #E31837; }
+				}
+
+				.local-website {
+					position: absolute;
+					top: 0px;
+					right: -17px;
+				}
+			}
+
+			h4 { 
+				font-size: 10px;
+				font-weight: bold;
+				margin-bottom: 8px;
+				color: #E31837;
+				text-transform: uppercase;
+			}
+
+			.store-foot {
+				.see-map { 
+					text-decoration: none;
+					color: #067bb5;
+				}
+			}
+		}
+	}
+}
+
+.store-results-page {
+	#page-content {
+
+		.find-sears { 
+			padding: 20px 0;
+			margin: 10px 8px 20px 0;
+			width: 100%;
+			background: #eee;
+
+			.find-sears-search { 
+				width: 980px; 
+				margin: 0 auto;
+			}
+
+			h2 { 
+				float: left; 
+				padding-top: 5px;
+				margin-right: 20px;
+			}
+
+			input { 
+				width: 500px;
+				float: left; 
+			}
+		}
+	}
+	.results-content {
+		width: 980px;
+		margin: 0 auto;
+	}
+	
+	.result { 
+		margin-bottom: 20px; 
+		margin-bottom: 10px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #ddd;
+	}
+	.results-sidebar {
+		float: left;
+		width: 372px;
+		font-size: 12px;
+
+		.results-sidebar-header {
+			margin-bottom: 20px;
+
+			h1 {
+				font-weight: bold;
+				font-size: 15px;
+				float: left;
+			}
+
+			.large { font-size: 20px; }
+		}
+
+		.results-sidebar-content {
+			height: 437px;
+			overflow: hidden;
+	    position: absolute;
+
+	    h1, h2 {
+	    	color: #0055a7;
+	    	font-weight: bold;
+	    	font-size: 12px;
+	    	line-height: 14px;
+	    }
+ 
+	    h2 { margin-bottom: 3px; }
+
+	    a { 
+	    	color: #0055a7;
+	    	text-decoration: none;
+	    	font-size: 11px;
+
+	    	&:hover { text-decoration: underline; }
+	    }
+	  }
+
+		.left { float: left; }
+		.right { 
+			float: right; 
+			padding: 0 10px 0 20px;
+			text-align: right;
+		}
+
+		.location { 
+			position: relative; 
+			margin-right: 10px;
+			padding: 1px;
+
+			&:hover { 
+				border: 1px solid #eee; 
+				padding: 0px;
+
+				.number { padding: 0; }
+			}
+		}
+
+		.location-address{
+			background: url('../images/sears-location-pin.png') no-repeat;
+			padding: 10px 10px 10px 40px;
+			font-size: 11px;
+			line-height: 14px;
+			width: 210px;
+
+			.number {
+				font-weight: bold;
+				font-size: 10px;
+				position: absolute;
+				left: 16px;
+				top: 15px;
+				padding: 1px;
+				color: #fff;
+			}
+
+			&:hover { 
+				background-color: #e8f3fa;
+				cursor: pointer; 
+			}
+		}
+
+		.location-info { 
+			padding-top: 10px;
+		}
+
+		.location-footer {
+			margin-top: 10px;
+			width: 320px;
+			padding-left: 40px;
+
+			span {
+				background: #f7c433;
+				padding: 2px 5px;
+				font-size: 9px;
+				border-radius: 5px;
+				margin: 0 2px 2px 0;
+				color: white;
+				text-transform: uppercase;
+				font-weight: bold;
+				letter-spacing: 1px;
+				display: inline-block;
+			}
+		}
+	}
+
+	#results-map {
+		width: 580px;
+		float: right; 
+		height: 478px;
+	}
+}
+
+/* scrollbar CSS */
+.ps-container .ps-scrollbar-x {
+	display: none;
+}
+
+.ps-container .ps-scrollbar-y {
+    position: absolute; /* please don't change 'position' */
+    right: 0; /* there must be 'right' for ps-scrollbar-y */
+    width: 5px;
+    background-color: #aaa;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    opacity: 0;
+    filter: alpha(opacity = 0);
+    -o-transition: opacity .2s linear;
+    -webkit-transition: opacity.2s linear;
+    -moz-transition: opacity .2s linear;
+    transition: opacity .2s linear;
+}
+
+.ps-container.ie .ps-scrollbar-y {
+    font-size: 0; /* fixed scrollbar height in xp sp3 ie6 */
+}
+
+.ps-container:hover .ps-scrollbar-y,
+.ps-container.hover .ps-scrollbar-y {
+    opacity: 0.6;
+    filter: alpha(opacity = 60);
+}
+
+.ps-container .ps-scrollbar-y:hover,
+.ps-container .ps-scrollbar-y.hover {
+    opacity: 0.9;
+    filter: alpha(opacity = 90);
+    cursor: default;
+}
+
+.ps-container .ps-scrollbar-y.in-scrolling {
+    opacity: 0.9;
+    filter: alpha(opacity = 90);
+}
+
+@mixin clear($side: both) {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after { clear: $side; }
+  zoom: 1;
+}
+.cf { @include clear; }
