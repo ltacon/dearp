@@ -16,7 +16,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
     <title>Sears Locations - Bedford, NY 10506</title>
     <link rel="icon" type="image/png" href="images/sears-favicon.png">
-    <link rel="stylesheet" href="stylesheets/storepages.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="js/perfect-scrollbar.min.js"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBzY9j4mYywVqpPXm9AdmWgMwgg3G5rTHY&sensor=false"></script> 
@@ -137,26 +137,6 @@
           <div class="results-sidebar">
             <div class="results-sidebar-header cf">
               <h1 class="number-results"><span class="large">5</span> stores near you</h1>
-              <form id="filter" class="filter_wrapper">
-                <div class="filter-btn">
-                  <span class="filter_down"></span>
-                  <input class="filter_input" type="button" value="FILTER">
-                </div>
-                <ul class="filter_dropdown" style="display:none;">
-                    <li class="filter_title">Filter your search</li>
-                    <li><input type="checkbox"><label for="Sears Stores">Sears Stores</label></li>
-                    <li><input type="checkbox"><label for="Sears Mall, Grand and Essential Stores">Sears Mall, Grand and Essential Stores</label></li>
-                    <li><input type="checkbox"><label for="Sears Auto Centers">Sears Auto Centers</label></li>
-                    <li><input type="checkbox"><label for="Repair Parts Centers">Repair Parts Centers</label></li>
-                    <li><input type="checkbox"><label for="Hometown Stores">Hometown Stores</label></li>
-                    <li><input type="checkbox"><label for="Hardware Stores">Hardware Stores</label></li>
-                    <li><input type="checkbox"><label for="Sears Outlet Stores">Sears Outlet Stores</label></li>
-                    <li><input type="checkbox"><label for="Drop-off Locations">Drop-off Locations</label></li>
-                    <li><input type="checkbox"><label for="Premium Appliances Showrooms">Premium Appliances Showrooms</label></li>
-                    <li><input class="filter_search" type="submit" value="Submit"></li>
-                    <li><input class="filter_close" type="button" value="close"></li>
-                  </ul>
-                </form>
             </div>
             <div class="results-sidebar-content">
               <div id="result-1" class="result">
@@ -490,53 +470,4 @@
       </div>
     </div>
   </body>
-<script type="text/javascript">
-  $(function() {
-    var $filter = $('#filter'),
-
-    /**
-    * on click display the dropdown, 
-    * and arrow image is switched
-    */
-    $('.filter-btn').bind('click',function(e){
-      e.stopPropagation();
-              $filter.find('.filter_down')
-        .addClass('filter_up')
-        .removeClass('filter_down')
-      if ($(".filter_dropdown").css('display') == 'block') {
-        $filter.find('.filter_down')
-        .addClass('filter_up')
-        .removeClass('filter_down')
-      }else{
-        $filter.find('.filter_up')
-        .addClass('filter_down')
-        .removeClass('filter_up')
-      }
-      $filter.andSelf()
-      .find('.filter_dropdown')
-      .toggle();
-    });
-
-    /*
-    * clicking the close button hide the dropdown, 
-    * and change the arrow image
-    */
-    $('.filter_close').bind('click',function(e) {
-      e.stopPropagation();
-      if ($(".filter_dropdown").css('display') == 'block') {
-        $filter.find('.filter_down')
-        .addClass('filter_up')
-        .removeClass('filter_down')
-      }else{
-        $filter.find('.filter_up')
-        .addClass('filter_down')
-        .removeClass('filter_up')
-      }
-      $filter.andSelf()
-      .find('.filter_dropdown')
-      .hide();
-    });
-
-  });
-</script> 
 </html> 
