@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+  <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+  <html class="lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+  <html class="lt-ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 8]><!--> 
+  <html lang="en"> 
+<!--<![endif]-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+<head> 
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> 
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
+    <title>Sears Locations - Bedford, NY 10506</title>
+    <!-- http://code.google.com/apis/ajaxlibs/documentation/ -->
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+    <link rel="stylesheet" href="css/storepages.css" type="text/css" />
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBzY9j4mYywVqpPXm9AdmWgMwgg3G5rTHY&sensor=false"></script> 
+<style type="text/css">
+html, body { height: 100%; } 
+</style>
+<script type="text/javascript"> 
+//<![CDATA[
+      // this variable will collect the html which will eventually be placed in the side_bar 
+      var side_bar_html = ""; 
+    
+      // arrays to hold copies of the markers and html used by the side_bar 
+      // because the function closure trick doesnt work there 
+      var gmarkers = []; 
+      var map = null;
+
+function initialize() {
+  // create the map
+  var myOptions = {
+    zoom: 9,
+    center: new google.maps.LatLng(41.1091065,-73.547011),
+    mapTypeControl: true,
+    mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+    navigationControl: true,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  map = new google.maps.Map(document.getElementById("map_canvas"),
+                                myOptions);
+ 
+  google.maps.event.addListener(map, 'click', function() {
+        infowindow.close();
+        });
+
+  // Add markers to the map
+  // Set up three markers with info windows 
+  // add the points    
+  var store = document.getElementById("info").innerHTML;
+
+  var point = new google.maps.LatLng(41.2197356,-73.71625540000002);
+  var marker = createMarker(point, "store name","Some stuff to display in the<br>First Info Window")
+ 
+  var point = new google.maps.LatLng(41.1091065,-73.547011);
+  var marker = createMarker(point, store,"Some stuff to display in the<br>Second Info Window")
+ 
+  var point = new google.maps.LatLng(41.031576,-73.76887799999997);
+  var marker = createMarker(point, store,"Some stuff to display in the<br>Third Info Window")
+
+  // put the assembled side_bar_html contents into the side_bar div
+  document.getElementById("side_bar").innerHTML = side_bar_html;
+}
+ 
+var infowindow = new google.maps.InfoWindow(
+  { 
+    size: new google.maps.Size(150,50)
+  });
+    
+// This function picks up the click and opens the corresponding info window
+function myclick(i) {
+  google.maps.event.trigger(gmarkers[i], "click");
+}
+
+// A function to create the marker and set up the event window function 
+function createMarker(latlng, name, html) {
+    var contentString = html;
+    var marker = new google.maps.Marker({
+        position: latlng,
+        map: map,
+        zIndex: Math.round(latlng.lat()*-100000)<<5
+        });
+
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(contentString); 
+        infowindow.open(map,marker);
+        });
+    // save the info we need to use later for the side_bar
+    gmarkers.push(marker);
+    // add a line to the side_bar html
+    side_bar_html += '<a href="location.html">' + name + '<\/a><br>';
+}
+ 
+
+    // This Javascript is based on code provided by the
+    // Community Church Javascript Team
+    // http://www.bisphamchurch.org.uk/   
+    // http://econym.org.uk/gmap/
+    // from the v2 tutorial page at:
+    // http://econym.org.uk/gmap/basic2.htm 
+//]]>
+</script> 
+
+  </head> 
+<body style="margin:0px; padding:0px;" onload="initialize()"> 
+ 
+    <!-- you can use tables or divs for the overall layout --> 
+    <div id="info" style="display: none;">
+      <h1></h1>
+      <h1>new</h1>
+    </div>
+    <table border="1"> 
+      <tr> 
+        <td> 
+           <div id="map_canvas" style="width: 550px; height: 450px"></div> 
+        </td> 
+        <td valign="top" style="width:150px; text-decoration: underline; color: #4444ff;"> 
+           <div id="side_bar"></div> 
+        </td> 
+      </tr> 
+    </table> 
+ 
+    <noscript><p><b>JavaScript must be enabled in order for you to use Google Maps.</b> 
+      However, it seems JavaScript is either disabled or not supported by your browser. 
+      To view Google Maps, enable JavaScript by changing your browser options, and then 
+      try again.</p>
+    </noscript>  
+  </body> 
+</html> 
