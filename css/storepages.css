@@ -516,13 +516,18 @@ a img {
 .store-results-page .location-info {
   padding-top: 10px;
 }
-/* line 420, ../sass/storepages.scss */
+/* line 421, ../sass/storepages.scss */
+.store-results-page .location-hours-table .day {
+  font-weight: bold;
+  padding-right: 10px;
+}
+/* line 429, ../sass/storepages.scss */
 .store-results-page .location-footer {
   margin-top: 10px;
   width: 320px;
   padding-left: 40px;
 }
-/* line 425, ../sass/storepages.scss */
+/* line 434, ../sass/storepages.scss */
 .store-results-page .location-footer span {
   background: #f7c433;
   padding: 2px 5px;
@@ -535,25 +540,29 @@ a img {
   letter-spacing: 1px;
   display: inline-block;
 }
-/* line 439, ../sass/storepages.scss */
+/* line 448, ../sass/storepages.scss */
 .store-results-page #results-map {
   width: 580px;
   float: right;
   height: 478px;
 }
-/* line 445, ../sass/storepages.scss */
+/* line 453, ../sass/storepages.scss */
+.store-results-page #results-map .result {
+  width: 320px;
+}
+/* line 456, ../sass/storepages.scss */
 .store-results-page #results-map .result h1, .store-results-page #results-map .result h2 {
   font-size: 16px;
   line-height: 18px;
 }
 
 /* scrollbar CSS */
-/* line 454, ../sass/storepages.scss */
+/* line 465, ../sass/storepages.scss */
 .ps-container .ps-scrollbar-x {
   display: none;
 }
 
-/* line 458, ../sass/storepages.scss */
+/* line 469, ../sass/storepages.scss */
 .ps-container .ps-scrollbar-y {
   position: absolute;
   /* please don't change 'position' */
@@ -579,20 +588,20 @@ a img {
   transition-duration: 2s;
 }
 
-/* line 470, ../sass/storepages.scss */
+/* line 481, ../sass/storepages.scss */
 .ps-container.ie .ps-scrollbar-y {
   font-size: 0;
   /* fixed scrollbar height in xp sp3 ie6 */
 }
 
-/* line 475, ../sass/storepages.scss */
+/* line 486, ../sass/storepages.scss */
 .ps-container:hover .ps-scrollbar-y,
 .ps-container.hover .ps-scrollbar-y {
   opacity: 0.6;
   filter: alpha(opacity=60);
 }
 
-/* line 481, ../sass/storepages.scss */
+/* line 492, ../sass/storepages.scss */
 .ps-container .ps-scrollbar-y:hover,
 .ps-container .ps-scrollbar-y.hover {
   opacity: 0.9;
@@ -600,28 +609,28 @@ a img {
   cursor: default;
 }
 
-/* line 487, ../sass/storepages.scss */
+/* line 498, ../sass/storepages.scss */
 .ps-container .ps-scrollbar-y.in-scrolling {
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
 
-/* line 501, ../sass/storepages.scss */
+/* line 512, ../sass/storepages.scss */
 .cf {
   zoom: 1;
 }
-/* line 494, ../sass/storepages.scss */
+/* line 505, ../sass/storepages.scss */
 .cf:before, .cf:after {
   content: "";
   display: table;
 }
-/* line 498, ../sass/storepages.scss */
+/* line 509, ../sass/storepages.scss */
 .cf:after {
   clear: both;
 }
 
 /* scroller */
-/* line 505, ../sass/storepages.scss */
+/* line 516, ../sass/storepages.scss */
 ul.bjqs {
   position: relative;
   list-style: none;
@@ -630,52 +639,52 @@ ul.bjqs {
   overflow: hidden;
   display: none;
 }
-/* line 513, ../sass/storepages.scss */
+/* line 524, ../sass/storepages.scss */
 ul.bjqs .bjqs-slide {
   position: absolute;
   display: none;
 }
-/* line 518, ../sass/storepages.scss */
+/* line 529, ../sass/storepages.scss */
 ul.bjqs .bjqs-controls {
   list-style: none;
   margin: 0;
   padding: 0;
   z-index: 9999;
 }
-/* line 524, ../sass/storepages.scss */
+/* line 535, ../sass/storepages.scss */
 ul.bjqs .bjqs-controls.v-centered li {
   position: absolute;
 }
-/* line 527, ../sass/storepages.scss */
+/* line 538, ../sass/storepages.scss */
 ul.bjqs .bjqs-controls.v-centered li.bjqs-next a {
   right: 0;
 }
-/* line 528, ../sass/storepages.scss */
+/* line 539, ../sass/storepages.scss */
 ul.bjqs .bjqs-controls.v-centered li.bjqs-prev a {
   left: 0;
 }
 
-/* line 534, ../sass/storepages.scss */
+/* line 545, ../sass/storepages.scss */
 ol.bjqs-markers {
   list-style: none;
   padding: 0;
   margin: 0;
   width: 100%;
 }
-/* line 540, ../sass/storepages.scss */
+/* line 551, ../sass/storepages.scss */
 ol.bjqs-markers.h-centered {
   text-align: center;
 }
-/* line 543, ../sass/storepages.scss */
+/* line 554, ../sass/storepages.scss */
 ol.bjqs-markers li {
   display: inline;
 }
-/* line 546, ../sass/storepages.scss */
+/* line 557, ../sass/storepages.scss */
 ol.bjqs-markers li a {
   display: inline-block;
 }
 
-/* line 550, ../sass/storepages.scss */
+/* line 561, ../sass/storepages.scss */
 p.bjqs-caption {
   display: block;
   width: 96%;
@@ -686,18 +695,18 @@ p.bjqs-caption {
 }
 
 /* Filter button - filter not added at this time 7/3/13 JAMIE */
-/* line 561, ../sass/storepages.scss */
+/* line 572, ../sass/storepages.scss */
 .filter-wrapper {
   position: absolute;
   width: 386px;
   z-index: 9999;
 }
-/* line 566, ../sass/storepages.scss */
+/* line 577, ../sass/storepages.scss */
 .filter-wrapper .filter-btn {
   display: inline-block;
   float: right;
 }
-/* line 572, ../sass/storepages.scss */
+/* line 583, ../sass/storepages.scss */
 .filter-wrapper input[type="button"],
 .filter-wrapper ul.filter-dropdown {
   border: 1px solid #eee;
@@ -711,7 +720,7 @@ p.bjqs-caption {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: normal;
 }
-/* line 585, ../sass/storepages.scss */
+/* line 596, ../sass/storepages.scss */
 .filter-wrapper ul.filter-dropdown {
   float: left;
   list-style: none;
@@ -723,18 +732,18 @@ p.bjqs-caption {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
-/* line 596, ../sass/storepages.scss */
+/* line 607, ../sass/storepages.scss */
 .filter-wrapper ul.filter-dropdown li {
   font-size: 12px;
   float: left;
   width: 50%;
 }
-/* line 601, ../sass/storepages.scss */
+/* line 612, ../sass/storepages.scss */
 .filter-wrapper ul.filter-dropdown li input[type="checkbox"] {
   float: left;
   margin: 10px 4px 0 5px;
 }
-/* line 606, ../sass/storepages.scss */
+/* line 617, ../sass/storepages.scss */
 .filter-wrapper ul.filter-dropdown li.filter-title {
   width: 348px;
   border: 1px solid #fff;
@@ -747,7 +756,7 @@ p.bjqs-caption {
   line-height: 14px;
   padding: 5px;
 }
-/* line 621, ../sass/storepages.scss */
+/* line 632, ../sass/storepages.scss */
 .filter-wrapper span {
   position: absolute;
   top: 3.5px;
@@ -758,15 +767,15 @@ p.bjqs-caption {
   background-repeat: no-repeat;
   z-index: 10;
 }
-/* line 631, ../sass/storepages.scss */
+/* line 642, ../sass/storepages.scss */
 .filter-wrapper span.filter-up {
   background-image: url(../images/filter-up.png);
 }
-/* line 632, ../sass/storepages.scss */
+/* line 643, ../sass/storepages.scss */
 .filter-wrapper span.filter-down {
   background-image: url(../images/filter-down.png);
 }
-/* line 635, ../sass/storepages.scss */
+/* line 646, ../sass/storepages.scss */
 .filter-wrapper .filter-search {
   background: #f2f2f2 url(../icons/search.png) no-repeat center center;
   height: 43px;
@@ -781,7 +790,7 @@ p.bjqs-caption {
   outline: none;
   cursor: pointer;
 }
-/* line 649, ../sass/storepages.scss */
+/* line 660, ../sass/storepages.scss */
 .filter-wrapper .filter-search:hover {
   background-color: #fff;
 }

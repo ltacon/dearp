@@ -417,6 +417,15 @@
 
 	.location-info { padding-top: 10px;	}
 
+	.location-hours-table {
+			.day {
+				font-weight: bold;
+				padding-right: 10px;
+			}
+
+			.hour { }
+	}
+
 	.location-footer {
 		margin-top: 10px;
 		width: 320px;
@@ -442,6 +451,8 @@
 		height: 478px;
 
 		.result {
+			width: 320px;
+
 			h1, h2 { 
 				font-size: 16px; 
 				line-height: 18px;
