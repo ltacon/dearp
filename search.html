@@ -75,10 +75,11 @@
 						<div class="find-sears cf">
 							<h2>Find a Sears Location</h2>
 							<div class="find-sears-search">
-								<input id="zip-city-state" class="zip-city-state" name="zip-city-state" type="text" placeholder="Enter a Zip Code or City and State">
+								<input class="zip-city-state" name="zip-city-state" type="text" placeholder="Enter a Zip Code or City and State">
 								<div class="go">
 									<a href="">GO</a>
 								</div>
+								<p class="inputval"></p>
 							</div>
 						</div>
 					</div>
@@ -146,6 +147,7 @@
 				</div>
 				<script class="secret-source">
 			    jQuery(document).ready(function($) {
+			      /* For search slider */
 			      $('#search-content-body').bjqs({
 			        animtype      : 'fade',
 			        height        : 411,
@@ -156,10 +158,15 @@
 			        showmarkers   : false
 			      });
 
-			      var $location = $("#zip-city-state").val(); 
-
-			      $location.keyup(function(){
-			      alert(this.value);
+			      /* For search link */
+			      function displayVals() {
+				      var location = $(".zip-city-state").val();
+				      $(".inputval").html("<b>zip-city-state</b> " + location;
+				             
+				    }
+				 
+				    $("input.zip-city-state").change(displayVals);
+				    displayVals();
   });
 			    });
 				</script>
