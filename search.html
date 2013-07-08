@@ -158,11 +158,11 @@
 
 			      var $location = $("#zip-city-state").val(); 
 
-			      $(".go").click(function() {
-						  if($location == ''){
-						  	alert('Please enter a zip or city and state.');
-						  }
-						});
+			      if($location == ""){
+				      $(".go").click(function() {
+							  	alert('Please enter a zip or city and state.');
+							});
+			    	}
 			    });
 				</script>
 			</div>
