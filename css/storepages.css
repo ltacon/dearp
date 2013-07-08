@@ -74,51 +74,50 @@ a img {
   min-width: 1200px;
   background: #fff;
 }
-
 /* line 22, ../sass/storepages.scss */
 #header .head-left {
   float: left;
   min-width: 900px;
 }
-/* line 26, ../sass/storepages.scss */
+/* line 27, ../sass/storepages.scss */
 #header .head-right {
   padding: 8px 15px 0 0;
   float: right;
 }
-/* line 31, ../sass/storepages.scss */
+/* line 32, ../sass/storepages.scss */
 #header .logo {
   padding: 38px 25.5px 0;
   float: left;
 }
-/* line 35, ../sass/storepages.scss */
+/* line 37, ../sass/storepages.scss */
 #header .sub-head {
   margin-top: 10px;
   height: 25px;
 }
-/* line 39, ../sass/storepages.scss */
+/* line 41, ../sass/storepages.scss */
 #header .sub-head ul {
   height: 25px;
   font-size: 12px;
 }
-/* line 43, ../sass/storepages.scss */
+/* line 45, ../sass/storepages.scss */
 #header .sub-head ul a {
   color: #999;
   text-decoration: none;
 }
-/* line 48, ../sass/storepages.scss */
+/* line 50, ../sass/storepages.scss */
 #header .sub-head ul li {
   float: left;
   border-right: 1px solid #999;
   padding-right: 7px;
   margin-right: 7px;
 }
-/* line 54, ../sass/storepages.scss */
+/* line 56, ../sass/storepages.scss */
 #header .sub-head ul li:last-child {
   border: none;
   margin: 0;
   padding: 0;
 }
-/* line 63, ../sass/storepages.scss */
+/* line 65, ../sass/storepages.scss */
 #header .search {
   background-color: #1985d1;
   min-width: 725px;
@@ -127,7 +126,7 @@ a img {
   padding: 3px;
   border-radius: 5px;
 }
-/* line 71, ../sass/storepages.scss */
+/* line 73, ../sass/storepages.scss */
 #header .search .search-box {
   font-family: Arial,Helvetica,sans-serif;
   width: 631px;
@@ -145,7 +144,7 @@ a img {
   background-color: #fff;
   float: left;
 }
-/* line 89, ../sass/storepages.scss */
+/* line 91, ../sass/storepages.scss */
 #header .search .search-btn {
   cursor: pointer;
   height: 27px;
@@ -174,7 +173,7 @@ a img {
   position: absolute;
   right: 4px;
 }
-/* line 117, ../sass/storepages.scss */
+/* line 119, ../sass/storepages.scss */
 #header .search .search-btn:hover {
   background: #f4963d;
   background: -moz-linear-gradient(top, #ff7341 0, #fe9e43 99%);
@@ -186,26 +185,47 @@ a img {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7341',endColorstr='#fe9e43',GradientType=0);
 }
 
-/* line 132, ../sass/storepages.scss */
-#page-content .content {
-  background: #fff;
-}
 /* line 135, ../sass/storepages.scss */
+#page-content .main-content {
+  width: 980px;
+  margin: 0 auto;
+}
+/* line 141, ../sass/storepages.scss */
 #page-content .search-content h2 {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   color: #0055a7;
 }
-/* line 144, ../sass/storepages.scss */
+/* line 148, ../sass/storepages.scss */
+#page-content .sub-nav {
+  padding: 20px 0;
+  margin: 10px 8px 20px 0;
+  width: 100%;
+  background: #eee;
+}
+/* line 154, ../sass/storepages.scss */
+#page-content .sub-nav .nav {
+  width: 980px;
+  margin: 0 auto;
+}
+/* line 160, ../sass/storepages.scss */
+#page-content .left {
+  float: left;
+}
+/* line 161, ../sass/storepages.scss */
+#page-content .right {
+  float: right;
+}
+/* line 164, ../sass/storepages.scss */
 #page-content .find-sears h2 {
   margin-bottom: 0;
 }
-/* line 146, ../sass/storepages.scss */
+/* line 166, ../sass/storepages.scss */
 #page-content .find-sears h3 {
   color: #499cb5;
   font-size: 10px;
 }
-/* line 154, ../sass/storepages.scss */
+/* line 174, ../sass/storepages.scss */
 #page-content .find-sears-search input {
   float: left;
   margin: 0 8px 0 0;
@@ -213,31 +233,31 @@ a img {
   font-family: arial;
   font-size: 11px;
 }
-/* line 161, ../sass/storepages.scss */
+/* line 181, ../sass/storepages.scss */
 #page-content .find-sears-search input.zip-city-state {
   width: 250px;
 }
-/* line 164, ../sass/storepages.scss */
+/* line 184, ../sass/storepages.scss */
 #page-content .find-sears-search ::-webkit-input-placeholder {
   /* WebKit browsers */
   font-weight: normal;
 }
-/* line 167, ../sass/storepages.scss */
+/* line 187, ../sass/storepages.scss */
 #page-content .find-sears-search :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   font-weight: normal;
 }
-/* line 170, ../sass/storepages.scss */
+/* line 190, ../sass/storepages.scss */
 #page-content .find-sears-search ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   font-weight: normal;
 }
-/* line 173, ../sass/storepages.scss */
+/* line 193, ../sass/storepages.scss */
 #page-content .find-sears-search :-ms-input-placeholder {
   /* Internet Explorer 10+ */
   font-weight: normal;
 }
-/* line 177, ../sass/storepages.scss */
+/* line 197, ../sass/storepages.scss */
 #page-content .find-sears-search .go {
   cursor: pointer;
   background: #f7c433;
@@ -250,23 +270,22 @@ a img {
   margin: 1.5px 8px 0 0;
   font-weight: bold;
 }
-
-#page-content .find-sears-search .go a{
-  color: #fff;
-  text-decoration: none;
-}
-
-/* line 190, ../sass/storepages.scss */
+/* line 209, ../sass/storepages.scss */
 #page-content .find-sears-search .go:hover {
   background: #eb833a;
 }
+/* line 211, ../sass/storepages.scss */
+#page-content .find-sears-search .go a {
+  color: fff;
+  text-decoration: none;
+}
 
-/* line 196, ../sass/storepages.scss */
+/* line 220, ../sass/storepages.scss */
 .store-search-page h2 {
   font-size: 25px;
   margin-bottom: 20px;
 }
-/* line 201, ../sass/storepages.scss */
+/* line 225, ../sass/storepages.scss */
 .store-search-page #search-content-body {
   width: 980px;
   margin: 0 auto;
@@ -274,50 +293,50 @@ a img {
   color: #666;
   height: 414px;
 }
-/* line 208, ../sass/storepages.scss */
+/* line 232, ../sass/storepages.scss */
 .store-search-page #search-content-body li {
   height: 414px;
 }
-/* line 209, ../sass/storepages.scss */
+/* line 233, ../sass/storepages.scss */
 .store-search-page #search-content-body .sears-appliances {
   background: url("../images/sears-appliances.png") no-repeat;
 }
-/* line 210, ../sass/storepages.scss */
+/* line 234, ../sass/storepages.scss */
 .store-search-page #search-content-body .sears-sports {
   background: url("../images/sears-sport-fitness.png") no-repeat;
 }
-/* line 211, ../sass/storepages.scss */
+/* line 235, ../sass/storepages.scss */
 .store-search-page #search-content-body .sears-electronics {
   background: url("../images/sears-electronics.png") no-repeat;
 }
-/* line 212, ../sass/storepages.scss */
+/* line 236, ../sass/storepages.scss */
 .store-search-page #search-content-body .sears-family {
   background: url("../images/sears-family.png") no-repeat;
 }
-/* line 213, ../sass/storepages.scss */
+/* line 237, ../sass/storepages.scss */
 .store-search-page #search-content-body .sears-garden {
   background: url("../images/sears-garden.png") no-repeat;
 }
-/* line 214, ../sass/storepages.scss */
+/* line 238, ../sass/storepages.scss */
 .store-search-page #search-content-body .sears-outdoors {
   background: url("../images/sears-outdoors.png") no-repeat;
 }
-/* line 215, ../sass/storepages.scss */
+/* line 239, ../sass/storepages.scss */
 .store-search-page #search-content-body .sears-fashion {
   background: url("../images/sears-fashion.png") no-repeat;
 }
-/* line 219, ../sass/storepages.scss */
+/* line 243, ../sass/storepages.scss */
 .store-search-page .find-sears {
   position: absolute;
   top: 100px;
   left: 25.5px;
 }
-/* line 225, ../sass/storepages.scss */
+/* line 249, ../sass/storepages.scss */
 .store-search-page .find-sears-search {
   float: left;
   width: 775px;
 }
-/* line 230, ../sass/storepages.scss */
+/* line 254, ../sass/storepages.scss */
 .store-search-page .sears-nearby {
   font-size: 11px;
   width: 100%;
@@ -326,46 +345,46 @@ a img {
   position: absolute;
   top: 283px;
 }
-/* line 238, ../sass/storepages.scss */
+/* line 262, ../sass/storepages.scss */
 .store-search-page .sears-nearby .sears-nearby-content {
   width: 980px;
   margin: 0 auto;
 }
-/* line 243, ../sass/storepages.scss */
+/* line 267, ../sass/storepages.scss */
 .store-search-page .sears-nearby .sears-store {
   float: left;
   padding: 0 35px;
 }
-/* line 247, ../sass/storepages.scss */
+/* line 271, ../sass/storepages.scss */
 .store-search-page .sears-nearby .sears-store.sears-store-1 {
   padding-left: 0;
 }
-/* line 248, ../sass/storepages.scss */
+/* line 272, ../sass/storepages.scss */
 .store-search-page .sears-nearby .sears-store.sears-store-4 {
   padding-right: 0;
 }
-/* line 250, ../sass/storepages.scss */
+/* line 274, ../sass/storepages.scss */
 .store-search-page .sears-nearby .sears-store h1 {
   font-weight: bold;
   font-size: 12px;
   position: relative;
 }
-/* line 255, ../sass/storepages.scss */
+/* line 279, ../sass/storepages.scss */
 .store-search-page .sears-nearby .sears-store h1 a {
   text-decoration: none;
   color: #0055a7;
 }
-/* line 259, ../sass/storepages.scss */
+/* line 283, ../sass/storepages.scss */
 .store-search-page .sears-nearby .sears-store h1 a:hover {
   color: #E31837;
 }
-/* line 262, ../sass/storepages.scss */
+/* line 286, ../sass/storepages.scss */
 .store-search-page .sears-nearby .sears-store h1 .local-website {
   position: absolute;
   top: 0px;
   right: -17px;
 }
-/* line 269, ../sass/storepages.scss */
+/* line 293, ../sass/storepages.scss */
 .store-search-page .sears-nearby .sears-store h4 {
   font-size: 10px;
   font-weight: bold;
@@ -373,87 +392,70 @@ a img {
   color: #E31837;
   text-transform: uppercase;
 }
-/* line 278, ../sass/storepages.scss */
+/* line 302, ../sass/storepages.scss */
 .store-search-page .sears-nearby .sears-store .store-foot .see-map {
   text-decoration: none;
   color: #067bb5;
 }
 
-/* line 290, ../sass/storepages.scss */
-.store-results-page #page-content .find-sears {
-  padding: 20px 0;
-  margin: 10px 8px 20px 0;
-  width: 100%;
-  background: #eee;
-}
-/* line 296, ../sass/storepages.scss */
-.store-results-page #page-content .find-sears .find-sears-search {
-  width: 980px;
-  margin: 0 auto;
-}
-/* line 301, ../sass/storepages.scss */
+/* line 314, ../sass/storepages.scss */
 .store-results-page #page-content .find-sears h2 {
   float: left;
   padding-top: 5px;
   margin-right: 20px;
 }
-/* line 307, ../sass/storepages.scss */
+/* line 320, ../sass/storepages.scss */
 .store-results-page #page-content .find-sears input {
   width: 500px;
   float: left;
 }
-/* line 313, ../sass/storepages.scss */
-.store-results-page .results-content {
-  width: 980px;
-  margin: 0 auto;
-}
-/* line 318, ../sass/storepages.scss */
+/* line 327, ../sass/storepages.scss */
 .store-results-page .results-sidebar {
   float: left;
   width: 372px;
   font-size: 12px;
 }
-/* line 323, ../sass/storepages.scss */
+/* line 332, ../sass/storepages.scss */
 .store-results-page .results-sidebar .result {
   margin-bottom: 20px;
   margin-bottom: 10px;
   padding-bottom: 20px;
   border-bottom: 1px solid #ddd;
 }
-/* line 330, ../sass/storepages.scss */
+/* line 339, ../sass/storepages.scss */
 .store-results-page .results-sidebar .results-sidebar-header {
   margin-bottom: 20px;
 }
-/* line 333, ../sass/storepages.scss */
+/* line 342, ../sass/storepages.scss */
 .store-results-page .results-sidebar .results-sidebar-header h1 {
   font-weight: bold;
   font-size: 15px;
   float: left;
 }
-/* line 339, ../sass/storepages.scss */
+/* line 348, ../sass/storepages.scss */
 .store-results-page .results-sidebar .results-sidebar-header .large {
   font-size: 20px;
 }
-/* line 342, ../sass/storepages.scss */
+/* line 351, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location {
   margin-right: 10px;
   padding: 1px;
 }
-/* line 346, ../sass/storepages.scss */
+/* line 355, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location:hover {
   border: 1px solid #eee;
   padding: 0px;
 }
-/* line 350, ../sass/storepages.scss */
+/* line 359, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location:hover .number {
   padding: 0;
 }
-/* line 354, ../sass/storepages.scss */
+/* line 363, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location-address {
   background: url("../images/sears-location-pin.png") no-repeat;
   padding: 10px 10px 10px 40px;
 }
-/* line 358, ../sass/storepages.scss */
+/* line 367, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location-address .number {
   font-weight: bold;
   font-size: 10px;
@@ -463,77 +465,72 @@ a img {
   color: #fff;
   padding: 1px;
 }
-/* line 368, ../sass/storepages.scss */
+/* line 377, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location-address:hover {
   background-color: #e8f3fa;
   cursor: pointer;
 }
-/* line 375, ../sass/storepages.scss */
+/* line 384, ../sass/storepages.scss */
 .store-results-page .results-sidebar-content {
   height: 437px;
   overflow: hidden;
   position: absolute;
 }
-/* line 382, ../sass/storepages.scss */
+/* line 391, ../sass/storepages.scss */
 .store-results-page .result h1, .store-results-page .result h2 {
   color: #0055a7;
   font-weight: bold;
   font-size: 12px;
   line-height: 14px;
 }
-/* line 389, ../sass/storepages.scss */
+/* line 398, ../sass/storepages.scss */
 .store-results-page .result h2 {
   margin-bottom: 3px;
 }
-/* line 391, ../sass/storepages.scss */
+/* line 400, ../sass/storepages.scss */
 .store-results-page .result a {
   color: #0055a7;
   text-decoration: none;
   font-size: 11px;
 }
-/* line 396, ../sass/storepages.scss */
+/* line 405, ../sass/storepages.scss */
 .store-results-page .result a:hover {
   text-decoration: underline;
 }
-/* line 400, ../sass/storepages.scss */
-.store-results-page .left {
-  float: left;
-}
-/* line 401, ../sass/storepages.scss */
+/* line 409, ../sass/storepages.scss */
 .store-results-page .right {
-  float: right;
   padding: 0 10px 0 20px;
   text-align: right;
 }
-/* line 407, ../sass/storepages.scss */
+/* line 414, ../sass/storepages.scss */
 .store-results-page .location {
   position: relative;
 }
-/* line 409, ../sass/storepages.scss */
+/* line 416, ../sass/storepages.scss */
 .store-results-page .result {
   font-size: 11px;
 }
-/* line 412, ../sass/storepages.scss */
+/* line 419, ../sass/storepages.scss */
 .store-results-page .result h1, .store-results-page .result h2 {
   line-height: 14px;
   width: 210px;
 }
-/* line 418, ../sass/storepages.scss */
+/* line 425, ../sass/storepages.scss */
 .store-results-page .location-info {
   padding-top: 10px;
 }
-/* line 421, ../sass/storepages.scss */
+/* line 428, ../sass/storepages.scss */
 .store-results-page .location-hours-table .day {
   font-weight: bold;
   padding-right: 10px;
 }
-/* line 429, ../sass/storepages.scss */
+/* line 434, ../sass/storepages.scss */
 .store-results-page .location-footer {
   margin-top: 10px;
   width: 320px;
   padding-left: 40px;
 }
-/* line 434, ../sass/storepages.scss */
+/* line 439, ../sass/storepages.scss */
 .store-results-page .location-footer span {
   background: #f7c433;
   padding: 2px 5px;
@@ -546,29 +543,99 @@ a img {
   letter-spacing: 1px;
   display: inline-block;
 }
-/* line 448, ../sass/storepages.scss */
+/* line 453, ../sass/storepages.scss */
 .store-results-page #results-map {
   width: 580px;
   float: right;
   height: 478px;
 }
-/* line 453, ../sass/storepages.scss */
+/* line 458, ../sass/storepages.scss */
 .store-results-page #results-map .result {
   width: 320px;
 }
-/* line 456, ../sass/storepages.scss */
+/* line 461, ../sass/storepages.scss */
 .store-results-page #results-map .result h1, .store-results-page #results-map .result h2 {
   font-size: 16px;
   line-height: 18px;
 }
 
+/* line 471, ../sass/storepages.scss */
+.store-location-page #page-content .sub-nav {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+/* line 477, ../sass/storepages.scss */
+.store-location-page #page-content .sub-nav a {
+  color: #0055a7;
+  text-decoration: none;
+}
+/* line 482, ../sass/storepages.scss */
+.store-location-page #page-content .sub-nav .divide {
+  padding: 0 5px;
+}
+/* line 486, ../sass/storepages.scss */
+.store-location-page .main-content {
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+/* line 491, ../sass/storepages.scss */
+.store-location-page .page-head {
+  border-bottom: 2px solid orange;
+}
+/* line 493, ../sass/storepages.scss */
+.store-location-page .left-content {
+  width: 660px;
+  float: left;
+  padding: 20px 10px 0 10px;
+}
+/* line 499, ../sass/storepages.scss */
+.store-location-page .right-content {
+  width: 280px;
+  float: right;
+  padding: 20px 10px 0 10px;
+  background: #fff;
+  height: 500px;
+}
+/* line 507, ../sass/storepages.scss */
+.store-location-page h1 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+}
+/* line 514, ../sass/storepages.scss */
+.store-location-page h2 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 20px;
+  color: #0055a7;
+}
+/* line 523, ../sass/storepages.scss */
+.store-location-page .location-info a {
+  color: #0055a7;
+}
+/* line 525, ../sass/storepages.scss */
+.store-location-page .location-description {
+  margin-top: 20px;
+  font-size: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+/* line 531, ../sass/storepages.scss */
+.store-location-page .location-description a {
+  text-decoration: none;
+}
+
 /* scrollbar CSS */
-/* line 465, ../sass/storepages.scss */
+/* line 538, ../sass/storepages.scss */
 .ps-container .ps-scrollbar-x {
   display: none;
 }
 
-/* line 469, ../sass/storepages.scss */
+/* line 542, ../sass/storepages.scss */
 .ps-container .ps-scrollbar-y {
   position: absolute;
   /* please don't change 'position' */
@@ -594,20 +661,20 @@ a img {
   transition-duration: 2s;
 }
 
-/* line 481, ../sass/storepages.scss */
+/* line 554, ../sass/storepages.scss */
 .ps-container.ie .ps-scrollbar-y {
   font-size: 0;
   /* fixed scrollbar height in xp sp3 ie6 */
 }
 
-/* line 486, ../sass/storepages.scss */
+/* line 559, ../sass/storepages.scss */
 .ps-container:hover .ps-scrollbar-y,
 .ps-container.hover .ps-scrollbar-y {
   opacity: 0.6;
   filter: alpha(opacity=60);
 }
 
-/* line 492, ../sass/storepages.scss */
+/* line 565, ../sass/storepages.scss */
 .ps-container .ps-scrollbar-y:hover,
 .ps-container .ps-scrollbar-y.hover {
   opacity: 0.9;
@@ -615,28 +682,28 @@ a img {
   cursor: default;
 }
 
-/* line 498, ../sass/storepages.scss */
+/* line 571, ../sass/storepages.scss */
 .ps-container .ps-scrollbar-y.in-scrolling {
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
 
-/* line 512, ../sass/storepages.scss */
+/* line 585, ../sass/storepages.scss */
 .cf {
   zoom: 1;
 }
-/* line 505, ../sass/storepages.scss */
+/* line 578, ../sass/storepages.scss */
 .cf:before, .cf:after {
   content: "";
   display: table;
 }
-/* line 509, ../sass/storepages.scss */
+/* line 582, ../sass/storepages.scss */
 .cf:after {
   clear: both;
 }
 
 /* scroller */
-/* line 516, ../sass/storepages.scss */
+/* line 589, ../sass/storepages.scss */
 ul.bjqs {
   position: relative;
   list-style: none;
@@ -645,52 +712,52 @@ ul.bjqs {
   overflow: hidden;
   display: none;
 }
-/* line 524, ../sass/storepages.scss */
+/* line 597, ../sass/storepages.scss */
 ul.bjqs .bjqs-slide {
   position: absolute;
   display: none;
 }
-/* line 529, ../sass/storepages.scss */
+/* line 602, ../sass/storepages.scss */
 ul.bjqs .bjqs-controls {
   list-style: none;
   margin: 0;
   padding: 0;
   z-index: 9999;
 }
-/* line 535, ../sass/storepages.scss */
+/* line 608, ../sass/storepages.scss */
 ul.bjqs .bjqs-controls.v-centered li {
   position: absolute;
 }
-/* line 538, ../sass/storepages.scss */
+/* line 611, ../sass/storepages.scss */
 ul.bjqs .bjqs-controls.v-centered li.bjqs-next a {
   right: 0;
 }
-/* line 539, ../sass/storepages.scss */
+/* line 612, ../sass/storepages.scss */
 ul.bjqs .bjqs-controls.v-centered li.bjqs-prev a {
   left: 0;
 }
 
-/* line 545, ../sass/storepages.scss */
+/* line 618, ../sass/storepages.scss */
 ol.bjqs-markers {
   list-style: none;
   padding: 0;
   margin: 0;
   width: 100%;
 }
-/* line 551, ../sass/storepages.scss */
+/* line 624, ../sass/storepages.scss */
 ol.bjqs-markers.h-centered {
   text-align: center;
 }
-/* line 554, ../sass/storepages.scss */
+/* line 627, ../sass/storepages.scss */
 ol.bjqs-markers li {
   display: inline;
 }
-/* line 557, ../sass/storepages.scss */
+/* line 630, ../sass/storepages.scss */
 ol.bjqs-markers li a {
   display: inline-block;
 }
 
-/* line 561, ../sass/storepages.scss */
+/* line 634, ../sass/storepages.scss */
 p.bjqs-caption {
   display: block;
   width: 96%;
@@ -701,18 +768,18 @@ p.bjqs-caption {
 }
 
 /* Filter button - filter not added at this time 7/3/13 JAMIE */
-/* line 572, ../sass/storepages.scss */
+/* line 645, ../sass/storepages.scss */
 .filter-wrapper {
   position: absolute;
   width: 386px;
   z-index: 9999;
 }
-/* line 577, ../sass/storepages.scss */
+/* line 650, ../sass/storepages.scss */
 .filter-wrapper .filter-btn {
   display: inline-block;
   float: right;
 }
-/* line 583, ../sass/storepages.scss */
+/* line 656, ../sass/storepages.scss */
 .filter-wrapper input[type="button"],
 .filter-wrapper ul.filter-dropdown {
   border: 1px solid #eee;
@@ -726,7 +793,7 @@ p.bjqs-caption {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: normal;
 }
-/* line 596, ../sass/storepages.scss */
+/* line 669, ../sass/storepages.scss */
 .filter-wrapper ul.filter-dropdown {
   float: left;
   list-style: none;
@@ -738,18 +805,18 @@ p.bjqs-caption {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
-/* line 607, ../sass/storepages.scss */
+/* line 680, ../sass/storepages.scss */
 .filter-wrapper ul.filter-dropdown li {
   font-size: 12px;
   float: left;
   width: 50%;
 }
-/* line 612, ../sass/storepages.scss */
+/* line 685, ../sass/storepages.scss */
 .filter-wrapper ul.filter-dropdown li input[type="checkbox"] {
   float: left;
   margin: 10px 4px 0 5px;
 }
-/* line 617, ../sass/storepages.scss */
+/* line 690, ../sass/storepages.scss */
 .filter-wrapper ul.filter-dropdown li.filter-title {
   width: 348px;
   border: 1px solid #fff;
@@ -762,7 +829,7 @@ p.bjqs-caption {
   line-height: 14px;
   padding: 5px;
 }
-/* line 632, ../sass/storepages.scss */
+/* line 705, ../sass/storepages.scss */
 .filter-wrapper span {
   position: absolute;
   top: 3.5px;
@@ -773,15 +840,15 @@ p.bjqs-caption {
   background-repeat: no-repeat;
   z-index: 10;
 }
-/* line 642, ../sass/storepages.scss */
+/* line 715, ../sass/storepages.scss */
 .filter-wrapper span.filter-up {
   background-image: url(../images/filter-up.png);
 }
-/* line 643, ../sass/storepages.scss */
+/* line 716, ../sass/storepages.scss */
 .filter-wrapper span.filter-down {
   background-image: url(../images/filter-down.png);
 }
-/* line 646, ../sass/storepages.scss */
+/* line 719, ../sass/storepages.scss */
 .filter-wrapper .filter-search {
   background: #f2f2f2 url(../icons/search.png) no-repeat center center;
   height: 43px;
@@ -796,7 +863,7 @@ p.bjqs-caption {
   outline: none;
   cursor: pointer;
 }
-/* line 660, ../sass/storepages.scss */
+/* line 733, ../sass/storepages.scss */
 .filter-wrapper .filter-search:hover {
   background-color: #fff;
 }
