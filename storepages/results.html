@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+  <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+  <html class="lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+  <html class="lt-ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 8]><!--> 
+  <html lang="en"> 
+<!--<![endif]-->
+  <head> 
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> 
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
+    <title>Sears Locations - Bedford, NY 10506</title>
+    <link rel="icon" type="image/png" href="images/sears-favicon.png">
+    <link rel="stylesheet" href="css/storepages.css" type="text/css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="js/perfect-scrollbar.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBzY9j4mYywVqpPXm9AdmWgMwgg3G5rTHY&sensor=false"></script> 
+    <script type="text/javascript"> 
+      var gmarkers = []; 
+      var map = null;
+      var markers = [];
+
+      function initialize() {
+        var myOptions = {
+          zoom: 9,
+          center: new google.maps.LatLng(41.1091065,-73.547011),
+          mapTypeControl: true,
+          mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+          navigationControl: true,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        map = new google.maps.Map(document.getElementById("results-map"), myOptions);
+       
+        google.maps.event.addListener(map, 'click', function() {
+              infowindow.close();
+        });
+
+        for (i=0; i<markers.length; i++) {
+          createMarker(markers[i].point, markers[i].storeName, markers[i].storeInfo)
+        }
+
+      }
+     
+      var infowindow = new google.maps.InfoWindow({ 
+        size: new google.maps.Size(150,50)
+      });
+        
+      function myclick(i) {
+        google.maps.event.trigger(gmarkers[i], "click");
+      }
+
+      function createMarker(latlng, name, html) {
+        var contentString = html;
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            zIndex: Math.round(latlng.lat()*-100000)<<5
+            });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.setContent(contentString); 
+            infowindow.open(map,marker);
+            });
+
+        gmarkers.push(marker);
+
+      }
+
+      $(document).ready(function ($) {
+        $('.results-sidebar-content').perfectScrollbar({
+          wheelSpeed: 20,
+          wheelPropagation: false
+        });
+      });
+
+      function openDropdown(dropDown, size) {
+        var dropDownObject = document.getElementById(dropDown);
+        dropDownObject.size = size;
+      }
+    </script>
+  </head> 
+  <body id="location-page" class="store-pg store-results-page" style="margin:0px; padding:0px;" onload="initialize()"> 
+    <div class="top-head">
+      <img src="images/sears-top-head.png" >
+    </div>
+    <div id="page-container" class="cf">
+      <div id="header" class="cf">
+        <div class="head-left">
+          <div class="logo">
+            <img src="images/sears-logo.png" />
+          </div>
+          <div class="sub-head">
+            <ul id="nav">
+              <li class="storeLocater">
+                <a href="" id="storeLocater" >Store Locator</a>
+              </li>
+              <li class="emailSavings">
+                <a href="" id="emailSavings">Email Savings</a>
+              </li>
+              <li class="custService">
+                <a href="" id="custService">Customer Service</a>
+              </li>
+              <li class="searsCC">
+                <a href="" id="searsCC">Sears Credit Cards</a>
+              </li>
+              <li class="giftCards">
+                <a href="" id="giftCards">Gift Cards</a>
+              </li>
+              <li class="DOD intShipHide">
+                <a href="" id="DOD">Deals Of the Day</a>
+              </li>
+            </ul>
+            <div class="search">
+              <input class="search-box" type="text" name="search" placeholder="Find something great..." >
+              <input class="search-btn" type="submit" src="images/sears-search.png" name="submit" value="Search" >
+            </div>
+          </div>
+        </div>
+        <div class="head-right">
+          <img src="images/sears-head-right.png">
+        </div>
+      </div>
+      <div id="page-content" class="cf">
+        <div class="find-sears search-content cf">
+          <div class="find-sears-search">
+            <h2>Find a Sears Location</h2>
+            <input class="zip-city-state" name="zip-city-state" type="text" placeholder="Enter a Zip Code or City and State">
+            <div class="go">GO</div>
+          </div>
+        </div>
+        <div class="results-content">
+          <div class="results-sidebar">
+            <div class="results-sidebar-header cf">
+              <h1 class="number-results"><span class="large">5</span> stores near you</h1>
+            </div>
+            <div class="results-sidebar-content">
+              <div id="result-1" class="result">
+                <div class="location cf">
+                  <div class="location-address left">
+                    <span class="number">1</span>
+                    <h1>Hometown Stores</h1>
+                    <h2>Sears Home Appliance Showroom</h2>
+                    <p>
+                      360 North Bedford Road<br>
+                      Mount Kisco, NY 10549<br>
+                      (914) 241-2291
+                    </p>
+                  </div>
+                  <div class="location-info right">
+                    <p>4 mile(s) away</p>
+                    <a href="">Directions</a><br>
+                    <a href="javascript:myclick(0)">Show in Map</a><br>
+                    <a href="">More Info</a>
+                  </div>
+                </div>
+                <div class="location-footer tags">
+                  <span>Local Website</span>
+                </div>
+              </div>
+              <div id="result-dialog-1" style="display: none;">
+                <div  class="result">
+                  <div class="location-header">
+                    <h1>Hometown Stores</h1>
+                    <h2>Sears Home Appliance Showroom</h2>
+                  </div>
+                  <div class="location cf">
+                    <div class="location-address left">
+                      <p>
+                        360 North Bedford RD<br>
+                        Mount Kisco, NY 10549<br>
+                        (914) 241-2291<br>
+                        <a href="">More Info</a> | <a href="">Directions</a>
+                      </p>
+                    </div>
+                    <div class="location-hours right">
+                      <table class="location-hours-table">
+                        <tr>
+                          <td class="day">Monday</td> 
+                          <td class="hour">10:00am - 9:30pm</td>
+                        </tr>
+                        <tr>
+                          <td class="day">Tuesday</td> 
+                          <td class="hour">10:00am - 9:30pm</td>
+                        </tr>
+                        <tr>
+                          <td class="day">Wednesday</td> 
+                          <td class="hour">10:00am - 9:30pm</td>
+                        </tr>
+                        <tr>
+                          <td class="day">Thursday</td> 
+                          <td class="hour">10:00am - 9:30pm</td>
+                        </tr>
+                        <tr>
+                          <td class="day">Friday</td> 
+                          <td class="hour">10:00am - 9:30pm</td>
+                        </tr>
+                        <tr>
+                          <td class="day">Saturday</td> 
+                          <td class="hour">10:00am - 9:30pm</td>
+                        </tr>
+                        <tr>
+                          <td class="day">Sunday</td> 
+                          <td class="hour">10:00am - 9:30pm</td>
+                        </tr>
+                      </table>
+                    </div>                
+                  </div>
+                </div>
+              </div>
+              <div id="result-2" class="result">
+                <div class="location cf">
+                  <div class="location-address left">
+                    <div class="number">2</div>
+                    <h1>Hometown Stores</h1>
+                    <h2>Sears Home Appliance Showroom</h2>
+                    <p>
+                      1145 High Ridge RD<br>
+                      Stamford, CT 06905<br>
+                      (203) 329-9400
+                    </p>
+                  </div>
+                  <div class="location-info right">
+                    <p>7 mile(s) away</p>
+                    <a href="">Directions</a><br>
+                    <a href="javascript:myclick(1)">Show in Map</a><br>
+                    <a href="">More Info</a>
+                  </div>
+                </div>
+                <div class="location-footer tags">
+                  <span>Local Website</span>
+                  <span>Store Pick Up</span>
+                </div>
+              </div>
+              <div id="result-dialog-2" style="display: none;">
+                <div  class="result">
+                  <div class="location cf">
+                    <div class="location-address left">
+                      <div class="location-header">
+                        <div class="number">2</div>
+                        <h1>Hometown Stores</h1>
+                        <h2>Sears Home Appliance Showroom</h2>
+                      </div>
+                      <p>
+                        1145 High Ridge RD<br>
+                        Stamford, CT 06905<br>
+                        (203) 329-9400<br>
+                        <a href="">More Info</a> | <a href="">Directions</a>
+                      </p>
+                      <p>7 mile(s) away</p>
+                    </div>
+                    <div class="location-hours right">
+                    </div>                
+                  </div>
+                </div>
+              </div>
+              <div id="result-3" class="result">
+                <div class="location cf">
+                  <div class="location-address left">
+                    <div class="number">3</div>
+                    <h1>Sears Stores</h1>
+                    <h2>White Plains -a</h2>
+                    <p>
+                      100 Main ST<br>
+                      White Plains, NY 10601<br>
+                      (914) 644-1400
+                    </p>
+                  </div>
+                  <div class="location-info right">
+                    <p>13 mile(s) away</p>
+                    <a href="">Directions</a><br>
+                    <a href="javascript:myclick(2)">Show in Map</a><br>
+                    <a href="">More Info</a>
+                  </div>
+                </div>
+                <div class="location-footer tags">
+                  <span>Gift Registry</span>
+                  <span>Store Pick Up</span>
+                  <span>Watch Repair</span>
+                  <span>Optical</span>
+                  <span>Hair Salon</span>
+                  <span>Ship from Store</span>
+                  <span>Heraring Aids</span>
+                  <span>Tax Services</span>
+                  <span>Lands' End Shop</span>
+                  <span>Free WiFi</span>
+                </div>
+              </div>
+              <div id="result-dialog-3" style="display: none;">
+                <div class="location cf">
+                  <div class="location-address left">
+                    <div class="location-header">
+                      <div class="number">3</div>
+                      <h1>Sears Stores</h1>
+                      <h2>White Plains -a</h2>
+                    </div>
+                    <p>
+                      100 Main ST<br>
+                      White Plains, NY 10601<br>
+                      (914) 644-1400<br>
+                      <a href="">More Info</a> | <a href="">Directions</a>
+                    </p>
+                    <p>13 mile(s) away</p>
+                  </div>
+                  <div class="location-hours right">
+                  </div>                
+                </div>
+              </div>
+              <div id="result-4" class="result">
+                <div class="location cf">
+                  <div class="location-address left">
+                    <div class="number">4</div>
+                    <h1>Service Centers & Repair Drop-off Locations</h1>
+                    <h2>White Plains - Branch</h2>
+                    <p>
+                      100 Main ST<br>
+                      White Plains, NY 10601<br>
+                      (914) 644-1505
+                    </p>
+                  </div>
+                  <div class="location-info right">
+                    <p>13 mile(s) away</p>
+                    <a href="">Directions</a><br>
+                    <a href="javascript:myclick(3)">Show in Map</a><br>
+                    <a href="">More Info</a>
+                  </div>
+                </div>
+                <div class="location-footer tags">
+                  <span>Store Pick Up</span>
+                  <span>Drop Off Location</span>
+                </div>
+              </div>
+              <div id="result-dialog-4" style="display: none;">
+                <div  class="result">
+                  <div class="location cf">
+                    <div class="location-address left">
+                      <div class="location-header">
+                        <div class="number">4</div>
+                        <h1>Service Centers & Repair Drop-off Locations</h1>
+                        <h2>White Plains - Branch</h2>
+                      </div>
+                      <p>
+                        100 Main ST<br>
+                        White Plains, NY 10601<br>
+                        (914) 644-1505<br>
+                        <a href="">More Info</a> | <a href="">Directions</a>
+                      </p>
+                      <p>13 mile(s) away</p>
+                    </div>
+                    <div class="location-hours right">
+                    </div>                
+                  </div>
+                </div>
+              </div>
+              <div id="result-5" class="result">
+                <div class="location cf">
+                  <div class="location-address left">
+                    <div class="number">5</div>
+                    <h1>Sears Stores</h1>
+                    <h2>Jefferson Valley Mall</h2>
+                    <p>
+                      600 Lee BLVD<br>
+                      Yorktown Heights, NY 10598<br>
+                      (914) 248-2500
+                    </p>
+                  </div>
+                  <div class="location-info right">
+                    <p>13 mile(s) away</p>
+                    <a href="">Directions</a><br>
+                    <a href="javascript:myclick(4)">Show in Map</a><br>
+                    <a href="">More Info</a>
+                  </div>
+                </div>
+                <div class="location-footer tags">
+                  <span>Gift Registry</span>
+                  <span>Drop-off Location</span>
+                  <span>Optical</span>
+                  <span>Lands' End Shop</span>
+                  <span>Store Pick Up</span>
+                  <span>Heraring Aids</span>
+                  <span>Tax Services</span>
+                  <span>Lands' Home End Shop</span>
+                  <span>Free WiFi</span>
+                </div>
+              </div>
+              <div id="result-dialog-5" style="display: none;">
+                <div  class="result">
+                  <div class="location cf">
+                    <div class="location-address left">
+                      <div class="location-header">
+                        <div class="number">5</div>
+                        <h1>Sears Stores</h1>
+                        <h2>Jefferson Valley Mall</h2>
+                      </div>
+                      <p>
+                        600 Lee BLVD<br>
+                        Yorktown Heights, NY 10598<br>
+                        (914) 248-2500<br>
+                        <a href="">More Info</a> | <a href="">Directions</a>
+                      </p>
+                      <p>13 mile(s) away</p>
+                    </div>
+                    <div class="location-hours right">
+                    </div>                
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            function getName(storeNumber){
+              var storeNumber;
+              var id = "#result-" + storeNumber + " h1";
+              var resultName = $(id).html();
+              return resultName;
+            }
+            function getDialog(storeNumber){
+              var storeNumber;
+              var id = "#result-dialog-" + storeNumber;
+              var resultDialog = $(id).html();
+              return resultDialog;
+            }   
+            var myMarker = {
+              point : new google.maps.LatLng(41.2197356,-73.71625540000002),
+              storeName : getName("1"),
+              storeInfo : getDialog("1")
+            }
+            markers.push(myMarker);
+
+            var myMarker = {
+              point : new google.maps.LatLng(41.1091065,-73.547011),
+              storeName : getName("2"),
+              storeInfo : getDialog("2")
+            }
+            markers.push(myMarker);
+
+            var myMarker = {
+              point : new google.maps.LatLng(41.031576,-73.76887799999997),
+              storeName : getName("3"),
+              storeInfo : getDialog("3")
+            }
+            markers.push(myMarker);
+
+            var myMarker = {
+              point : new google.maps.LatLng(41.031576,-73.76887799999997),
+              storeName : getName("4"),
+              storeInfo : getDialog("4")
+            }
+            markers.push(myMarker);
+
+            var myMarker = {
+              point : new google.maps.LatLng(41.3256673,-73.8056128),
+              storeName : getName("5"),
+              storeInfo : getDialog("5")
+            }
+            markers.push(myMarker);
+
+          </script>
+          <div id="results-map"></div> 
+          <noscript><p><b>JavaScript must be enabled in order for you to use Google Maps.</b> 
+            However, it seems JavaScript is either disabled or not supported by your browser. 
+            To view Google Maps, enable JavaScript by changing your browser options, and then 
+            try again.</p>
+          </noscript>  
+        </div>
+      </div>
+    </div>
+  </body>
+</html> 
