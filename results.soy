@@ -137,10 +137,10 @@
             </div>
             <div class="results-sidebar-content">
               {foreach $location in $locations}
-              <div id="result-{index($location)}" class="result">
+              <div id="result-{index($location)+1}" class="result">
                 <div class="location cf">
                   <div class="location-address left">
-                    <span class="number">{index($location)}</span>
+                    <span class="number">{index($location)+1}</span>
                     <h1>{$location.name}</h1>
                     <h2>Sears Home Appliance Showroom</h2>
                     <p>
@@ -160,7 +160,7 @@
                   <span>Local Website</span>
                 </div>
               </div>
-              <div id="result-dialog-{index($location)}" style="display: none;">
+              <div id="result-dialog-{index($location)+1}" style="display: none;">
                 <div  class="result">
                   <div class="location-header">
                     <h1>Hometown Stores</h1>
