@@ -77,9 +77,8 @@
 							<div class="find-sears-search">
 								<input class="zip-city-state" name="zip-city-state" type="text" placeholder="Enter a Zip Code or City and State">
 								<div class="go">
-									<a href="">GO</a>
+									<a href="" class="search-link">GO</a>
 								</div>
-								<p class="inputval"></p>
 							</div>
 						</div>
 					</div>
@@ -161,7 +160,7 @@
 			      /* For search link */
 			      function displayVals() {
 				      var location = $(".zip-city-state").val();
-				      $(".inputval").html("<b>zip-city-state</b> " + location);
+				      $(".search-link").attr("href", "search/?query=" + location);
 				             
 				    }
 				 
