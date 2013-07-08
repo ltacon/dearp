@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="/css/storepages.css" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="js/perfect-scrollbar.min.js"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBzY9j4mYywVqpPXm9AdmWgMwgg3G5rTHY&sensor=false"></script> 
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBzY9j4mYywVqpPXm9AdmWgMwgg3G5rTHY&sensor=false"></script>
+    {literal}
     <script type="text/javascript"> 
       var gmarkers = []; 
       var map = null;
@@ -78,6 +79,7 @@
         dropDownObject.size = size;
       }
     </script>
+    {/literal}
   </head> 
   <body id="location-page" class="store-pg store-results-page" style="margin:0px; padding:0px;" onload="initialize()"> 
     <div class="top-head">
@@ -211,6 +213,7 @@
               {/foreach}
             </div>
           </div>
+          {literal}
           <script>
             function getName(storeNumber){
               var storeNumber;
@@ -265,7 +268,8 @@
             However, it seems JavaScript is either disabled or not supported by your browser. 
             To view Google Maps, enable JavaScript by changing your browser options, and then 
             try again.</p>
-          </noscript>  
+          </noscript> 
+          {/literal}
         </div>
       </div>
     </div>
