@@ -75,8 +75,10 @@
 						<div class="find-sears cf">
 							<h2>Find a Sears Location</h2>
 							<div class="find-sears-search">
-								<input class="zip-city-state" name="zip-city-state" type="text" placeholder="Enter a Zip Code or City and State">
-								<div class="go">GO</div>
+								<input id="zip-city-state" class="zip-city-state" name="zip-city-state" type="text" placeholder="Enter a Zip Code or City and State">
+								<div class="go">
+									<a href="">GO</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -153,6 +155,14 @@
 			        showcontrols  : false,
 			        showmarkers   : false
 			      });
+
+			      var $location = $("#zip-city-state").val(); 
+
+			      $(".go").click(function() {
+						  if($location == ''){
+						  	alert('Please enter a zip or city and state.');
+						  }
+						});
 			    });
 				</script>
 			</div>
