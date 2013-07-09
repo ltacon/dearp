@@ -138,33 +138,32 @@
               <h1 class="number-results"><span class="large">5</span> stores near you</h1>
             </div>
             <div class="results-sidebar-content">
+              #{each location}
               <div id="result-1" class="result">
                 <div class="location cf">
                   <div class="location-address left">
-                    <span class="number">1</span>
-                    <h1>Hometown Stores</h1>
-                    <h2>Sears Home Appliance Showroom</h2>
+                    <span class="number">${_index}</span>
+                    <h2>${location.name}</h2>
                     <p>
-                      360 North Bedford Road<br>
-                      Mount Kisco, NY 10549<br>
-                      (914) 241-2291
+                      ${location.address}<br>
+                      ${location.city}, ${location.state} ${location.postalCode}<br>
+                      ${location.mainPhone}
                     </p>
                   </div>
                   <div class="location-info right">
-                    <p>4 mile(s) away</p>
-                    <a href="">Directions</a><br>
                     <a href="javascript:myclick(0)">Show in Map</a><br>
-                    <a href="">More Info</a>
+                    <a href="${location.url}">More Info</a>
                   </div>
                 </div>
                 <div class="location-footer tags">
-                  <span>Local Website</span>
+                  #{each services}
+                  <span>${location.services}</span>
+                  #{/each}
                 </div>
               </div>
               <div id="result-dialog-1" style="display: none;">
                 <div  class="result">
                   <div class="location-header">
-                    <h1>Hometown Stores</h1>
                     <h2>Sears Home Appliance Showroom</h2>
                   </div>
                   <div class="location cf">
@@ -211,203 +210,7 @@
                   </div>
                 </div>
               </div>
-              <div id="result-2" class="result">
-                <div class="location cf">
-                  <div class="location-address left">
-                    <div class="number">2</div>
-                    <h1>Hometown Stores</h1>
-                    <h2>Sears Home Appliance Showroom</h2>
-                    <p>
-                      1145 High Ridge RD<br>
-                      Stamford, CT 06905<br>
-                      (203) 329-9400
-                    </p>
-                  </div>
-                  <div class="location-info right">
-                    <p>7 mile(s) away</p>
-                    <a href="">Directions</a><br>
-                    <a href="javascript:myclick(1)">Show in Map</a><br>
-                    <a href="">More Info</a>
-                  </div>
-                </div>
-                <div class="location-footer tags">
-                  <span>Local Website</span>
-                  <span>Store Pick Up</span>
-                </div>
-              </div>
-              <div id="result-dialog-2" style="display: none;">
-                <div  class="result">
-                  <div class="location cf">
-                    <div class="location-address left">
-                      <div class="location-header">
-                        <div class="number">2</div>
-                        <h1>Hometown Stores</h1>
-                        <h2>Sears Home Appliance Showroom</h2>
-                      </div>
-                      <p>
-                        1145 High Ridge RD<br>
-                        Stamford, CT 06905<br>
-                        (203) 329-9400<br>
-                        <a href="">More Info</a> | <a href="">Directions</a>
-                      </p>
-                      <p>7 mile(s) away</p>
-                    </div>
-                    <div class="location-hours right">
-                    </div>                
-                  </div>
-                </div>
-              </div>
-              <div id="result-3" class="result">
-                <div class="location cf">
-                  <div class="location-address left">
-                    <div class="number">3</div>
-                    <h1>Sears Stores</h1>
-                    <h2>White Plains -a</h2>
-                    <p>
-                      100 Main ST<br>
-                      White Plains, NY 10601<br>
-                      (914) 644-1400
-                    </p>
-                  </div>
-                  <div class="location-info right">
-                    <p>13 mile(s) away</p>
-                    <a href="">Directions</a><br>
-                    <a href="javascript:myclick(2)">Show in Map</a><br>
-                    <a href="">More Info</a>
-                  </div>
-                </div>
-                <div class="location-footer tags">
-                  <span>Gift Registry</span>
-                  <span>Store Pick Up</span>
-                  <span>Watch Repair</span>
-                  <span>Optical</span>
-                  <span>Hair Salon</span>
-                  <span>Ship from Store</span>
-                  <span>Heraring Aids</span>
-                  <span>Tax Services</span>
-                  <span>Lands' End Shop</span>
-                  <span>Free WiFi</span>
-                </div>
-              </div>
-              <div id="result-dialog-3" style="display: none;">
-                <div class="location cf">
-                  <div class="location-address left">
-                    <div class="location-header">
-                      <div class="number">3</div>
-                      <h1>Sears Stores</h1>
-                      <h2>White Plains -a</h2>
-                    </div>
-                    <p>
-                      100 Main ST<br>
-                      White Plains, NY 10601<br>
-                      (914) 644-1400<br>
-                      <a href="">More Info</a> | <a href="">Directions</a>
-                    </p>
-                    <p>13 mile(s) away</p>
-                  </div>
-                  <div class="location-hours right">
-                  </div>                
-                </div>
-              </div>
-              <div id="result-4" class="result">
-                <div class="location cf">
-                  <div class="location-address left">
-                    <div class="number">4</div>
-                    <h1>Service Centers & Repair Drop-off Locations</h1>
-                    <h2>White Plains - Branch</h2>
-                    <p>
-                      100 Main ST<br>
-                      White Plains, NY 10601<br>
-                      (914) 644-1505
-                    </p>
-                  </div>
-                  <div class="location-info right">
-                    <p>13 mile(s) away</p>
-                    <a href="">Directions</a><br>
-                    <a href="javascript:myclick(3)">Show in Map</a><br>
-                    <a href="">More Info</a>
-                  </div>
-                </div>
-                <div class="location-footer tags">
-                  <span>Store Pick Up</span>
-                  <span>Drop Off Location</span>
-                </div>
-              </div>
-              <div id="result-dialog-4" style="display: none;">
-                <div  class="result">
-                  <div class="location cf">
-                    <div class="location-address left">
-                      <div class="location-header">
-                        <div class="number">4</div>
-                        <h1>Service Centers & Repair Drop-off Locations</h1>
-                        <h2>White Plains - Branch</h2>
-                      </div>
-                      <p>
-                        100 Main ST<br>
-                        White Plains, NY 10601<br>
-                        (914) 644-1505<br>
-                        <a href="">More Info</a> | <a href="">Directions</a>
-                      </p>
-                      <p>13 mile(s) away</p>
-                    </div>
-                    <div class="location-hours right">
-                    </div>                
-                  </div>
-                </div>
-              </div>
-              <div id="result-5" class="result">
-                <div class="location cf">
-                  <div class="location-address left">
-                    <div class="number">5</div>
-                    <h1>Sears Stores</h1>
-                    <h2>Jefferson Valley Mall</h2>
-                    <p>
-                      600 Lee BLVD<br>
-                      Yorktown Heights, NY 10598<br>
-                      (914) 248-2500
-                    </p>
-                  </div>
-                  <div class="location-info right">
-                    <p>13 mile(s) away</p>
-                    <a href="">Directions</a><br>
-                    <a href="javascript:myclick(4)">Show in Map</a><br>
-                    <a href="">More Info</a>
-                  </div>
-                </div>
-                <div class="location-footer tags">
-                  <span>Gift Registry</span>
-                  <span>Drop-off Location</span>
-                  <span>Optical</span>
-                  <span>Lands' End Shop</span>
-                  <span>Store Pick Up</span>
-                  <span>Heraring Aids</span>
-                  <span>Tax Services</span>
-                  <span>Lands' Home End Shop</span>
-                  <span>Free WiFi</span>
-                </div>
-              </div>
-              <div id="result-dialog-5" style="display: none;">
-                <div  class="result">
-                  <div class="location cf">
-                    <div class="location-address left">
-                      <div class="location-header">
-                        <div class="number">5</div>
-                        <h1>Sears Stores</h1>
-                        <h2>Jefferson Valley Mall</h2>
-                      </div>
-                      <p>
-                        600 Lee BLVD<br>
-                        Yorktown Heights, NY 10598<br>
-                        (914) 248-2500<br>
-                        <a href="">More Info</a> | <a href="">Directions</a>
-                      </p>
-                      <p>13 mile(s) away</p>
-                    </div>
-                    <div class="location-hours right">
-                    </div>                
-                  </div>
-                </div>
-              </div>
+              #{/each}
             </div>
           </div>
           <script>
