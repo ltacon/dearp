@@ -156,7 +156,9 @@
               <div class="location-services right">
                 <h3>Services</h3>
                 <ul class="location-services-list">
-                  <li>${services}</li>
+                  #{list services, as:'service'}
+                    <li>${service}</li>
+                  #{/list}
                 </ul>
               </div>       
             </div>
