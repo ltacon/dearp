@@ -32,7 +32,7 @@
           scaleControl: false,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-        var map = new google.maps.Map(document.getElementById('location-map'), mapOptions);
+        var map = new google.maps.Map(document.getElementById("location-map"), mapOptions);
 
         var marker = new google.maps.Marker({
             position: myLatlng,
@@ -40,7 +40,7 @@
         });
       }
 
-      google.maps.event.addDomListener(window, 'load', initialize);
+      google.maps.event.addDomListener(window, "load", initialize);
     </script>
   </head>
   <body id="location-page" class="store-pg store-location-page">
