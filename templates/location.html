@@ -31,7 +31,7 @@
           mapTypeControl: false,
           scaleControl: false,
           mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
+        };
         var map = new google.maps.Map(document.getElementById('location-map'), mapOptions);
 
         var marker = new google.maps.Marker({
@@ -103,7 +103,7 @@
             </noscript>  
           </div>
           <div class="left-content">
-            <h2>${name}2</h2>
+            <h2>${name}</h2>
             <div class="location-info">
               <div class="location-address cf">
                 <div class="left">
@@ -156,7 +156,9 @@
               <div class="location-services right">
                 <h3>Services</h3>
                 <ul class="location-services-list">
-                  <li>${services}</li> 
+                  #{list services, as:'service'}
+                    <li>${service}</li>
+                  #{/list}
                 </ul>
               </div>       
             </div>
