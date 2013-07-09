@@ -123,34 +123,12 @@
               <div class="location-hours left">
                 <h3>Hours</h3>
                 <table class="location-hours-table">
-                  <tr>
-                    <td class="day">Monday</td> 
-                    <td class="hour">10:00am - 9:30pm</td>
-                  </tr>
-                  <tr>
-                    <td class="day">Tuesday</td> 
-                    <td class="hour">10:00am - 9:30pm</td>
-                  </tr>
-                  <tr>
-                    <td class="day">Wednesday</td> 
-                    <td class="hour">10:00am - 9:30pm</td>
-                  </tr>
-                  <tr>
-                    <td class="day">Thursday</td> 
-                    <td class="hour">10:00am - 9:30pm</td>
-                  </tr>
-                  <tr>
-                    <td class="day">Friday</td> 
-                    <td class="hour">10:00am - 9:30pm</td>
-                  </tr>
-                  <tr>
-                    <td class="day">Saturday</td> 
-                    <td class="hour">10:00am - 9:30pm</td>
-                  </tr>
-                  <tr>
-                    <td class="day">Sunday</td> 
-                    <td class="hour">10:00am - 9:30pm</td>
-                  </tr>
+                  #{each Hour}
+                    <tr>
+                      <td class="day">${_day}</td> 
+                      <td class="hour">10:00am - 9:30pm</td>
+                    </tr>
+                  #{/each}
                 </table>
               </div> 
               <div class="location-services right">
@@ -166,7 +144,7 @@
           <div class="right-content">
             <div class="location-featured-msg">
               <div class="circle"><span class="current-special">Current Special</span></div>
-              See your store associate to sign up for SHOP YOUR WAY REWARDS! It’s a free program that lets you earn and redeem Points at Sears and other stores!
+              ${FeaturedMessage.description}
             </div>
           </div>
         </div>
