@@ -138,11 +138,11 @@
               <h1 class="number-results"><span class="large">5</span> stores near you</h1>
             </div>
             <div class="results-sidebar-content">
-              #{each location}
+              #{list locations, as:'location'}
               <div id="result-1" class="result">
                 <div class="location cf">
                   <div class="location-address left">
-                    <span class="number">${_index}</span>
+                    <span class="number">${location_index}</span>
                     <h2>${location.name}</h2>
                     <p>
                       ${location.address}<br>
@@ -156,9 +156,9 @@
                   </div>
                 </div>
                 <div class="location-footer tags">
-                  #{each services}
-                  <span>${location.services}</span>
-                  #{/each}
+                  #{list location.services, as:'service'}
+                  <span>${service}</span>
+                  #{/list}
                 </div>
               </div>
               <div id="result-dialog-1" style="display: none;">
@@ -210,7 +210,7 @@
                   </div>
                 </div>
               </div>
-              #{/each}
+              #{/list}
             </div>
           </div>
           <script>
