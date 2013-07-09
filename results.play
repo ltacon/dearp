@@ -1,15 +1,9 @@
-{namespace default}
-
-/**
- * @param locations A list of locations
- * @param query The search query that resulted in this list
- */
-{template .results}
+<!DOCTYPE html>
 <html>
   <head> 
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
-    <title>Sears Locations - {$query}</title>
+    <title>Sears Locations - ${query}</title>
     <link rel="icon" type="image/png" href="images/sears-favicon.png">
     <link rel="stylesheet" href="/css/storepages.css" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -123,14 +117,14 @@
         </div>
       </div>
       <div id="page-content" class="cf">
-        <div class="sub-nav find-sears search-content cf">
-          <div class="nav find-sears-search">
+        <div class="find-sears search-content cf">
+          <div class="find-sears-search">
             <h2>Find a Sears Location</h2>
             <input class="zip-city-state" name="zip-city-state" type="text" placeholder="Enter a Zip Code or City and State">
             <div class="go">GO</div>
           </div>
         </div>
-        <div class="main-content results-content">
+        <div class="results-content">
           <div class="results-sidebar">
             <div class="results-sidebar-header cf">
               <h1 class="number-results"><span class="large">{length($locations)}</span> stores near you</h1>
@@ -146,7 +140,7 @@
                     <p>
                       {$location.address}<br>
                       {$location.city}, {$location.state} {$location.postalCode}<br>
-                      {$location.mainPhone}
+                      (914) 241-2291
                     </p>
                   </div>
                   <div class="location-info right">
