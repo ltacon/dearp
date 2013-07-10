@@ -111,7 +111,7 @@
                   ${city}, ${state} ${postalCode}
                 </div>
                 <div class="right">
-                  <span class="phone">${mainPhone}</div><br>
+                  <span class="phone">${mainPhone}</span><br>
                   <a href="mailto:${mainEmail}">${mainEmail}</a>
                 </div>
               </div>
@@ -157,10 +157,11 @@
     <script language="javascript">
       $(document).ready(function() {        
         $(".location-description").shorten({showChars: 430});
-        $(".phone").text(function(i, text) {
-            text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2-$3");
-            return text;
-        });
+      });
+
+      $(".phone").text(function(i, text) {
+          text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
+          return text;
       });
     </script>
   </body>
