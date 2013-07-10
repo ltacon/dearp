@@ -126,7 +126,9 @@
                   #{list hours}
                     <tr>
                       <td class="day">${_day}</td> 
-                      <td class="hour">${_Interval.start} - ${_Interval.end}</td>
+                      #{each _Interval}
+                        <td class="hour">${_start} - ${_end}</td>
+                      #{/each}
                     </tr>
                   #{/list}
                 </table>
