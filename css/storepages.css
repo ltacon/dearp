@@ -283,6 +283,7 @@ a img {
 #page-content .location-hours-table .day {
   font-weight: bold;
   padding-right: 10px;
+  text-transform: capitalize;
 }
 
 /* line 226, ../sass/storepages.scss */
