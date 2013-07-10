@@ -22,7 +22,7 @@
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBzY9j4mYywVqpPXm9AdmWgMwgg3G5rTHY&sensor=false"></script> 
     <script type="text/javascript"> 
       function initialize() {
-        var myLatlng = new google.maps.LatLng(41.2197356,-73.71625540000002);
+        var myLatlng = new google.maps.LatLng(${latLng.latitude}, ${latLng.longitude});
         var mapOptions = {
           zoom: 15,
           center: myLatlng,
@@ -131,7 +131,6 @@
                       #{/list}
                     </tr>
                   #{/list}
-                  
                 </table>
               </div> 
               <div class="location-services right">
@@ -147,7 +146,7 @@
           <div class="right-content">
             <div class="location-featured-msg">
               <div class="circle"><span class="current-special">Current Special</span></div>
-              ${featuredMessage.description}
+              ${featuredMessage?.description}
             </div>
           </div>
         </div>
