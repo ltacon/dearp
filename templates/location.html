@@ -27,113 +27,14 @@
       <img src="../images/sears-top-head.png" >
     </div>
     <div id="page-container">
-      <div id="header" class="cf">
-        <div class="head-left">
-          <div class="logo">
-            <img src="../images/sears-logo.png" />
-          </div>
-          <div class="sub-head">
-            <ul id="nav">
-              <li class="storeLocater">
-                <a href="" id="storeLocater" >Store Locator</a>
-              </li>
-              <li class="emailSavings">
-                <a href="" id="emailSavings">Email Savings</a>
-              </li>
-              <li class="custService">
-                <a href="" id="custService">Customer Service</a>
-              </li>
-              <li class="searsCC">
-                <a href="" id="searsCC">Sears Credit Cards</a>
-              </li>
-              <li class="giftCards">
-                <a href="" id="giftCards">Gift Cards</a>
-              </li>
-              <li class="DOD intShipHide">
-                <a href="" id="DOD">Deals Of the Day</a>
-              </li>
-            </ul>
-            <div class="search">
-              <input class="search-box" type="text" name="search" placeholder="Find something great..." >
-              <input class="search-btn" type="submit" src="../images/sears-search.png" name="submit" value="Search" >
-            </div>
-          </div>
-        </div>
-        <div class="head-right">
-          <img src="../images/sears-head-right.png">
-        </div>
-      </div>
-      <div id="page-content" class="cf">
-        <div class="sub-nav">
-          <div class="nav">
-            <a href="search.html">Find a store</a> <span class="divide">></span> Sears Home Appliance Showroom
-          </div>
-        </div>
-        <div class="main-content location-content cf">
-          <div class="page-head cf">
-            <div class="location-image">
-              <img src="../images/sears-location-head.png" style="float: left;">
-            </div>
-            <div id="location-map" style="width: 300px; height: 250px; float: left;"></div> 
-            <noscript><p><b>JavaScript must be enabled in order for you to use Google Maps.</b> 
-              However, it seems JavaScript is either disabled or not supported by your browser. 
-              To view Google Maps, enable JavaScript by changing your browser options, and then 
-              try again.</p>
-            </noscript>  
-          </div>
-          <div class="left-content">
-            <h2>${name}</h2>
-            <div class="location-info">
-              <div class="location-address cf">
-                <div class="left">
-                  ${address}<br>
-                  ${city}, ${state} ${postalCode}
-                </div>
-                <div class="right">
-                  <span class="phone">${mainPhone}</span><br>
-                  <a href="mailto:${mainEmail}">${mainEmail}</a>
-                </div>
-              </div>
-              <div class="location-description">
-                ${description}
-              </div>
-            </div>
-            <div class="location-specifics cf">
-              <div class="location-hours left">
-                <h3>Hours</h3>
-                <table class="location-hours-table">
-                  #{list hours}
-                    <tr>
-                      <td class="day">${_.day}</td>
-                      #{list _.intervals}
-                        %{start = _.start}%
-                        %{end = _.end}%
-                        <td class="hour">${start} - ${end}</td>
-                      #{/list}
-                    </tr>
-                  #{/list}
-                </table>
-              </div> 
-              <div class="location-services right">
-                <h3>Services</h3>
-                <ul class="location-services-list">
-                  #{list services}
-                    <li>${_}</li>
-                  #{/list}
-                </ul>
-              </div>       
-            </div>
-          </div>
-          <div class="right-content">
-            <div class="location-featured-msg">
-              <div class="circle"><span class="current-special">Current Special</span></div>
-              ${featuredMessage?.description}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
+    </div>
+    <script language="javascript">
+    $(function() {  
+      var storepages = new Storepages();
+      storepages.locationMap(${latLng.latitude}, ${latLng.longitude});
+    });
+    </script>
   </body>
 </html>
 
