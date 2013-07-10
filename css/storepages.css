@@ -283,8 +283,10 @@ a img {
 #page-content .location-hours-table .day {
   font-weight: bold;
   padding-right: 10px;
-  text-transform: capitalize;
+  text-transform: lowercase;
 }
+
+#page-content .location-hours-table .day:first-letter { text-transform: uppercase; }
 
 /* line 226, ../sass/storepages.scss */
 .store-search-page h2 {

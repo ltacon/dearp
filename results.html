@@ -147,7 +147,7 @@
                     <p>
                       ${location.address}<br>
                       ${location.city}, ${location.state} ${location.postalCode}<br>
-                      ${location.mainPhone}
+                      <span class="phone">${location.mainPhone}</span>
                     </p>
                   </div>
                   <div class="location-info right">
@@ -271,5 +271,11 @@
         </div>
       </div>
     </div>
+    <script>
+    $(".phone").text(function(i, text) {
+        text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2-$3");
+        return text;
+    });
+    </script>
   </body>
 </html> 
