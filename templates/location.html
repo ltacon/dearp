@@ -127,7 +127,9 @@
                     <tr>
                       <td>${_.day}</td>
                       #{list _.intervals}
-                        <td>${_.start}</td>
+                        %{start = _.start}%
+                        %{end = _.end}%
+                        <td>${start.asdate(h:mm a)</td>
                       #{/list}
                     </tr>
                   #{/list}
