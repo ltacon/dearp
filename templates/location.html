@@ -123,9 +123,11 @@
               <div class="location-hours left">
                 <h3>Hours</h3>
                 <table class="location-hours-table">
-                  <tr>
-                    <td>${hours}</td>
-                  </tr>
+                  #{list hours.day}
+                    <tr>
+                      <td>${_}</td>
+                    </tr>
+                  #{/list}
                 </table>
               </div> 
               <div class="location-services right">
