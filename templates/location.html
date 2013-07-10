@@ -126,13 +126,10 @@
                   #{list hours.day}
                     <tr>
                       <td>${_}</td>
+                      <td>${hours[_].intervals.start}</td>
                     </tr>
                   #{/list}
-                  #{list hours.intervals}
-                    <tr>
-                      <td>${_.start}</td>
-                    </tr>
-                  #{/list}
+                  
                 </table>
               </div> 
               <div class="location-services right">
