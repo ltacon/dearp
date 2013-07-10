@@ -123,9 +123,9 @@
               <div class="location-hours left">
                 <h3>Hours</h3>
                 <table class="location-hours-table">
-                  #{each hours}
+                  #{each hours.day}
                     <tr>
-                      <td class="day">${hours.day}</td> 
+                      <td class="day">${_}</td> 
                       <td class="hour"></td>
                     </tr>
                   #{/each}
