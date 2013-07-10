@@ -123,11 +123,11 @@
               <div class="location-hours left">
                 <h3>Hours</h3>
                 <table class="location-hours-table">
-                  #{list hours, as:"hour"}
+                  #{each hours}
                     <tr>
-                      <td class="day">${hour.day}</td> 
+                      <td class="day">${_day}</td> 
                     </tr>
-                  #{/list}
+                  #{/each}
                 </table>
               </div> 
               <div class="location-services right">
