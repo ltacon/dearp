@@ -231,5 +231,5 @@
           }
         );
       }
-    }
+    };
 })(window, document);
