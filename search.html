@@ -123,7 +123,7 @@
 	function populateNearbyStores(nearbyStoreJson) {
 		parentDiv = document.getElementById("sears-nearby-content");
 		for (var ii=0; ii < nearbyStoreJson.resultsArray.length; ii++) {
-			store = nearbyStoreJson.resultsArrayii];
+			store = nearbyStoreJson.resultsArray[ii];
 			newDiv = document.createElement('div');
 			newDiv.setAttribute('class', 'sears-store sears-store-'+ii);
 
