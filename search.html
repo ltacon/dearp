@@ -122,8 +122,8 @@
 
 	function populateNearbyStores(nearbyStoreJson) {
 		parentDiv = document.getElementById("sears-nearby-content");
-		for (var ii=0; ii < nearbyStoreJson.results.length; ii++) {
-			store = nearbyStoreJson.results[ii];
+		for (var ii=0; ii < nearbyStoreJson.resultsArray.length; ii++) {
+			store = nearbyStoreJson.resultsArrayii];
 			newDiv = document.createElement('div');
 			newDiv.setAttribute('class', 'sears-store sears-store-'+ii);
 
@@ -146,7 +146,7 @@
 			newDiv.appendChild(document.createTextNode("\n" + store.mainPhone));
 			newDiv.appendChild(document.createElement("br"));
 			newDiv.appendChild(document.createElement("br"));
-				newDiv.appendChild(document.createTextNode("\n" + store.distance + " miles away"));
+			newDiv.appendChild(document.createTextNode("\n" + store.distance + " miles away"));
 			newDiv.appendChild(document.createElement("br"));
 			
 			parentDiv.appendChild(newDiv);
