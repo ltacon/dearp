@@ -119,6 +119,39 @@
 	    });
 		</script>
 		<script type="text/javascript">
+
+		function populateNearbyStores(nearbyStoreJson) {
+		parentDiv = document.getElementById("sears-nearby-content");
+		for (var ii=0; ii < nearbyStoreJson.length; ii++) {
+			store = nearbyStoreJson[ii];
+			newDiv = document.createElement('div');
+			newDiv.setAttribute('class', 'sears-store sears-store-'+ii);
+
+			// Create and store store name as header/link
+			storeNameHeader = document.createElement('h1');
+			storeNameLink = document.createElement('a');
+			storeNameLink.setAttribute('href',store.pageUrl);
+			storeNameLink.setAttribute('class', 'sears-store-type');
+			storeNameLink.innerHTML = store.name;
+			storeNameHeader.appendChild(storeNameLink);
+
+			newDiv.appendChild(storeNameHeader);
+
+			// Add address information
+			newDiv.appendChild(document.createElement("br"));
+			newDiv.appendChild(document.createTextNode(store.address));
+			newDiv.appendChild(document.createElement("br"));
+			newDiv.appendChild(document.createTextNode("\n" + store.city + ", " + store.state + " " + store.postalCode));
+			newDiv.appendChild(document.createElement('br'));
+			newDiv.appendChild(document.createTextNode("\n" + store.mainPhone));
+			newDiv.appendChild(document.createElement("br"));
+			newDiv.appendChild(document.createElement("br"));
+			newDiv.appendChild(document.createTextNode("\n" + store.distance + " miles away"));
+			newDiv.appendChild(document.createElement("br"));
+			
+			parentDiv.appendChild(newDiv);
+		}
+	}
 			
 	function nearbyStoresError(jqXHR, textStatus, error) {
 		console.log("Something went wrong: ", error);
