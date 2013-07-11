@@ -23,13 +23,11 @@
     * to (888) 888 - 8888
     */
     StorePages.prototype.phoneNumberFormat = function() {
-      $(".phone").each(function() { {
-        var phoneNumber = $(this).text();
-        phoneNumber = phoneNumber.replace(phoneNumber, "($1) $2 - $3");
-        $(this).text(phoneNumber);
-        //console.log(text);
+      $(".phone").text(function(i, text) {
+        text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
+        return text;
       });  
-    };
+    }
 
     /**
     * Converts military time to 
