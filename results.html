@@ -14,10 +14,10 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no"> 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
     <title>Sears Locations#{if geocodeResult} - ${geocodeResult.city}, ${geocodeResult.state} ${geocodeResult.postalCode}#{/if}</title>
-    <link rel="icon" type="image/png" href="images/sears-favicon.png">
-    <link rel="stylesheet" href="css/storepages.css" type="text/css">
+    <link rel="icon" type="image/png" href="/images/sears-favicon.png">
+    <link rel="stylesheet" href="/css/storepages.css" type="text/css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src="js/perfect-scrollbar.min.js"></script>
+    <script src="/js/perfect-scrollbar.min.js"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBzY9j4mYywVqpPXm9AdmWgMwgg3G5rTHY&sensor=false"></script> 
     <script type="text/javascript"> 
       var gmarkers = []; 
@@ -139,20 +139,20 @@
             </div>
             <div class="results-sidebar-content">
               #{list locations, as:'location'}
-              <div id="result-1" class="result">
+              <div id="result-${location_index}" class="result">
                 <div class="location cf">
                   <div class="location-address left">
                     <span class="number">${location_index}</span>
                     <h2>${location.name}</h2>
                     <p>
-                      ${location.address}<br>
+                      ${location.address} ${location.address2}<br>
                       ${location.city}, ${location.state} ${location.postalCode}<br>
                       <span class="phone">${location.mainPhone}</span>
                     </p>
                   </div>
                   <div class="location-info right">
                     <a href="javascript:myclick(0)">Show in Map</a><br>
-                    <a href="${location.pageUrl}">More Info</a>
+                    <a href="/${location.pageUrl}">More Info</a>
                   </div>
                 </div>
                 <div class="location-footer tags">
@@ -161,17 +161,17 @@
                   #{/list}
                 </div>
               </div>
-              <div id="result-dialog-1" style="display: none;">
+              <div id="result-dialog-${location_index}" style="display: none;">
                 <div  class="result">
                   <div class="location-header">
                     <h2>Sears Home Appliance Showroom</h2>
                   </div>
                   <div class="location cf">
                     <div class="location-address left">
-                      <p>
-                        360 North Bedford RD<br>
-                        Mount Kisco, NY 10549<br>
-                        (914) 241-2291<br>
+                        <p>
+                        ${location.address} ${location.address2}<br>
+                        ${location.city}, ${location.state} ${location.postalCode}<br>
+                        <span class="phone">${location.mainPhone}</span>
                         <a href="">More Info</a> | <a href="">Directions</a>
                       </p>
                     </div>
