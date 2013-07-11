@@ -12,19 +12,16 @@
      * this include the search, 
      * location template and results page
      */
-    var Storepages = function() {
-      //this.shortenText();
+    var StorePages = function() {
       this.phoneNumberFormat();
     }
-    window.Storepages = Storepages;
-    
-    Storepages.prototype.descriptionLength = 450;
+    window.StorePages = StorePages;
 
     /**
     * Formats the phone number
     * to (888) 888 - 8888
     */
-    Storepages.prototype.phoneNumberFormat = function() {
+    StorePages.prototype.phoneNumberFormat = function() {
       $(".phone").text(function(i, text) {
         text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
         return text;
@@ -35,19 +32,16 @@
      * @constructor for just the
      * location template page
      */
-    var LocationPage = function() {
+    var LocationPage = function(latitude, longitude) {
       // Inherit Storepages
-      this.prototype = new Storepages();
+      this.prototype = new StorePages();
 
       this.shortenText();
-      this.locationMap();
+      this.locationMap(latitude, longitude);
     };
-    window.ResultsPage = ResultsPage;
+    window.LocationPage = LocationPage;
 
-    LocationPage.prototype = new Storepages();
-
-    LocationPage = function() {
-    }
+    LocationPage.prototype.descriptionLength = 450; 
 
     /**
      * Shortens text based off 
@@ -86,54 +80,15 @@
      * @constructor for just the
      * results page
      */
-    var ResultsPage = function() {
+    var ResultsPage = function(markers) {
       // Inherit Storepages
-      this.prototype = new Storepages();
+      this.prototype = new StorePages();
 
-      this.markers = [];
-
-      this.resultsMarker();
-      this.resultsMap();
+      this.markers = markers || []; 
+      this.initializeMap();
+      this.Scrollbar();
     };
     window.ResultsPage = ResultsPage;
-
-    ResultsPage.prototype.resultsMarker = function() {
-      var getName = function(storeNumber){
-        return $('#result-' + storeNumber + ' h1').html();
-      };
-
-      var getDialog = function(storeNumber){
-        return $('#result-dialog-' + storeNumber).html();
-      };  
-
-      this.markers = [
-        {
-          point : new google.maps.LatLng(41.2197356,-73.71625540000002),
-          storeName : getName("1"),
-          storeInfo : getDialog("1")
-        },
-        {
-          point : new google.maps.LatLng(41.1091065,-73.547011),
-          storeName : getName("2"),
-          storeInfo : getDialog("2")
-        },
-        {
-          point : new google.maps.LatLng(41.031576,-73.76887799999997),
-          storeName : getName("3"),
-          storeInfo : getDialog("3")
-        },
-        {
-          point : new google.maps.LatLng(41.031576,-73.76887799999997),
-          storeName : getName("4"),
-          storeInfo : getDialog("4")
-        },
-        {
-          point : new google.maps.LatLng(41.3256673,-73.8056128),
-          storeName : getName("5"),
-          storeInfo : getDialog("5")
-        }
-      ];
-    };
 
     /**
     * Displays a multi-marker map
@@ -142,13 +97,13 @@
     * latitude and longitude for 
     * the center point
     */
-    ResultsPage.prototype.resultsMap = function() {
+    ResultsPage.prototype.initializeMap = function() {
       var map,
           self = this;
       
-      var myLatlng = new google.maps.LatLng(41.2197356,-73.71625540000002);
-
       function initialize() {
+        var myLatlng = new google.maps.LatLng(41.2197356,-73.71625540000002);
+
         var myOptions = {
           zoom: 9,
           center: myLatlng,
@@ -173,7 +128,7 @@
       });
         
       function myClick(i) {
-        google.maps.event.trigger(gmarkers[i], "click");
+        google.maps.event.trigger(this.markers[i], "click");
       }
 
       function createMarker(latlng, name, html) {
@@ -188,10 +143,19 @@
           infowindow.setContent(contentString); 
           infowindow.open(map, marker);
         });
-
-        gmarkers.push(this.marker);
       }
 
       initialize();
     };
+
+    /**
+    * Creates a scrollbar for
+    * the results page
+    */
+    ResultsPage.prototype.Scrollbar = function() {
+      $('.results-sidebar-content').perfectScrollbar({
+        wheelSpeed: 20,
+        wheelPropagation: false
+      });
+    }
 })(window, document);

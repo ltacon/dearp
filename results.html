@@ -19,69 +19,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="/js/perfect-scrollbar.min.js"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBzY9j4mYywVqpPXm9AdmWgMwgg3G5rTHY&sensor=false"></script> 
-    <script type="text/javascript"> 
-      var gmarkers = []; 
-      var map = null;
-      var markers = [];
-      var myLatlng = new google.maps.LatLng(41.2197356,-73.71625540000002);
-      function initialize() {
-        var myOptions = {
-          zoom: 9,
-          center: myLatlng,
-          mapTypeControl: true,
-          mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
-          navigationControl: true,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        map = new google.maps.Map(document.getElementById("results-map"), myOptions);
-       
-        google.maps.event.addListener(map, 'click', function() {
-              infowindow.close();
-        });
-
-        for (i=0; i<markers.length; i++) {
-          createMarker(markers[i].point, markers[i].storeName, markers[i].storeInfo)
-        }
-
-      }
-     
-      var infowindow = new google.maps.InfoWindow({ 
-        size: new google.maps.Size(150,50)
-      });
-        
-      function myclick(i) {
-        google.maps.event.trigger(gmarkers[i], "click");
-      }
-
-      function createMarker(latlng, name, html) {
-        var contentString = html;
-        var marker = new google.maps.Marker({
-            position: latlng,
-            map: map,
-            zIndex: Math.round(latlng.lat()*-100000)<<5
-            });
-
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent(contentString); 
-            infowindow.open(map,marker);
-            });
-
-        gmarkers.push(marker);
-
-      }
-
-      $(document).ready(function ($) {
-        $('.results-sidebar-content').perfectScrollbar({
-          wheelSpeed: 20,
-          wheelPropagation: false
-        });
-      });
-
-      function openDropdown(dropDown, size) {
-        var dropDownObject = document.getElementById(dropDown);
-        dropDownObject.size = size;
-      }
-    </script>
+    <script type="text/javascript" src="/js/storepages.js"></script>
   </head> 
   <body id="location-page" class="store-pg store-results-page" style="margin:0px; padding:0px;" onload="initialize()"> 
     <div class="top-head">
@@ -194,27 +132,6 @@
             </div>
           </div>
           <script>
-            function getName(storeNumber){
-              var storeNumber;
-              var id = "#result-" + storeNumber + " h1";
-              var resultName = $(id).html();
-              return resultName;
-            }
-            function getDialog(storeNumber){
-              var storeNumber;
-              var id = "#result-dialog-" + storeNumber;
-              var resultDialog = $(id).html();
-              return resultDialog;
-            }
-            #{list locations}
-            var myMarker = {
-              point : new google.maps.LatLng(${_.latLng?.latitude}, ${_.latLng?.longitude}),
-              storeName : getName("${_index}"),
-              storeInfo : getDialog("${_index}")
-            }
-            markers.push(myMarker);
-            #{/list}
-
           </script>
           <div id="results-map"></div> 
           <noscript><p><b>JavaScript must be enabled in order for you to use Google Maps.</b> 
@@ -226,10 +143,19 @@
       </div>
     </div>
     <script>
-    $(".phone").text(function(i, text) {
-        text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2-$3");
-        return text;
-    });
+      $(function() {
+          var markers = [
+          #{list locations}
+            {
+              point : new google.maps.LatLng(${_.latLng?.latitude}, ${_.latLng?.longitude}),
+              storeName : getName("${_index}"),
+              storeInfo : getDialog("${_index}")
+            }#{if _isLast}#{/if}#{else},#{/else}
+          #{/list}
+          ];
+
+          var resultsPage = new ResultsPage(markers);
+      });
     </script>
   </body>
 </html> 

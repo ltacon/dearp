@@ -135,8 +135,7 @@
     </div>
     <script language="javascript">
     $(function() {  
-      var storepages = new Storepages();
-      storepages.locationMap(${latLng.latitude}, ${latLng.longitude});
+      var results = new LocationPage(${latLng.latitude}, ${latLng.longitude}));
     });
     </script>
   </body>
