@@ -168,6 +168,7 @@
       this.prototype = new StorePages();
 
       this.findNearbyStores();
+      this.Slider();
     };
     window.SearchPage = SearchPage;
 
