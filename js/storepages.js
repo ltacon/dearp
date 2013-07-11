@@ -29,7 +29,7 @@
         $(this).text(phoneNumber);
         //console.log(text);
       });  
-    }
+    };
 
     /**
     * Converts military time to 
