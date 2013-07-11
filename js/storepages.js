@@ -201,7 +201,6 @@
     * with closest store locations
     */ 
     SearchPage.prototype.findNearbyStores = function() {
-      // Check to see if this browser supports geolocation.
       function populateNearbyStores(nearbyStoreJson) {
         parentDiv = document.getElementById("sears-nearby-content");
         for (var ii=0; ii < nearbyStoreJson.length; ii++) {
@@ -234,30 +233,51 @@
           parentDiv.appendChild(newDiv);
         }
       }
-
+      
       function nearbyStoresError(jqXHR, textStatus, error) {
         console.log("Something went wrong: ", error);
       }
 
-      function geolocationSuccess(position){
+      function locationSuccess( position ){
+        console.log(position.latitude);
+        console.log(position.longitude);
         $.ajax({
           url: "/searchJson/",
           type: "GET",
-          data: "lat=" + position.coords.latitude + "&lng=" + position.coords.longitude
+          data: "lat=" + position.latitude + "&lng=" + position.longitude
         }).done(populateNearbyStores)
         .fail(nearbyStoresError);
       }
 
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          geolocationSuccess,
-          nearbyStoresError,
-          {
-            timeout: (5 * 1000),
-            maximumAge: (1000 * 60 * 15),
-            enableHighAccuracy: true
-          }
-        );
+      function ipSuccess(data) {
+        $.ajax({
+          url: "http://freegeoip.net/json/" + data.ip
+        }).done(locationSuccess)
+        .fail(nearbyStoresError);
       }
+
+      $.ajax({
+        url: "http://jsonip.appspot.com/"
+      }).done(ipSuccess)
+      .fail(nearbyStoresError);
+    };
+
+    SearchPage.prototype.findNearbyStores = function(time) { {
+      time = parseInt(time);
+      hours = parseInt(time / 100);
+      minutes = time % 100;
+      xm = "";
+      if (hours > 11) {
+        xm = "pm";
+        hours = hours - 12;
+      } else {
+        xm = "am";
+      }
+      if (hours==0) {
+        hours = 12;
+      }
+      if (("" + hours).length < 2) {hours = " " + hours;} else { hours = hours + "";}
+      if (("" + minutes).length < 2) {minutes = "0" + minutes;} else { minutes = minutes + "";}
+      return hours + ":" + minutes + " " + xm;
     };
 })(window, document);
