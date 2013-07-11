@@ -14,6 +14,7 @@
      */
     var StorePages = function() {
       this.phoneNumberFormat();
+      this.timeFormat();
     }
     window.StorePages = StorePages;
 
@@ -27,7 +28,44 @@
         return text;
       });  
     }
-    
+
+    /**
+    * Converts military time to 
+    * a standard time format - 
+    * the class "time" is found in 
+    * file and replaced
+    */
+    StorePages.prototype.timeFormat = function() { 
+      //The actual function that converts military time
+      //to standard tme 
+      var militaryToStandard = function(time) {
+        time = parseInt(time);
+        hours = parseInt(time / 100);
+        minutes = time % 100;
+        xm = "";
+        if (hours > 11) {
+          xm = "pm";
+          hours = hours - 12;
+        } else {
+          xm = "am";
+        }
+        if (hours==0) {
+          hours = 12;
+        }
+        if (("" + hours).length < 2) {hours = " " + hours;} else { hours = hours + "";}
+        if (("" + minutes).length < 2) {minutes = "0" + minutes;} else { minutes = minutes + "";}
+        return hours + ":" + minutes + " " + xm;
+      };
+      
+      //Replaces the span class time with standard time format
+      $(".time").each(function() {
+        var militaryTime = $(this).text();
+        var standardTime = militaryToStandard(militaryTime);
+        militaryTime = militaryTime.replace(militaryTime, standardTime);
+        $(this).text(militaryTime);
+      });
+    };
+
     /**
      * @constructor for just the
      * location template page

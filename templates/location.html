@@ -108,7 +108,9 @@
                       #{list _.intervals}
                         %{start = _.start}%
                         %{end = _.end}%
-                        <td class="hour">${start} - ${end}</td>
+                        <td class="hour">
+                          <span class="time">${start}</span> - <span class="time">${end}</span>
+                        </td>
                       #{/list}
                     </tr>
                   #{/list}
