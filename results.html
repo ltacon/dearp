@@ -125,7 +125,9 @@
                         <tr>
                           <td class="day">${hour.day}</td>
                           #{list hour.intervals, as:"interval"}
-                            <td class="hour">${interval.start} - ${interval.end}</td>
+                            <td class="hour">
+                              <span class="time">${interval.start}</span> - <span class="time">${interval.end}</span>
+                            </td>
                           #{/list}
                         </tr>
                         #{/list}
