@@ -265,18 +265,12 @@
           phoneNumber = document.createElement('span');
           phoneNumber.setAttribute('class', 'phone');
           
-
-          /*mainPhone = store.mainPhone; 
-          mainPhone.text(function(i, text) {
-            text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
-            phoneNumber.innerHTML = text; 
-          });*/
           var numberFormat = function(number) {
             return number.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
           }
 
-          var newFormat = numberFormat(store.mainPhone);
-          console.log(newFormat);
+          var phoneNumberFormat = numberFormat(store.mainPhone);
+          phoneNumber.innerHTML = phoneNumberFormat; 
 
           newDiv.appendChild(phoneNumber);
           newDiv.appendChild(document.createElement("br"));
