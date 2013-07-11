@@ -266,11 +266,12 @@
           phoneNumber.setAttribute('class', 'phone');
           
 
-          mainPhone = store.mainPhone; 
+          /*mainPhone = store.mainPhone; 
           mainPhone.text(function(i, text) {
             text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
             phoneNumber.innerHTML = text; 
-          }); 
+          });*/
+          console.log(store.mainPhone); 
 
           newDiv.appendChild(phoneNumber);
           newDiv.appendChild(document.createElement("br"));
