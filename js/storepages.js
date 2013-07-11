@@ -271,7 +271,12 @@
             text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
             phoneNumber.innerHTML = text; 
           });*/
-          console.log(store.mainPhone); 
+          var numberFormat = function(number) {
+            return number.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
+          }
+
+          var newFormat = numberFormat(store.mainPhone);
+          console.log(newFormat);
 
           newDiv.appendChild(phoneNumber);
           newDiv.appendChild(document.createElement("br"));
