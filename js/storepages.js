@@ -169,7 +169,7 @@
 
       this.findNearbyStores();
     };
-    window.SearchPage = ResultsPage;
+    window.SearchPage = SearchPage;
 
     // Check to see if this browser supports geolocation.
 
