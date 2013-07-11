@@ -264,7 +264,14 @@
           newDiv.appendChild(document.createElement('br'));
           phoneNumber = document.createElement('span');
           phoneNumber.setAttribute('class', 'phone');
-          phoneNumber.innerHTML = store.mainPhone; 
+          
+
+          mainPhone = store.mainPhone; 
+          mainPhone.text(function(i, text) {
+            text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
+            phoneNumber.innerHTML = text; 
+          }); 
+
           newDiv.appendChild(phoneNumber);
           newDiv.appendChild(document.createElement("br"));
           newDiv.appendChild(document.createElement("br"));
