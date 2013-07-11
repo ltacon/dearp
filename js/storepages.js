@@ -262,7 +262,10 @@
           newDiv.appendChild(document.createElement("br"));
           newDiv.appendChild(document.createTextNode("\n" + store.city + ", " + store.state + " " + store.postalCode));
           newDiv.appendChild(document.createElement('br'));
-          newDiv.appendChild(document.createTextNode("\n" + store.mainPhone));
+          phoneNumber = document.createElement('span');
+          phoneNumber.setAttribute('class', 'phone');
+          phoneNumber.innerHTML = store.mainPhone; 
+          newDiv.appendChild(phoneNumber);
           newDiv.appendChild(document.createElement("br"));
           newDiv.appendChild(document.createElement("br"));
           newDiv.appendChild(document.createTextNode("\n" + store.distance + " miles away"));
