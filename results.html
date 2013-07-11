@@ -135,7 +135,7 @@
         <div class="main-content results-content">
           <div class="results-sidebar">
             <div class="results-sidebar-header cf">
-              <h1 class="number-results"><span class="large">5</span> stores near you</h1>
+              <h1 class="number-results"><span class="large">${locations.size()}</span> stores near you</h1>
             </div>
             <div class="results-sidebar-content">
               #{list locations, as:'location'}
@@ -152,7 +152,7 @@
                   </div>
                   <div class="location-info right">
                     <a href="javascript:myclick(0)">Show in Map</a><br>
-                    <a href="${location.url}">More Info</a>
+                    <a href="${location.pageUrl}">More Info</a>
                   </div>
                 </div>
                 <div class="location-footer tags">
