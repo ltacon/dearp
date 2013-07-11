@@ -27,7 +27,7 @@
         return text;
       });  
     }
-
+    
     /**
      * @constructor for just the
      * location template page
@@ -260,24 +260,5 @@
         url: "http://jsonip.appspot.com/"
       }).done(ipSuccess)
       .fail(nearbyStoresError);
-    };
-
-    SearchPage.prototype.findNearbyStores = function(time) { {
-      time = parseInt(time);
-      hours = parseInt(time / 100);
-      minutes = time % 100;
-      xm = "";
-      if (hours > 11) {
-        xm = "pm";
-        hours = hours - 12;
-      } else {
-        xm = "am";
-      }
-      if (hours==0) {
-        hours = 12;
-      }
-      if (("" + hours).length < 2) {hours = " " + hours;} else { hours = hours + "";}
-      if (("" + minutes).length < 2) {minutes = "0" + minutes;} else { minutes = minutes + "";}
-      return hours + ":" + minutes + " " + xm;
     };
 })(window, document);
