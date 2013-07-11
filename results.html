@@ -144,12 +144,20 @@
     </div>
     <script>
       $(function() {
+          var getName = function(storeNumber){
+            return $('#result-' + storeNumber + ' h1').html();
+          };
+
+          var getDialog = function(storeNumber){
+            return $('#result-dialog-' + storeNumber).html();
+          };  
+
           var markers = [
           #{list locations}
             {
               point : new google.maps.LatLng(${_.latLng?.latitude}, ${_.latLng?.longitude}),
-              storeName : $("#result-${_index} h1").html(); 
-              storeInfo : $("#result-dialog-${_index}").html(); 
+              storeName : getName("${_index}"),
+              storeInfo : getDialog("${_index}")
             }#{if _isLast}#{/if}#{else},#{/else}
           #{/list}
           ];
