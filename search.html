@@ -18,6 +18,7 @@
 		  <script src="js/bjqs-1.3.min.js"></script>
 		  <link rel="stylesheet" href="css/storepages.css" type="text/css">
 		  <link rel="icon" type="image/png" href="images/sears-favicon.png">
+		  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	</head>
   <body id="search-page" class="store-pg store-search-page">
     <div class="top-head">
@@ -83,66 +84,14 @@
 						</div>
 					</div>
 					<div class="sears-nearby">
-						<div class="sears-nearby-content">
+						<div class="sears-nearby-content" id="sears-nearby-content">
 							<h2 class="sears-nearby-title">Sears near your current location</h1>
-							<div class="sears-store sears-store-1">
-								<h1><a href="" class="sears-store-type">Sears Home Appliance</a> <a href="" title="Local Website"><img src="images/sears-local-website.png" width="13" class="local-website"></a></h1>
-								<h4>Hometown Store</h4>
-								360 N Bedford Road<br>
-								MT Kisco, NY 10549<br>
-								(914) 241-2291<br>
-								<br>
-								<div class="store-foot">
-									5 Mile(s) away<br>
-									<a href class="see-map">see map</a><br>
-									<br>
-									<a href="" class="go-to-store">Go to this Sears</a>
-								</div>
-							</div>
-							<div class="sears-store sears-store-2">
-								<h1><a href="" class="sears-store-type">Sears Home Appliance</a> <a href="" title="Local Website"><img src="images/sears-local-website.png" width="13" class="local-website"></a></h1>
-								<h4>Store Pick up</h4>
-								1145 High Ridge Road<br>
-								Stamford, CT 06905<br>
-								(203) 329-9400<br>
-								<br>
-								<div class="store-foot">
-									7 Mile(s) away<br>
-									<a href class="see-map">see map</a><br>
-									<br>
-									<a href="" class="go-to-store">Go to this Sears</a>
-								</div>
-							</div>
-							<div class="sears-store sears-store-3">
-								<h1><a href="" class="sears-store-type">Sears Stores</a></h1>
-								<h4>Store Pick up</h4>
-								100 Main Street<br>
-								White Plains, NY 10601<br>
-								(914) 644-1400<br>
-								<br>
-								<div class="store-foot">
-									13 Mile(s) away<br>
-									<a href class="see-map">see map</a><br>
-									<br>
-									<a href="" class="go-to-store">Go to this Sears</a>
-								</div>
-							</div>
-							<div class="sears-store sears-store-4">
-								<h1 class="sears-store-type"><a href="">Service Centers & Repair</a></h1>
-								<h4>Drop-off Location</h4>
-								100 Main Street<br>
-								White Plains, NY 10601<br>
-								(914) 644-1505<br>
-								<br>
-								<div class="store-foot">
-									13 Mile(s) away<br>
-									<a href class="see-map">see map</a><br>
-									<br>
-									<a href="" class="go-to-store">Go to this Sears</a>
-								</div>
-							</div>
 						</div>
 					</div>
+				</div>
+				<div id="location">
+				</div>
+				<div id="ip_address">
 				</div>
 				<script class="secret-source">
 			    jQuery(document).ready(function($) {
@@ -168,6 +117,71 @@
 				    displayVals();
 			    });
 				</script>
+<script type="text/javascript">
+	// Check to see if this browser supports geolocation.
+
+	function populateNearbyStores(nearbyStoreJson) {
+		parentDiv = document.getElementById("sears-nearby-content");
+		for (var ii=0; ii < nearbyStoreJson.results.length; ii++) {
+			store = nearbyStoreJson.results[ii];
+			newDiv = document.createElement('div');
+			newDiv.setAttribute('class', 'sears-store sears-store-'+ii);
+
+			// Create and store store name as header/link
+			storeNameHeader = document.createElement('h1');
+			storeNameLink = document.createElement('a');
+			storeNameLink.setAttribute('href',store.locationData.url);
+			storeNameLink.setAttribute('class', 'sears-store-type');
+			storeNameLink.innerHTML = store.locationData.name;
+			storeNameHeader.appendChild(storeNameLink);
+
+			newDiv.appendChild(storeNameHeader);
+
+			// Add address information
+			newDiv.appendChild(document.createElement("br"));
+			newDiv.appendChild(document.createTextNode(store.locationData.address));
+			newDiv.appendChild(document.createElement("br"));
+			newDiv.appendChild(document.createTextNode("\n" + store.locationData.city + ", " + store.locationData.state + " " + store.locationData.postalCode));
+			newDiv.appendChild(document.createElement('br'));
+			newDiv.appendChild(document.createTextNode("\n" + store.locationData.mainPhone));
+			newDiv.appendChild(document.createElement("br"));
+			newDiv.appendChild(document.createElement("br"));
+			newDiv.appendChild(document.createTextNode("\n" + store.distance + " miles away"));
+			newDiv.appendChild(document.createElement("br"));
+			
+			parentDiv.appendChild(newDiv);
+		}
+	}
+
+	function nearbyStoresError(jqXHR, textStatus, error) {
+		console.log("Something went wrong: ", error);
+		parentDiv = document.getElementById("sears-nearby-content");
+		newDiv = document.createElement('div');
+		newDiv.appendChild(document.createTextNode("Your location could not be resolved"));
+		parentDiv.appendChild(newDiv);
+	}
+
+	function geolocationSuccess( position ){
+		$.ajax({
+			url: "/getNearbyLocations/",
+			type: "GET",
+			data: "lat=" + position.coords.latitude + "&lng=" + position.coords.longitude
+		}).done(populateNearbyStores)
+		.fail(nearbyStoresError);
+	}
+
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(
+			geolocationSuccess,
+			nearbyStoresError,
+			{
+				timeout: (5 * 1000),
+				maximumAge: (1000 * 60 * 15),
+				enableHighAccuracy: true
+			}
+		);
+	}
+</script>
 			</div>
 		</div>
   </body>
