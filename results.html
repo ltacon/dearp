@@ -209,8 +209,8 @@
             #{list locations}
             var myMarker = {
               point : new google.maps.LatLng(${_.latLng?.latitude}, ${_.latLng?.longitude}),
-              storeName : getName("{_index}"),
-              storeInfo : getDialog("_index")
+              storeName : getName("${_index}"),
+              storeInfo : getDialog("${_index}")
             }
             markers.push(myMarker);
             #{/list}
