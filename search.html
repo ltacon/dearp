@@ -120,6 +120,32 @@
 		</script>
 		<script type="text/javascript">
 			
+	function nearbyStoresError(jqXHR, textStatus, error) {
+		console.log("Something went wrong: ", error);
+	}
+
+	function locationSuccess( position ){
+		console.log(position.latitude);
+		console.log(position.longitude);
+		$.ajax({
+			url: "/searchJson/",
+			type: "GET",
+			data: "lat=" + position.latitude + "&lng=" + position.longitude
+		}).done(populateNearbyStores)
+		.fail(nearbyStoresError);
+	}
+
+	function ipSuccess(data) {
+		$.ajax({
+			url: "http://freegeoip.net/json/" + data.ip
+		}).done(locationSuccess)
+		.fail(nearbyStoresError);
+	}
+
+	$.ajax({
+		url: "http://jsonip.appspot.com/"
+	}).done(ipSuccess)
+	.fail(nearbyStoresError);
 		</script>
 			</div>
 		</div>
