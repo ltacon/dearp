@@ -163,7 +163,7 @@
      * @constructor for just the
      * search page
      */
-    var SeachPage = function() {
+    var SearchPage = function() {
       // Inherit Storepages
       this.prototype = new StorePages();
 
