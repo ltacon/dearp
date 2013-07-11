@@ -208,6 +208,7 @@
 
       this.findNearbyStores();
       this.Slider();
+      this.phoneNumberFormat();
     };
     window.SearchPage = SearchPage;
 
@@ -303,4 +304,12 @@
       }).done(ipSuccess)
       .fail(nearbyStoresError);
     };
+
+     SearchPage.prototype.phoneNumberFormat = function() {
+      $(".phone").text(function(i, text) {
+        text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
+        //return text;
+        console.log(text);
+      });  
+    }
 })(window, document);
