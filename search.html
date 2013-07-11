@@ -130,20 +130,20 @@
 			// Create and store store name as header/link
 			storeNameHeader = document.createElement('h1');
 			storeNameLink = document.createElement('a');
-			storeNameLink.setAttribute('href',store.locationData.url);
+			storeNameLink.setAttribute('href',store.url);
 			storeNameLink.setAttribute('class', 'sears-store-type');
-			storeNameLink.innerHTML = store.locationData.name;
+			storeNameLink.innerHTML = store.name;
 			storeNameHeader.appendChild(storeNameLink);
 
 			newDiv.appendChild(storeNameHeader);
 
 			// Add address information
 			newDiv.appendChild(document.createElement("br"));
-			newDiv.appendChild(document.createTextNode(store.locationData.address));
+			newDiv.appendChild(document.createTextNode(store.address));
 			newDiv.appendChild(document.createElement("br"));
-			newDiv.appendChild(document.createTextNode("\n" + store.locationData.city + ", " + store.locationData.state + " " + store.locationData.postalCode));
+			newDiv.appendChild(document.createTextNode("\n" + store.city + ", " + store.state + " " + store.postalCode));
 			newDiv.appendChild(document.createElement('br'));
-			newDiv.appendChild(document.createTextNode("\n" + store.locationData.mainPhone));
+			newDiv.appendChild(document.createTextNode("\n" + store.mainPhone));
 			newDiv.appendChild(document.createElement("br"));
 			newDiv.appendChild(document.createElement("br"));
 			newDiv.appendChild(document.createTextNode("\n" + store.distance + " miles away"));
