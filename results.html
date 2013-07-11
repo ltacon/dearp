@@ -85,7 +85,7 @@
               #{list locations, as:'location'}
               <div id="result-${location_index}" class="result">
                 <div class="location cf">
-                  <div class="location-address left">
+                  <a href="/${location.pageUrl}" class="location-address left">
                     <span class="number">${location_index}</span>
                     <h2>${location.name}</h2>
                     <p>
@@ -93,7 +93,7 @@
                       ${location.city}, ${location.state} ${location.postalCode}<br>
                       <span class="phone">${location.mainPhone}</span>
                     </p>
-                  </div>
+                  </a>
                   <div class="location-info right">
                     <a href="javascript:myclick(getShowMapLink(${location_index})">Show in Map</a><br>
                     <a href="/${location.pageUrl}">More Info</a>
@@ -111,14 +111,14 @@
                       <h2>${location.name}</h2>
                   </div>
                   <div class="location cf">
-                    <a href="/${location.pageUrl}" class="location-address left">
+                    <div class="location-address left">
                         <p>
                         ${location.address} ${location.address2}<br>
                         ${location.city}, ${location.state} ${location.postalCode}<br>
                         <span class="phone">${location.mainPhone}</span>
                         <a href="/${location.pageUrl}">More Info</a> | <a href="">Directions</a>
                       </p>
-                    </a>
+                    </div>
                     <div class="location-hours right">
                       <table class="location-hours-table">
                         #{list location.hours, as:"hour"}
