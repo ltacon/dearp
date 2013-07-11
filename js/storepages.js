@@ -169,7 +169,7 @@
 
       this.findNearbyStores();
     };
-    window.SearchPage = ResultsPage;
+    window.SearchPage = SearchPage;
 
     // Check to see if this browser supports geolocation.
 
@@ -211,7 +211,7 @@
         console.log("Something went wrong: ", error);
       }
 
-      function geolocationSuccess( position ){
+      function geolocationSuccess(position){
         $.ajax({
           url: "/searchJson/",
           type: "GET",
