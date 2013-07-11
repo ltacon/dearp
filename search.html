@@ -62,122 +62,122 @@
         </div>
       </div>
       <div id="page-content">
-				<div class="content search-content">
-					<div id="search-content-body">
-						<ul class="bjqs">
-							<li class="sears-appliances"></li>
-							<li class="sears-sports"></li>
-							<li class="sears-electronics"></li>
-							<li class="sears-family"></li>
-							<li class="sears-fashion"></li>
-							<li class="sears-garden"></li>
-							<li class="sears-outdoors"></li>
-						</ul>
-						<div class="find-sears cf">
-							<h2>Find a Sears Location</h2>
-							<div class="find-sears-search">
-								<input class="zip-city-state" name="zip-city-state" type="text" placeholder="Enter a Zip Code or City and State">
-								<div class="go">
-									<a href="" class="search-link">GO</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="sears-nearby">
-						<div class="sears-nearby-content" id="sears-nearby-content">
-							<h2 class="sears-nearby-title">Sears near your current location</h1>
+		<div class="content search-content">
+			<div id="search-content-body">
+				<ul class="bjqs">
+					<li class="sears-appliances"></li>
+					<li class="sears-sports"></li>
+					<li class="sears-electronics"></li>
+					<li class="sears-family"></li>
+					<li class="sears-fashion"></li>
+					<li class="sears-garden"></li>
+					<li class="sears-outdoors"></li>
+				</ul>
+				<div class="find-sears cf">
+					<h2>Find a Sears Location</h2>
+					<div class="find-sears-search">
+						<input class="zip-city-state" name="zip-city-state" type="text" placeholder="Enter a Zip Code or City and State">
+						<div class="go">
+							<a href="" class="search-link">GO</a>
 						</div>
 					</div>
 				</div>
-				<div id="location">
+			</div>
+			<div class="sears-nearby">
+				<div class="sears-nearby-content" id="sears-nearby-content">
+					<h2 class="sears-nearby-title">Sears near your current location</h1>
 				</div>
-				<div id="ip_address">
-				</div>
-				<script class="secret-source">
-			    jQuery(document).ready(function($) {
-			      /* For search slider */
-			      $('#search-content-body').bjqs({
-			        animtype      : 'fade',
-			        height        : 411,
-			        width         : 980,
-			        responsive    : true,
-			        randomstart   : true,
-			        showcontrols  : false,
-			        showmarkers   : false
-			      });
+			</div>
+		</div>
+		<div id="location">
+		</div>
+		<div id="ip_address">
+		</div>
+		<script class="secret-source">
+	    jQuery(document).ready(function($) {
+	      /* For search slider */
+	      $('#search-content-body').bjqs({
+	        animtype      : 'fade',
+	        height        : 411,
+	        width         : 980,
+	        responsive    : true,
+	        randomstart   : true,
+	        showcontrols  : false,
+	        showmarkers   : false
+	      });
 
-			      /* For search link */
-			      function displayVals() {
-				      var location = $(".zip-city-state").val();
-				      $(".search-link").attr("href", "search/?query=" + location);
-				             
-				    }
-				 
-				    $("input.zip-city-state").change(displayVals);
-				    displayVals();
-			    });
-				</script>
-<script type="text/javascript">
-	// Check to see if this browser supports geolocation.
+	      /* For search link */
+	      function displayVals() {
+		      var location = $(".zip-city-state").val();
+		      $(".search-link").attr("href", "search/?query=" + location);
+		             
+		    }
+		 
+		    $("input.zip-city-state").change(displayVals);
+		    displayVals();
+	    });
+		</script>
+		<script type="text/javascript">
+			// Check to see if this browser supports geolocation.
 
-	function populateNearbyStores(nearbyStoreJson) {
-		parentDiv = document.getElementById("sears-nearby-content");
-		for (var ii=0; ii < nearbyStoreJson.length; ii++) {
-			store = nearbyStoreJson[ii];
-			newDiv = document.createElement('div');
-			newDiv.setAttribute('class', 'sears-store sears-store-'+ii);
+			function populateNearbyStores(nearbyStoreJson) {
+				parentDiv = document.getElementById("sears-nearby-content");
+				for (var ii=0; ii < nearbyStoreJson.length; ii++) {
+					store = nearbyStoreJson[ii];
+					newDiv = document.createElement('div');
+					newDiv.setAttribute('class', 'sears-store sears-store-'+ii);
 
-			// Create and store store name as header/link
-			storeNameHeader = document.createElement('h1');
-			storeNameLink = document.createElement('a');
-			storeNameLink.setAttribute('href',store.pageUrl);
-			storeNameLink.setAttribute('class', 'sears-store-type');
-			storeNameLink.innerHTML = store.name;
-			storeNameHeader.appendChild(storeNameLink);
+					// Create and store store name as header/link
+					storeNameHeader = document.createElement('h1');
+					storeNameLink = document.createElement('a');
+					storeNameLink.setAttribute('href',store.pageUrl);
+					storeNameLink.setAttribute('class', 'sears-store-type');
+					storeNameLink.innerHTML = store.name;
+					storeNameHeader.appendChild(storeNameLink);
 
-			newDiv.appendChild(storeNameHeader);
+					newDiv.appendChild(storeNameHeader);
 
-			// Add address information
-			newDiv.appendChild(document.createElement("br"));
-			newDiv.appendChild(document.createTextNode(store.address));
-			newDiv.appendChild(document.createElement("br"));
-			newDiv.appendChild(document.createTextNode("\n" + store.city + ", " + store.state + " " + store.postalCode));
-			newDiv.appendChild(document.createElement('br'));
-			newDiv.appendChild(document.createTextNode("\n" + store.mainPhone));
-			newDiv.appendChild(document.createElement("br"));
-			newDiv.appendChild(document.createElement("br"));
-			newDiv.appendChild(document.createTextNode("\n" + store.distance + " miles away"));
-			newDiv.appendChild(document.createElement("br"));
-			
-			parentDiv.appendChild(newDiv);
-		}
-	}
-
-	function nearbyStoresError(jqXHR, textStatus, error) {
-		console.log("Something went wrong: ", error);
-	}
-
-	function geolocationSuccess( position ){
-		$.ajax({
-			url: "/searchJson/",
-			type: "GET",
-			data: "lat=" + position.coords.latitude + "&lng=" + position.coords.longitude
-		}).done(populateNearbyStores)
-		.fail(nearbyStoresError);
-	}
-
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(
-			geolocationSuccess,
-			nearbyStoresError,
-			{
-				timeout: (5 * 1000),
-				maximumAge: (1000 * 60 * 15),
-				enableHighAccuracy: true
+					// Add address information
+					newDiv.appendChild(document.createElement("br"));
+					newDiv.appendChild(document.createTextNode(store.address));
+					newDiv.appendChild(document.createElement("br"));
+					newDiv.appendChild(document.createTextNode("\n" + store.city + ", " + store.state + " " + store.postalCode));
+					newDiv.appendChild(document.createElement('br'));
+					newDiv.appendChild(document.createTextNode("\n" + store.mainPhone));
+					newDiv.appendChild(document.createElement("br"));
+					newDiv.appendChild(document.createElement("br"));
+					newDiv.appendChild(document.createTextNode("\n" + store.distance + " miles away"));
+					newDiv.appendChild(document.createElement("br"));
+					
+					parentDiv.appendChild(newDiv);
+				}
 			}
-		);
-	}
-</script>
+
+			function nearbyStoresError(jqXHR, textStatus, error) {
+				console.log("Something went wrong: ", error);
+			}
+
+			function geolocationSuccess( position ){
+				$.ajax({
+					url: "/searchJson/",
+					type: "GET",
+					data: "lat=" + position.coords.latitude + "&lng=" + position.coords.longitude
+				}).done(populateNearbyStores)
+				.fail(nearbyStoresError);
+			}
+
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(
+					geolocationSuccess,
+					nearbyStoresError,
+					{
+						timeout: (5 * 1000),
+						maximumAge: (1000 * 60 * 15),
+						enableHighAccuracy: true
+					}
+				);
+			}
+		</script>
 			</div>
 		</div>
   </body>

@@ -158,4 +158,78 @@
         wheelPropagation: false
       });
     }
+
+    /**
+     * @constructor for just the
+     * search page
+     */
+    var SeachPage = function() {
+      // Inherit Storepages
+      this.prototype = new StorePages();
+
+      this.findNearbyStores();
+    };
+    window.SearchPage = ResultsPage;
+
+    // Check to see if this browser supports geolocation.
+
+    SearchPage.prototype.findNearbyStores = function() {
+      function populateNearbyStores(nearbyStoreJson) {
+        parentDiv = document.getElementById("sears-nearby-content");
+        for (var ii=0; ii < nearbyStoreJson.length; ii++) {
+          store = nearbyStoreJson[ii];
+          newDiv = document.createElement('div');
+          newDiv.setAttribute('class', 'sears-store sears-store-'+ii);
+
+          // Create and store store name as header/link
+          storeNameHeader = document.createElement('h1');
+          storeNameLink = document.createElement('a');
+          storeNameLink.setAttribute('href',store.pageUrl);
+          storeNameLink.setAttribute('class', 'sears-store-type');
+          storeNameLink.innerHTML = store.name;
+          storeNameHeader.appendChild(storeNameLink);
+
+          newDiv.appendChild(storeNameHeader);
+
+          // Add address information
+          newDiv.appendChild(document.createElement("br"));
+          newDiv.appendChild(document.createTextNode(store.address));
+          newDiv.appendChild(document.createElement("br"));
+          newDiv.appendChild(document.createTextNode("\n" + store.city + ", " + store.state + " " + store.postalCode));
+          newDiv.appendChild(document.createElement('br'));
+          newDiv.appendChild(document.createTextNode("\n" + store.mainPhone));
+          newDiv.appendChild(document.createElement("br"));
+          newDiv.appendChild(document.createElement("br"));
+          newDiv.appendChild(document.createTextNode("\n" + store.distance + " miles away"));
+          newDiv.appendChild(document.createElement("br"));
+          
+          parentDiv.appendChild(newDiv);
+        }
+      }
+
+      function nearbyStoresError(jqXHR, textStatus, error) {
+        console.log("Something went wrong: ", error);
+      }
+
+      function geolocationSuccess( position ){
+        $.ajax({
+          url: "/searchJson/",
+          type: "GET",
+          data: "lat=" + position.coords.latitude + "&lng=" + position.coords.longitude
+        }).done(populateNearbyStores)
+        .fail(nearbyStoresError);
+      }
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          geolocationSuccess,
+          nearbyStoresError,
+          {
+            timeout: (5 * 1000),
+            maximumAge: (1000 * 60 * 15),
+            enableHighAccuracy: true
+          }
+        );
+      }
+    }
 })(window, document);
