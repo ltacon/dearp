@@ -122,51 +122,39 @@
 
 	function populateNearbyStores(nearbyStoreJson) {
 		parentDiv = document.getElementById("sears-nearby-content");
-		if (nearbyStoreJson.results.length == 0) {
-			console.log("No results returned");
-			parentDiv = document.getElementById("sears-nearby-content");
+		for (var ii=0; ii < nearbyStoreJson.results.length; ii++) {
+			store = nearbyStoreJson.results[ii];
 			newDiv = document.createElement('div');
-			newDiv.appendChild(document.createTextNode("No stores could be found nearby"));
+			newDiv.setAttribute('class', 'sears-store sears-store-'+ii);
+
+			// Create and store store name as header/link
+			storeNameHeader = document.createElement('h1');
+			storeNameLink = document.createElement('a');
+			storeNameLink.setAttribute('href',store.url);
+			storeNameLink.setAttribute('class', 'sears-store-type');
+			storeNameLink.innerHTML = store.name;
+			storeNameHeader.appendChild(storeNameLink);
+
+			newDiv.appendChild(storeNameHeader);
+
+			// Add address information
+			newDiv.appendChild(document.createElement("br"));
+			newDiv.appendChild(document.createTextNode(store.address));
+			newDiv.appendChild(document.createElement("br"));
+			newDiv.appendChild(document.createTextNode("\n" + store.city + ", " + store.state + " " + store.postalCode));
+			newDiv.appendChild(document.createElement('br'));
+			newDiv.appendChild(document.createTextNode("\n" + store.mainPhone));
+			newDiv.appendChild(document.createElement("br"));
+			newDiv.appendChild(document.createElement("br"));
+				newDiv.appendChild(document.createTextNode("\n" + store.distance + " miles away"));
+			newDiv.appendChild(document.createElement("br"));
+			
 			parentDiv.appendChild(newDiv);
-		} else {
-			for (var ii=0; ii < nearbyStoreJson.results.length; ii++) {
-				store = nearbyStoreJson.results[ii];
-				newDiv = document.createElement('div');
-				newDiv.setAttribute('class', 'sears-store sears-store-'+ii);
-
-				// Create and store store name as header/link
-				storeNameHeader = document.createElement('h1');
-				storeNameLink = document.createElement('a');
-				storeNameLink.setAttribute('href',store.url);
-				storeNameLink.setAttribute('class', 'sears-store-type');
-				storeNameLink.innerHTML = store.name;
-				storeNameHeader.appendChild(storeNameLink);
-
-				newDiv.appendChild(storeNameHeader);
-
-				// Add address information
-				newDiv.appendChild(document.createElement("br"));
-				newDiv.appendChild(document.createTextNode(store.address));
-				newDiv.appendChild(document.createElement("br"));
-				newDiv.appendChild(document.createTextNode("\n" + store.city + ", " + store.state + " " + store.postalCode));
-				newDiv.appendChild(document.createElement('br'));
-				newDiv.appendChild(document.createTextNode("\n" + store.mainPhone));
-				newDiv.appendChild(document.createElement("br"));
-				newDiv.appendChild(document.createElement("br"));
-					newDiv.appendChild(document.createTextNode("\n" + store.distance + " miles away"));
-				newDiv.appendChild(document.createElement("br"));
-				
-				parentDiv.appendChild(newDiv);
-			}
 		}
 	}
 
 	function nearbyStoresError(jqXHR, textStatus, error) {
 		console.log("Something went wrong: ", error);
-		parentDiv = document.getElementById("sears-nearby-content");
-		newDiv = document.createElement('div');
-		newDiv.appendChild(document.createTextNode("Your location could not be resolved"));
-		parentDiv.appendChild(newDiv);
 	}
 
 	function geolocationSuccess( position ){
