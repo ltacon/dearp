@@ -164,7 +164,7 @@
               <div id="result-dialog-${location_index}" style="display: none;">
                 <div  class="result">
                   <div class="location-header">
-                    <h2>Sears Home Appliance Showroom</h2>
+                      <h2>${location.name}</h2>
                   </div>
                   <div class="location cf">
                     <div class="location-address left">
@@ -172,39 +172,19 @@
                         ${location.address} ${location.address2}<br>
                         ${location.city}, ${location.state} ${location.postalCode}<br>
                         <span class="phone">${location.mainPhone}</span>
-                        <a href="">More Info</a> | <a href="">Directions</a>
+                        <a href="/${location.pageUrl}">More Info</a> | <a href="">Directions</a>
                       </p>
                     </div>
                     <div class="location-hours right">
                       <table class="location-hours-table">
+                        #{list location.hours, as:"hour"}
                         <tr>
-                          <td class="day">Monday</td> 
-                          <td class="hour">10:00am - 9:30pm</td>
+                          <td class="day">${hour.day}</td>
+                          #{list hour.intervals, as:"interval"}
+                            <td class="hour">${interval.start} - ${interval.end}</td>
+                          #{/list}
                         </tr>
-                        <tr>
-                          <td class="day">Tuesday</td> 
-                          <td class="hour">10:00am - 9:30pm</td>
-                        </tr>
-                        <tr>
-                          <td class="day">Wednesday</td> 
-                          <td class="hour">10:00am - 9:30pm</td>
-                        </tr>
-                        <tr>
-                          <td class="day">Thursday</td> 
-                          <td class="hour">10:00am - 9:30pm</td>
-                        </tr>
-                        <tr>
-                          <td class="day">Friday</td> 
-                          <td class="hour">10:00am - 9:30pm</td>
-                        </tr>
-                        <tr>
-                          <td class="day">Saturday</td> 
-                          <td class="hour">10:00am - 9:30pm</td>
-                        </tr>
-                        <tr>
-                          <td class="day">Sunday</td> 
-                          <td class="hour">10:00am - 9:30pm</td>
-                        </tr>
+                        #{/list}
                       </table>
                     </div>                
                   </div>
