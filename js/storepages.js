@@ -171,9 +171,36 @@
     };
     window.SearchPage = SearchPage;
 
-    // Check to see if this browser supports geolocation.
+    SearchPage.prototype.Slider = function() {
+      /* For search slider */
+      $('#search-content-body').bjqs({
+        animtype      : 'fade',
+        height        : 411,
+        width         : 980,
+        responsive    : true,
+        randomstart   : true,
+        showcontrols  : false,
+        showmarkers   : false
+      });
 
+      /* For search link */
+      function displayVals() {
+        var location = $(".zip-city-state").val();
+        $(".search-link").attr("href", "search/?query=" + location);
+               
+      }
+   
+      $("input.zip-city-state").change(displayVals);
+      displayVals();
+    };
+
+    /**
+    * Finds user location
+    * and populates search page
+    * with closest store locations
+    */ 
     SearchPage.prototype.findNearbyStores = function() {
+      // Check to see if this browser supports geolocation.
       function populateNearbyStores(nearbyStoreJson) {
         parentDiv = document.getElementById("sears-nearby-content");
         for (var ii=0; ii < nearbyStoreJson.length; ii++) {
