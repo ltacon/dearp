@@ -211,7 +211,7 @@
         console.log("Something went wrong: ", error);
       }
 
-      function geolocationSuccess( position ){
+      function geolocationSuccess(position){
         $.ajax({
           url: "/searchJson/",
           type: "GET",
