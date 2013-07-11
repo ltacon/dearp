@@ -122,9 +122,8 @@
 
 	function populateNearbyStores(nearbyStoreJson) {
 		parentDiv = document.getElementById("sears-nearby-content");
-		console.log(nearbyStoreJson);
-		for (var ii=0; ii < nearbyStoreJson.resultsArray.length; ii++) {
-			store = nearbyStoreJson.resultsArray[ii];
+		for (var ii=0; ii < nearbyStoreJson.length; ii++) {
+			store = nearbyStoreJson[ii];
 			newDiv = document.createElement('div');
 			newDiv.setAttribute('class', 'sears-store sears-store-'+ii);
 
