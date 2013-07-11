@@ -151,7 +151,7 @@
                     </p>
                   </div>
                   <div class="location-info right">
-                    <a href="javascript:myclick(0)">Show in Map</a><br>
+                    <a href="javascript:myclick(${location_index} - 1)">Show in Map</a><br>
                     <a href="/${location.pageUrl}">More Info</a>
                   </div>
                 </div>
@@ -205,41 +205,15 @@
               var id = "#result-dialog-" + storeNumber;
               var resultDialog = $(id).html();
               return resultDialog;
-            }   
+            }
+            #{list locations}
             var myMarker = {
-              point : new google.maps.LatLng(41.2197356,-73.71625540000002),
-              storeName : getName("1"),
-              storeInfo : getDialog("1")
+              point : new google.maps.LatLng(${_.latLng?.latitude}, ${_.latLng?.longitude}),
+              storeName : getName("{_index}"),
+              storeInfo : getDialog("_index")
             }
             markers.push(myMarker);
-
-            var myMarker = {
-              point : new google.maps.LatLng(41.1091065,-73.547011),
-              storeName : getName("2"),
-              storeInfo : getDialog("2")
-            }
-            markers.push(myMarker);
-
-            var myMarker = {
-              point : new google.maps.LatLng(41.031576,-73.76887799999997),
-              storeName : getName("3"),
-              storeInfo : getDialog("3")
-            }
-            markers.push(myMarker);
-
-            var myMarker = {
-              point : new google.maps.LatLng(41.031576,-73.76887799999997),
-              storeName : getName("4"),
-              storeInfo : getDialog("4")
-            }
-            markers.push(myMarker);
-
-            var myMarker = {
-              point : new google.maps.LatLng(41.3256673,-73.8056128),
-              storeName : getName("5"),
-              storeInfo : getDialog("5")
-            }
-            markers.push(myMarker);
+            #{/list}
 
           </script>
           <div id="results-map"></div> 
