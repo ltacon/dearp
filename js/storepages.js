@@ -15,6 +15,7 @@
     var StorePages = function() {
       this.phoneNumberFormat();
       this.timeFormat();
+      this.goLink();
     }
     window.StorePages = StorePages;
 
@@ -27,6 +28,18 @@
         text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
         return text;
       });  
+    }
+
+    StorePages.prototype.goLink = function() {
+      /* For search link */
+      function displayVals() {
+        var location = $(".zip-city-state").val();
+        $(".search-link").attr("href", "search/?query=" + location);
+               
+      }
+   
+      $("input.zip-city-state").change(displayVals);
+      displayVals();
     }
 
     /**
@@ -234,16 +247,6 @@
         showcontrols  : false,
         showmarkers   : false
       });
-
-      /* For search link */
-      function displayVals() {
-        var location = $(".zip-city-state").val();
-        $(".search-link").attr("href", "search/?query=" + location);
-               
-      }
-   
-      $("input.zip-city-state").change(displayVals);
-      displayVals();
     };
 
     /**
