@@ -14,11 +14,13 @@
 		<meta charset="utf-8" />
 		  <meta name="description" content="" />
 			<title>Sears | Search</title>
-			<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+			<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		  <script src="js/bjqs-1.3.min.js"></script>
 		  <link rel="stylesheet" href="/css/storepages.css" type="text/css">
+		  <link rel="stylesheet" type="text/css" href="/css/tango/skin.css" />
 		  <link rel="icon" type="image/png" href="/images/sears-favicon.png">
 		  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		  <script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
 		  <script type="text/javascript" src="/js/storepages.js"></script>
 	</head>
   <body id="search-page" class="store-pg store-search-page">
@@ -85,8 +87,8 @@
 						</div>
 					</div>
 					<div class="sears-nearby">
-						<div id="sears-nearby-content" class="sears-nearby-content">
-							<h2 class="sears-nearby-title">Sears near your current location</h2>
+						<h2 class="sears-nearby-title">Sears near your current location</h2>
+						<div id="sears-nearby-content" class="sears-nearby-content jcarousel-skin-tango cf">
 						</div>
 					</div>
 					<div id="location"></div>

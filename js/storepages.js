@@ -79,7 +79,6 @@
     };
     window.LocationPage = LocationPage;
 
-    LocationPage.prototype.descriptionLength = 450; 
 
     /**
      * Shortens text based off 
@@ -87,7 +86,7 @@
      * to show more text
      */
     LocationPage.prototype.shortenText = function() {
-      $(".location-description").shorten({ showChars: this.descriptionLength });
+      $(".location-description").shorten({ showChars: 450 });
     };
 
     /**
@@ -143,7 +142,7 @@
         var myLatlng = new google.maps.LatLng(41.2197356,-73.71625540000002);
 
         var myOptions = {
-          zoom: 9,
+          zoom: 12,
           center: myLatlng,
           mapTypeControl: true,
           mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
@@ -206,11 +205,25 @@
       this.prototype = new StorePages();
 
       this.findNearbyStores();
-      this.Slider();
+      this.backgroundSlider();
+      this.resultSlider();
     };
     window.SearchPage = SearchPage;
 
-    SearchPage.prototype.Slider = function() {
+    /**
+     * This is for the search page
+     * closest store location results
+     * slider
+     */
+     SearchPage.prototype.resultSlider = function() {
+      jQuery('#sears-nearby-content').jcarousel();
+     }
+
+    /** 
+     * This is for the search page
+     * background photo slider
+     */
+    SearchPage.prototype.backgroundSlider = function() {
       /* For search slider */
       $('#search-content-body').bjqs({
         animtype      : 'fade',
@@ -264,7 +277,7 @@
           newDiv.appendChild(document.createElement('br'));
           phoneNumber = document.createElement('span');
           phoneNumber.setAttribute('class', 'phone');
-          
+
           var numberFormat = function(number) {
             return number.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
           }
