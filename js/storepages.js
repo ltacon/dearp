@@ -143,7 +143,7 @@
       function initialize() {
 
         var myOptions = {
-          zoom: 12,
+          zoom: 10,
           center: myLatlng,
           mapTypeControl: true,
           mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
