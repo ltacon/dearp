@@ -21,7 +21,7 @@
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBzY9j4mYywVqpPXm9AdmWgMwgg3G5rTHY&sensor=false"></script> 
     <script type="text/javascript" src="/js/storepages.js"></script>
   </head> 
-  <body id="location-page" class="store-pg store-results-page" onload="initialize()"> 
+  <body id="location-page" class="store-pg store-results-page"> 
     <div class="top-head">
       <img src="/images/sears-top-head.png" >
     </div>
@@ -87,12 +87,11 @@
                     <p>
                       ${location.address} ${location.address2}<br>
                       ${location.city}, ${location.state} ${location.postalCode}<br>
-                      <span class="phone">${location.mainPhone}</span><br><br>
-		      ${location.distance} miles away
+                      <span class="phone">${location.mainPhone}</span>
                     </p>
                   </a>
                   <div class="location-info right">
-                    <a class="js-show-location" data-location-id="${location_index - 1}">Show in Map</a><br>
+                    <a class="js-show-location" data-location-id="${location_index -1}">Show in Map</a><br>
                     <a href="/${location.pageUrl}">More Info</a>
                   </div>
                 </div>
@@ -148,25 +147,33 @@
       </div>
     </div>
     <script>
-    $(function()
-        var markers = [
-        #{list locations}
-          {
-            point : new google.maps.LatLng(${_.latLng?.latitude}, ${_.latLng?.longitude}),
-            storeName : getName("${_index}"),
-            storeInfo : getDialog("${_index}")
-          }#{if _isLast}#{/if}#{else},#{/else}
-        #{/list} 
-        ];
+      $(function() {
+          var getName = function(storeNumber){
+            return $('#result-' + storeNumber + ' h1').html();
+          };
 
-        #{list locations}
-          #{if _isFirst}
-          var latitude = ${_.latLng?.latitude},
-              longitude = ${_.latLng?.longitude};
-          #{/if}
-        #{/list} 
-          
-        var resultsPage = new ResultsPage(latitude, longitude, markers);
+          var getDialog = function(storeNumber){
+            return $('#result-dialog-' + storeNumber).html();
+          };  
+
+          var markers = [
+          #{list locations}
+            {
+              point : new google.maps.LatLng(${_.latLng?.latitude}, ${_.latLng?.longitude}),
+              storeName : getName("${_index}"),
+              storeInfo : getDialog("${_index}")
+            }#{if _isLast}#{/if}#{else},#{/else}
+          #{/list}
+          ];
+
+          #{list locations}
+            #{if _isFirst}
+            var latitude = ${_.latLng?.latitude},
+                longitude = ${_.latLng?.longitude};
+            #{/if}
+          #{/list}
+              
+          var resultsPage = new ResultsPage(latitude, longitude, markers);
       });
     </script>
   </body>
