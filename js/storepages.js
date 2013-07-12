@@ -176,6 +176,7 @@
         google.maps.event.addListener(newMarker, 'click', function() {
           infowindow.setContent(contentString); 
           infowindow.open(map, newMarker);
+          console.log('hey');
         });
         
         self.gmarkers.push(newMarker);
