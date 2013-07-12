@@ -280,16 +280,18 @@ a img {
   text-decoration: none;
 }
 /* line 218, ../sass/storepages.scss */
-#page-content .location-hours-table  {
-text-transform: lowercase;
-}
 #page-content .location-hours-table .day {
   font-weight: bold;
   padding-right: 10px;
 }
-#page-content .location-hours-table .hour {
-text-transform: capitalize;
+#page-content .location-hours-table  {
+  text-transform: lowercase;
 }
+#page-content .location-hours-table .day:first-letter  {
+  text-transform: uppercase;
+
+}
+
 
 /* line 226, ../sass/storepages.scss */
 .store-search-page h2 {
