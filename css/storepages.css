@@ -679,6 +679,7 @@ a img {
   font-size: 12px;
   line-height: 16px;
   border: 1px solid #ddd;
+  min-height: 58px;
 }
 /* line 575, ../sass/storepages.scss */
 .store-location-page .location-featured-msg .circle {
