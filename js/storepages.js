@@ -117,12 +117,13 @@
      * @constructor for just the
      * results page
      */
-    var ResultsPage = function(latitude, longitude, markers) {
+    //var ResultsPage = function(latitude, longitude, markers) {
+      var ResultsPage = function() {
       // Inherit Storepages
       this.prototype = new StorePages();
 
-      this.markers = markers || []; 
-      this.initializeMap(latitude, longitude);
+      //this.markers = markers || []; 
+      //this.initializeMap(latitude, longitude);
       this.Scrollbar();
     };
     window.ResultsPage = ResultsPage;
@@ -137,8 +138,6 @@
     ResultsPage.prototype.initializeMap = function(latitude, longitude) {
       var map,
           self = this;
-
-      
 
       function initialize() {
         var myLatlng = new google.maps.LatLng(latitude, longitude);

@@ -146,6 +146,68 @@
       </div>
     </div>
     <script>
+      var gmarkers = []; 
+      var map = null;
+      var markers = [];
+
+      function initialize() {
+        var myOptions = {
+          zoom: 9,
+          center: new google.maps.LatLng(41.1091065,-73.547011),
+          mapTypeControl: true,
+          mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+          navigationControl: true,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        map = new google.maps.Map(document.getElementById("results-map"), myOptions);
+       
+        google.maps.event.addListener(map, 'click', function() {
+              infowindow.close();
+        });
+
+        for (i=0; i<markers.length; i++) {
+          createMarker(markers[i].point, markers[i].storeName, markers[i].storeInfo)
+        }
+
+      }
+     
+      var infowindow = new google.maps.InfoWindow({ 
+        size: new google.maps.Size(150,50)
+      });
+        
+      function myclick(i) {
+        google.maps.event.trigger(gmarkers[i], "click");
+      }
+
+      function createMarker(latlng, name, html) {
+        var contentString = html;
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            zIndex: Math.round(latlng.lat()*-100000)<<5
+            });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.setContent(contentString); 
+            infowindow.open(map,marker);
+            });
+
+        gmarkers.push(marker);
+
+      }
+
+      $(document).ready(function ($) {
+        $('.results-sidebar-content').perfectScrollbar({
+          wheelSpeed: 20,
+          wheelPropagation: false
+        });
+      });
+
+      function openDropdown(dropDown, size) {
+        var dropDownObject = document.getElementById(dropDown);
+        dropDownObject.size = size;
+      }
+
       $(function() {
           var getName = function(storeNumber){
             return $('#result-' + storeNumber + ' h1').html();
@@ -155,24 +217,34 @@
             return $('#result-dialog-' + storeNumber).html();
           };  
 
-          var markers = [
           #{list locations}
+          var myMarker = {
+            point : new google.maps.LatLng({_.latLng?.latitude}, ${_.latLng?.longitude}),
+            storeName : getName("${_index}"),
+            storeInfo : getDialog("${_index}")
+          }
+          markers.push(myMarker);
+          #{/list}  
+
+          /*
+          var markers = [
+          
             {
               point : new google.maps.LatLng(${_.latLng?.latitude}, ${_.latLng?.longitude}),
               storeName : getName("${_index}"),
               storeInfo : getDialog("${_index}")
             }#{if _isLast}#{/if}#{else},#{/else}
-          #{/list}
+          
           ];
 
           #{list locations}
             #{if _isFirst}
-            var latitude = ${_.latLng?.latitude},
+            /*var latitude = ${_.latLng?.latitude},
                 longitude = ${_.latLng?.longitude};
             #{/if}
-          #{/list}
-              
-          var resultsPage = new ResultsPage(latitude, longitude, markers);
+          #{/list} 
+              */
+          var resultsPage = new ResultsPage();
       });
     </script>
   </body>
