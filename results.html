@@ -148,6 +148,12 @@
       </div>
     </div>
     <script>
+      #{list locations}
+        #{if _isFirst}
+        var latitude = ${_.latLng?.latitude},
+            longitude = ${_.latLng?.longitude};
+        #{/if}
+      #{/list} 
       var gmarkers = []; 
       var map = null;
       var markers = [];
@@ -155,7 +161,7 @@
       function initialize() {
         var myOptions = {
           zoom: 11,
-          center: new google.maps.LatLng(41.1091065,-73.547011),
+          center: new google.maps.LatLng(latitude, longitude),
           mapTypeControl: true,
           mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
           navigationControl: true,
