@@ -92,7 +92,7 @@
                     </p>
                   </a>
                   <div class="location-info right">
-                    <a href="javascript:myclick(${location_index - 1})">Show in Map</a><br>
+                    <a class="js-show-location" data-location-id="${location_index - 1}">Show in Map</a><br>
                     <a href="/${location.pageUrl}">More Info</a>
                   </div>
                 </div>
@@ -148,111 +148,25 @@
       </div>
     </div>
     <script>
-      #{list locations}
-        #{if _isFirst}
-        var latitude = ${_.latLng?.latitude},
-            longitude = ${_.latLng?.longitude};
-        #{/if}
-      #{/list} 
-      var gmarkers = []; 
-      var map = null;
-      var markers = [];
-
-      function initialize() {
-        var myOptions = {
-          zoom: 11,
-          center: new google.maps.LatLng(latitude, longitude),
-          mapTypeControl: true,
-          mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
-          navigationControl: true,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        map = new google.maps.Map(document.getElementById("results-map"), myOptions);
-       
-        google.maps.event.addListener(map, 'click', function() {
-              infowindow.close();
-        });
-
-        for (i=0; i<markers.length; i++) {
-          createMarker(markers[i].point, markers[i].storeName, markers[i].storeInfo)
-        }
-
-      }
-     
-      var infowindow = new google.maps.InfoWindow({ 
-        size: new google.maps.Size(150,50)
-      });
-        
-      function myclick(i) {
-        google.maps.event.trigger(gmarkers[i], "click");
-      }
-
-      function createMarker(latlng, name, html) {
-        var contentString = html;
-        var marker = new google.maps.Marker({
-            position: latlng,
-            map: map,
-            zIndex: Math.round(latlng.lat()*-100000)<<5
-            });
-
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent(contentString); 
-            infowindow.open(map,marker);
-            });
-
-        gmarkers.push(marker);
-
-      }
-
-      $(document).ready(function ($) {
-        $('.results-sidebar-content').perfectScrollbar({
-          wheelSpeed: 20,
-          wheelPropagation: false
-        });
-      });
-
-      function openDropdown(dropDown, size) {
-        var dropDownObject = document.getElementById(dropDown);
-        dropDownObject.size = size;
-      }
-
-      $(function() {
-          var getName = function(storeNumber){
-            return $('#result-' + storeNumber + ' h1').html();
-          };
-
-          var getDialog = function(storeNumber){
-            return $('#result-dialog-' + storeNumber).html();
-          };  
-
-          #{list locations}
-          var myMarker = {
+    $(function()
+        var markers = [
+        #{list locations}
+          {
             point : new google.maps.LatLng(${_.latLng?.latitude}, ${_.latLng?.longitude}),
             storeName : getName("${_index}"),
             storeInfo : getDialog("${_index}")
-          }
-          markers.push(myMarker);
-          #{/list}  
+          }#{if _isLast}#{/if}#{else},#{/else}
+        #{/list} 
+        ];
 
-          /*
-          var markers = [
+        #{list locations}
+          #{if _isFirst}
+          var latitude = ${_.latLng?.latitude},
+              longitude = ${_.latLng?.longitude};
+          #{/if}
+        #{/list} 
           
-            {
-              point : new google.maps.LatLng(${_.latLng?.latitude}, ${_.latLng?.longitude}),
-              storeName : getName("${_index}"),
-              storeInfo : getDialog("${_index}")
-            }#{if _isLast}#{/if}#{else},#{/else}
-          
-          ];
-
-          #{list locations}
-            #{if _isFirst}
-            /*var latitude = ${_.latLng?.latitude},
-                longitude = ${_.latLng?.longitude};
-            #{/if}
-          #{/list} 
-              */
-          var resultsPage = new ResultsPage();
+        var resultsPage = new ResultsPage(latitude, longitude, markers);
       });
     </script>
   </body>

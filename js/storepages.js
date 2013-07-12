@@ -15,7 +15,6 @@
     var StorePages = function() {
       this.phoneNumberFormat();
       this.timeFormat();
-      this.goLink();
     }
     window.StorePages = StorePages;
 
@@ -28,18 +27,6 @@
         text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
         return text;
       });  
-    }
-
-    StorePages.prototype.goLink = function() {
-      /* For search link */
-      function displayVals() {
-        var location = $(".zip-city-state").val();
-        $(".search-link").attr("href", "search/?query=" + location);
-               
-      }
-   
-      $("input.zip-city-state").change(displayVals);
-      displayVals();
     }
 
     /**
@@ -130,14 +117,15 @@
      * @constructor for just the
      * results page
      */
-    //var ResultsPage = function(latitude, longitude, markers) {
-      var ResultsPage = function() {
+    var ResultsPage = function(latitude, longitude, markers) {
       // Inherit Storepages
       this.prototype = new StorePages();
 
-      //this.markers = markers || []; 
-      //this.initializeMap(latitude, longitude);
+      this.markers = markers || []; 
+      this.gmarkers = [];
+      this.initializeMap(latitude, longitude);
       this.Scrollbar();
+      this.bindLocationSelection();
     };
     window.ResultsPage = ResultsPage;
 
@@ -148,7 +136,7 @@
     * latitude and longitude for 
     * the center point
     */
-    ResultsPage.prototype.initializeMap = function(latitude, longitude) {
+    ResultsPage.prototype.initializeMap = function(latitude, longitude, markers) {
       var map,
           self = this;
 
@@ -177,25 +165,35 @@
         size: new google.maps.Size(150,50)
       });
         
-      function myClick(i) {
-        google.maps.event.trigger(this.markers[i], "click");
-      }
-
       function createMarker(latlng, name, html) {
         var contentString = html;
-        var marker = new google.maps.Marker({
+        var newMarker = new google.maps.Marker({
           position: latlng,
           map: map,
           zIndex: Math.round(latlng.lat()*-100000)<<5
         });
 
-        google.maps.event.addListener(marker, 'click', function() {
+        google.maps.event.addListener(newMarker, 'click', function() {
           infowindow.setContent(contentString); 
-          infowindow.open(map, marker);
+          infowindow.open(map, newMarker);
         });
+        
+        self.gmarkers.push(newMarker);
       }
 
       initialize();
+    };
+
+    ResultsPage.prototype.showMarkerInfo = function(locationIndex) {
+      google.maps.event.trigger(this.gmarkers[locationIndex], "click");
+    };
+
+    ResultsPage.prototype.bindLocationSelection = function() {
+      var self = this;
+
+      $('.js-show-location').click(function() {
+        self.showMarkerInfo($(this).data('location-id'));
+      });
     };
 
     /**
@@ -247,6 +245,16 @@
         showcontrols  : false,
         showmarkers   : false
       });
+
+      /* For search link */
+      function displayVals() {
+        var location = $(".zip-city-state").val();
+        $(".search-link").attr("href", "search/?query=" + location);
+               
+      }
+   
+      $("input.zip-city-state").change(displayVals);
+      displayVals();
     };
 
     /**
@@ -257,7 +265,7 @@
     SearchPage.prototype.findNearbyStores = function() {
       function populateNearbyStores(nearbyStoreJson) {
         parentDiv = document.getElementById("sears-nearby-content");
-        for (var ii=0; ii < nearbyStoreJson.length && ii <= 5; ii++) {
+        for (var ii=0; ii < nearbyStoreJson.length; ii++) {
           store = nearbyStoreJson[ii];
           newDiv = document.createElement('div');
           newDiv.setAttribute('class', 'sears-store sears-store-'+ii);
