@@ -170,7 +170,12 @@
           #{/list}
           ];
 
-          var resultsPage = new ResultsPage(markers);
+          #{if _isFirst}
+          var latitude = ${_.latLng?.latitude},
+              longitude = ${_.latLng?.longitude};
+          #{/if}
+              
+          var resultsPage = new ResultsPage(markers, latitude, longitude);
       });
     </script>
   </body>

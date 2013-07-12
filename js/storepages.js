@@ -117,7 +117,7 @@
      * @constructor for just the
      * results page
      */
-    var ResultsPage = function(markers) {
+    var ResultsPage = function(markers, latitude, longitude) {
       // Inherit Storepages
       this.prototype = new StorePages();
 
@@ -137,8 +137,7 @@
     ResultsPage.prototype.initializeMap = function() {
       var map,
           self = this;
-      console.log(this.markers[1]);
-      console.log(markers[1]);
+
       var myLatlng = new google.maps.LatLng(this.markers[1], this.markers[1]);
 
       function initialize() {
