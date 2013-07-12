@@ -117,12 +117,12 @@
      * @constructor for just the
      * results page
      */
-    var ResultsPage = function(markers, latitude, longitude) {
+    var ResultsPage = function(latitude, longitude, markers) {
       // Inherit Storepages
       this.prototype = new StorePages();
 
       this.markers = markers || []; 
-      this.initializeMap();
+      this.initializeMap(latitude, longitude);
       this.Scrollbar();
     };
     window.ResultsPage = ResultsPage;
@@ -134,16 +134,16 @@
     * latitude and longitude for 
     * the center point
     */
-    ResultsPage.prototype.initializeMap = function() {
+    ResultsPage.prototype.initializeMap = function(latitude, longitude) {
       var map,
           self = this;
 
-      var myLatlng = new google.maps.LatLng(this.markers[1], this.markers[1]);
+      
 
       function initialize() {
-
+        var myLatlng = new google.maps.LatLng(latitude, longitude);
         var myOptions = {
-          zoom: 10,
+          zoom: 11,
           center: myLatlng,
           mapTypeControl: true,
           mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
