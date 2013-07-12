@@ -254,7 +254,7 @@
     SearchPage.prototype.findNearbyStores = function() {
       function populateNearbyStores(nearbyStoreJson) {
         parentDiv = document.getElementById("sears-nearby-content");
-        for (var ii=0; ii < nearbyStoreJson.length && i <= 5; ii++) {
+        for (var ii=0; ii < nearbyStoreJson.length && ii <= 5; ii++) {
           store = nearbyStoreJson[ii];
           newDiv = document.createElement('div');
           newDiv.setAttribute('class', 'sears-store sears-store-'+ii);
