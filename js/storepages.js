@@ -137,7 +137,8 @@
     ResultsPage.prototype.initializeMap = function() {
       var map,
           self = this;
-      
+      console.log(this.markers[1]);
+      console.log(markers[1]);
       var myLatlng = new google.maps.LatLng(this.markers[1], this.markers[1]);
 
       function initialize() {
