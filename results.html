@@ -170,10 +170,12 @@
           #{/list}
           ];
 
-          #{if _isFirst}
-          var latitude = ${_.latLng?.latitude},
-              longitude = ${_.latLng?.longitude};
-          #{/if}
+          #{list locations}
+            #{if _isFirst}
+            var latitude = ${_.latLng?.latitude},
+                longitude = ${_.latLng?.longitude};
+            #{/if}
+          #{/list}
               
           var resultsPage = new ResultsPage(markers, latitude, longitude);
       });
