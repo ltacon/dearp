@@ -73,6 +73,7 @@
     var LocationPage = function(latitude, longitude) {
       this.shortenText();
       this.locationMap(latitude, longitude);
+      this.__proto__ = new StorePages();
     };
     window.LocationPage = LocationPage;
 
