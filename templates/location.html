@@ -118,12 +118,14 @@
                 </table>
               </div> 
               <div class="location-services right">
-                <h3>Products</h3>
-                <ul class="location-services-list">
-                  #{list services}
-                    <li>${_}</li>
-                  #{/list}
-                </ul>
+                #{if services}
+                  <h3>Products</h3>
+                  <ul class="location-services-list">
+                    #{list services}
+                      <li>${_}</li>
+                    #{/list}
+                  </ul>
+                #{/if}
               </div>       
             </div>
           </div>
