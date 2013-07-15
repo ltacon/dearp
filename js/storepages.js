@@ -56,7 +56,8 @@
     }
 
     /**
-    * Changes search link 
+    * Changes search link and zipcode
+    * in # stores near "zip code"
     * based off the value entered 
     * in the input box
     */
@@ -64,7 +65,9 @@
       function displayVals() {
         var location = $(".zip-city-state").val();
         $(".search-link").attr("href", "search/?query=" + location);   
-        $(".search-zip-code").html(location);
+
+        var zipcode = window.location.href.substring(window.location.href.lastIndexOf('=') + 1);
+        $(".search-zip-code").html(zipcode);
       }
    
       $("input.zip-city-state").change(displayVals);
@@ -262,7 +265,6 @@
     var SearchPage = function() {
       this.findNearbyStores();
       this.backgroundSlider();
-      this.resultSlider();
     };
     window.SearchPage = SearchPage;
 
