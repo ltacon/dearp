@@ -357,18 +357,18 @@ a img {
 }
 /* line 271, ../sass/storepages.scss */
 .store-search-page .sears-nearby .sears-nearby-content {
-  width: 980px;
+  width: 925px;
   margin: 0 auto;
 }
 /* line 276, ../sass/storepages.scss */
 .store-search-page .sears-nearby h2 {
-  width: 900px;
+  width: 980px;
   margin: 0 auto 20px;
 }
 /* line 281, ../sass/storepages.scss */
 .store-search-page .sears-nearby .sears-store {
   float: left;
-  padding-left: 35px;
+  padding: 0 25px;
 }
 /* line 285, ../sass/storepages.scss */
 .store-search-page .sears-nearby .sears-store h1 {
