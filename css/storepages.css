@@ -467,8 +467,8 @@ a img {
 .store-results-page .results-sidebar .location a {
   color: #000;
 }
-.store-results-page .results-sidebar .location a {
-  color: #000;
+.store-results-page .results-sidebar .location a:hover {
+  text-decoration: none;
 }
 
 .store-results-page .results-sidebar .location .right a:hover {
