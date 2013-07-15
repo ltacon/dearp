@@ -24,7 +24,7 @@
     */
     StorePages.prototype.phoneNumberFormat = function() {
       $(".phone").text(function(i, text) {
-        text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
+        text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2-$3");
         return text;
       });  
     }
