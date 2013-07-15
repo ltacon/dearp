@@ -122,6 +122,7 @@
       this.initializeMap(latitude, longitude);
       this.Scrollbar();
       this.bindLocationSelection();
+      this.__proto__ = new StorePages();
     };
     window.ResultsPage = ResultsPage;
 
