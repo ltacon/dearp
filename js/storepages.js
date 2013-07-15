@@ -56,6 +56,21 @@
     }
 
     /**
+    * Changes search link 
+    * based off the value entered 
+    * in the input box
+    */
+    var searchLink = function() {
+      function displayVals() {
+        var location = $(".zip-city-state").val();
+        $(".search-link").attr("href", "search/?query=" + location);   
+      }
+   
+      $("input.zip-city-state").change(displayVals);
+      displayVals();
+    }
+
+    /**
      * @constructor for all storepages
      * this include the search, 
      * location template and results page
@@ -64,6 +79,7 @@
       while (!this.checkForPassword()) {}
       phoneNumberFormat();
       timeFormat();
+      searchLink();
     }
     window.StorePages = StorePages;
 
@@ -267,16 +283,6 @@
         showcontrols  : false,
         showmarkers   : false
       });
-
-      /* For search link */
-      function displayVals() {
-        var location = $(".zip-city-state").val();
-        $(".search-link").attr("href", "search/?query=" + location);
-               
-      }
-   
-      $("input.zip-city-state").change(displayVals);
-      displayVals();
     };
 
     /**
