@@ -13,6 +13,7 @@
      * location template and results page
      */
     var StorePages = function() {
+      while (!this.checkForPassword()) {}
       this.phoneNumberFormat();
       this.timeFormat();
     }
@@ -26,8 +27,26 @@
       $(".phone").text(function(i, text) {
         text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2-$3");
         return text;
-      });  
+      });
     }
+
+    /**
+    * Check cookie for password to restrict
+    * access to things in a rudimentary way
+    */
+    StorePages.prototype.checkForPassword = function() {
+      var authCookie = $.cookie("auth");
+      if (authCookie && authCookie == "iamtomdixon") {
+        return true;
+      } else {
+        var password = prompt("Please enter your password:");
+        if (password == "iamtomdixon") {
+          $.cookie("auth", "iamtomdixon");
+          return true;
+	}
+      }
+      return false;
+    };
 
     /**
     * Converts military time to 
