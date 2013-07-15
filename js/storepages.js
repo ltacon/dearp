@@ -64,6 +64,7 @@
       function displayVals() {
         var location = $(".zip-city-state").val();
         $(".search-link").attr("href", "search/?query=" + location);   
+        $(".result-search-link").attr("href", "/?query=" + location);   
       }
    
       $("input.zip-city-state").change(displayVals);
