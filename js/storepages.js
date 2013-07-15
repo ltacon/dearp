@@ -252,15 +252,6 @@
     // Inherit Storepages
     SearchPage.prototype = new StorePages();
 
-    /**
-     * This is for the search page
-     * closest store location results
-     * slider
-     */
-     SearchPage.prototype.resultSlider = function() {
-      jQuery('#sears-nearby-content').jcarousel();
-     }
-
     /** 
      * This is for the search page
      * background photo slider
