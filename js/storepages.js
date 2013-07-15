@@ -199,10 +199,24 @@
 
     /**
     * Creates a scrollbar for
-    * the results page
+    * the results page and sets
+    * a height for the sidebar
+    * based off browser height
     */
     ResultsPage.prototype.Scrollbar = function() {
-      $('.results-sidebar-content').perfectScrollbar({
+      var height = $(window).height(),
+          height = height - 260;
+      $(".results-sidebar-content").css("height", height);
+
+      $(window).resize(function() {
+        var newHeight = $(window).height(),
+            newHeight = newHeight - 260;
+        $(".results-sidebar-content").css("height", newHeight);
+        $(".results-sidebar-content").perfectScrollbar("update");
+        console.log(newHeight);
+      });
+
+      $(".results-sidebar-content").perfectScrollbar({
         wheelSpeed: 20,
         wheelPropagation: false
       });
