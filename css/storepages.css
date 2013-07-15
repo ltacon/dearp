@@ -738,8 +738,8 @@ a img {
   -webkit-transform: rotate(-28deg);
   text-align: center;
 }
-/* line 627, ../sass/storepages.scss */
-.store-location-page .location-featured-msg .circle .msg {
+/* line 628, ../sass/storepages.scss */
+.store-location-page .location-featured-msg .msg {
   padding-left: 86px;
 }
 
@@ -973,3 +973,11 @@ p.bjqs-caption {
   border: 1px solid #fff;
   -moz-box-shadow: 1px 1px 3px #555;
   -webkit-box-shadow: 1px 1px 3px #555;
+  -box-shadow: 1px 1px 3px #555;
+  outline: none;
+  cursor: pointer;
+}
+/* line 826, ../sass/storepages.scss */
+.filter-wrapper .filter-search:hover {
+  background-color: #fff;
+}
