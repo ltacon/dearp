@@ -6,55 +6,14 @@
  * @author Jamie Arkin (jarkin@yext.com)
  */
 
-(function(window, document, undefined) {
-    /**
-     * @constructor for all storepages
-     * this include the search, 
-     * location template and results page
-     */
-    var StorePages = function() {
-      while (!this.checkForPassword()) {}
-      this.phoneNumberFormat();
-      this.timeFormat();
-    }
-    window.StorePages = StorePages;
-
-    /**
-    * Formats the phone number
-    * to (888) 888 - 8888
-    */
-    StorePages.prototype.phoneNumberFormat = function() {
-      $(".phone").text(function(i, text) {
-        text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2-$3");
-        return text;
-      });
-    }
-
-    /**
-    * Check cookie for password to restrict
-    * access to things in a rudimentary way
-    */
-    StorePages.prototype.checkForPassword = function() {
-      var authCookie = $.cookie("auth");
-      if (authCookie && authCookie == "iamtomdixon") {
-        return true;
-      } else {
-        var password = prompt("Please enter your password:");
-        if (password == "iamtomdixon") {
-          $.cookie("auth", "iamtomdixon");
-          return true;
-	}
-      }
-      return false;
-    };
-
+(function(window, document, undefined) {    
     /**
     * Converts military time to 
     * a standard time format - 
     * the class "time" is found in 
     * file and replaced
     */
-    StorePages.prototype.timeFormat = function() { 
+    var timeFormat = function() { 
       //The actual function that converts military time
       //to standard tme 
       var militaryToStandard = function(time) {
@@ -83,6 +42,47 @@
         militaryTime = militaryTime.replace(militaryTime, standardTime);
         $(this).text(militaryTime);
       });
+    };
+
+    /**
+    * Formats the phone number
+    * to (888) 888 - 8888
+    */
+    var phoneNumberFormat = function() {
+      $(".phone").text(function(i, text) {
+        text = text.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2-$3");
+        return text;
+      });
+    }
+
+    /**
+     * @constructor for all storepages
+     * this include the search, 
+     * location template and results page
+     */
+    var StorePages = function() {
+      while (!this.checkForPassword()) {}
+      phoneNumberFormat();
+      timeFormat();
+    }
+    window.StorePages = StorePages;
+
+    /**
+    * Check cookie for password to restrict
+    * access to things in a rudimentary way
+    */
+    StorePages.prototype.checkForPassword = function() {
+      var authCookie = $.cookie("auth");
+      if (authCookie && authCookie == "iamtomdixon") {
+        return true;
+      } else {
+        var password = prompt("Please enter your password:");
+        if (password == "iamtomdixon") {
+          $.cookie("auth", "iamtomdixon");
+          return true;
+	}
+      }
+      return false;
     };
 
     /**
@@ -192,8 +192,8 @@
         google.maps.event.addListener(newMarker, 'click', function() {
           infowindow.setContent(contentString); 
           infowindow.open(map, newMarker);
-          self.phoneNumberFormat();
-          self.timeFormat();
+          phoneNumberFormat();
+          timeFormat();
         });
         
         self.gmarkers.push(newMarker);
