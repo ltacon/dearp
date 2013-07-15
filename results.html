@@ -82,7 +82,7 @@
               <div id="result-${location_index}" class="result">
                 <div class="location cf">
                   <a href="/${location.pageUrl}" class="location-address left">
-                    <span class="number#{if location_index > 10} double-digit#{/if}">${location_index}</span>
+                    <span class="number#{if location_index > 9} double-digit#{/if}#{elseif location_index > 99} triple-digit#{/elseif}">${location_index}</span>
                     <h2>${location.name}</h2>
                     <p>
                       ${location.address} ${location.address2}<br>
