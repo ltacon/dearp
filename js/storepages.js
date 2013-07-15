@@ -90,14 +90,12 @@
      * location template page
      */
     var LocationPage = function(latitude, longitude) {
+      // Inherit Storepages
+      LocationPage.prototype = new StorePages();
       this.shortenText();
       this.locationMap(latitude, longitude);
-      this.__proto__ = new StorePages();
     };
     window.LocationPage = LocationPage;
-
-    // Inherit Storepages
-    LocationPage.prototype = new StorePages();
 
     /**
      * Shortens text based off 
@@ -137,17 +135,15 @@
      * results page
      */
     var ResultsPage = function(latitude, longitude, markers) {
+      // Inherit Storepages
+      ResultsPage.prototype = new StorePages();
       this.markers = markers || []; 
       this.gmarkers = [];
       this.initializeMap(latitude, longitude);
       this.Scrollbar();
       this.bindLocationSelection();
-      this.__proto__ = new StorePages();
     };
     window.ResultsPage = ResultsPage;
-
-    // Inherit Storepages
-    ResultsPage.prototype = new StorePages();
 
     /**
     * Displays a multi-marker map
