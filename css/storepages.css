@@ -467,9 +467,14 @@ a img {
 .store-results-page .results-sidebar .location a {
   color: #000;
 }
-.store-results-page .results-sidebar .location .right a {
-  color: #0055a7;
+.store-results-page .results-sidebar .location a {
+  color: #000;
 }
+
+.store-results-page .results-sidebar .location .right a:hover {
+  text-decoration: none;
+}
+
 /* line 368, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location:hover {
   border: 1px solid #eee;
