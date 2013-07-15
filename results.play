@@ -62,10 +62,7 @@
       }
 
       $(document).ready(function ($) {
-        $('.results-sidebar-content').perfectScrollbar({
-          wheelSpeed: 20,
-          wheelPropagation: false
-        });
+
       });
 
       function openDropdown(dropDown, size) {
