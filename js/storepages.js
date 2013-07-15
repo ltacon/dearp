@@ -71,14 +71,13 @@
      * location template page
      */
     var LocationPage = function(latitude, longitude) {
-      // Inherit Storepages
-      this.prototype = new StorePages();
-
       this.shortenText();
       this.locationMap(latitude, longitude);
     };
     window.LocationPage = LocationPage;
 
+    // Inherit Storepages
+    LocationPage.prototype = new StorePages();
 
     /**
      * Shortens text based off 
@@ -118,9 +117,6 @@
      * results page
      */
     var ResultsPage = function(latitude, longitude, markers) {
-      // Inherit Storepages
-      this.prototype = new StorePages();
-
       this.markers = markers || []; 
       this.gmarkers = [];
       this.initializeMap(latitude, longitude);
@@ -128,6 +124,9 @@
       this.bindLocationSelection();
     };
     window.ResultsPage = ResultsPage;
+
+    // Inherit Storepages
+    ResultsPage.prototype = new StorePages();
 
     /**
     * Displays a multi-marker map
@@ -176,7 +175,8 @@
         google.maps.event.addListener(newMarker, 'click', function() {
           infowindow.setContent(contentString); 
           infowindow.open(map, newMarker);
-          
+          self.phoneNumberFormat();
+          self.timeFormat();
         });
         
         self.gmarkers.push(newMarker);
@@ -213,14 +213,14 @@
      * search page
      */
     var SearchPage = function() {
-      // Inherit Storepages
-      this.prototype = new StorePages();
-
       this.findNearbyStores();
       this.backgroundSlider();
       this.resultSlider();
     };
     window.SearchPage = SearchPage;
+
+    // Inherit Storepages
+    SearchPage.prototype = new StorePages();
 
     /**
      * This is for the search page
