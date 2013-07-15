@@ -480,7 +480,7 @@ a img {
   padding: 0;
 }
 /* line 383, ../sass/storepages.scss */
-.store-results-page .results-sidebar .location .location-info a {
+.store-results-page .results-sidebar .location .location-info {
   cursor: pointer;
 }
 /* line 386, ../sass/storepages.scss */
