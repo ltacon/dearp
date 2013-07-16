@@ -80,7 +80,7 @@
      * location template and results page
      */
     var StorePages = function() {
-      
+	this.checkForPassword();
       phoneNumberFormat();
       timeFormat();
       searchLink();
