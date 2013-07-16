@@ -93,7 +93,7 @@
     */
     StorePages.prototype.checkForPassword = function() {
       var authCookie = $.cookie("auth");
-      var password = "searsdemo123";
+      var password = "jy5azb";
       if (authCookie && authCookie == password) {
         return true;
       } else {
