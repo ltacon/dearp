@@ -364,8 +364,9 @@
       }
 
       $.ajax({
-        url: "http://intense-coast-8013.herokuapp.com/?callback=processIP",
-        dataType: 'jsonp'
+        url: "http://intense-coast-8013.herokuapp.com/",
+          dataType: 'jsonp',
+          jsonpCallback: 'processIP'
       })
     };
 })(window, document);
