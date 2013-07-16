@@ -80,7 +80,7 @@
      * location template and results page
      */
     var StorePages = function() {
-      while (!this.checkForPassword()) {}
+      
       phoneNumberFormat();
       timeFormat();
       searchLink();
@@ -93,12 +93,25 @@
     */
     StorePages.prototype.checkForPassword = function() {
       var authCookie = $.cookie("auth");
-      if (authCookie && authCookie == "iamtomdixon") {
+      var username = "tdixon";
+      var password = "searsdemo123";
+      if (authCookie && authCookie == password) {
         return true;
+      } else if (true) {
+        $('body').dialog({
+            autoOpen: true,
+            height: 350,
+            width: 350,
+            modal: true,
+            buttons: {
+		"Submit": function() { alert($(this).val()); }
+            },
+            close: function() { $(this).dialog("close"); }
+        });  
       } else {
-        var password = prompt("Please enter your password:");
-        if (password == "iamtomdixon") {
-          $.cookie("auth", "iamtomdixon");
+        var userPassword = prompt("Please enter your password:");
+        if (userPassword == password) {
+          $.cookie("auth", userPassword);
           return true;
 	}
       }
