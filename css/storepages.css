@@ -690,6 +690,7 @@ a img {
 /* line 583, ../sass/storepages.scss */
 .store-location-page .location-services-list {
   float: left;
+  width: 160px;
   padding-right: 10px;
 }
 /* line 588, ../sass/storepages.scss */
