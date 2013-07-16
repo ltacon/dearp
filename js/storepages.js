@@ -360,7 +360,7 @@
       }
 
       $.ajax({
-        url: "http://jsonip.com/?callback=?"
+        url: "http://jsonip.appspot.com/"
       }).done(ipSuccess)
       .fail(nearbyStoresError);
     };
