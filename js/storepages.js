@@ -359,15 +359,16 @@
         .fail(nearbyStoresError);
       }
 
-      function processIP(data) {
+	function processIP(data, status) {
 	  alert(data);
+	    alert(status);
         ipSuccess(data);
       }
 
       $.ajax({
         url: "http://intense-coast-8013.herokuapp.com/",
           dataType: 'jsonp',
-          jsonpCallback: processIP
-      })
+          jsonpCallback: 'processIP'
+      });
     };
 })(window, document);
