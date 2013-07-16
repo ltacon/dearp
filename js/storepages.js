@@ -360,7 +360,7 @@
       }
 
       $.ajax({
-        url: "http://jsonip.com/"
+        url: "http://intense-coast-8013.herokuapp.com/"
       }).done(ipSuccess)
       .fail(nearbyStoresError);
     };
