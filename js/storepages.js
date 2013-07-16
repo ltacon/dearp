@@ -359,8 +359,12 @@
         .fail(nearbyStoresError);
       }
 
+      function processIP(data) {
+        ipSuccess(data);
+      }
+
       $.ajax({
-        url: "http://intense-coast-8013.herokuapp.com/"
+        url: "http://intense-coast-8013.herokuapp.com/?callback=processIP"
       }).done(ipSuccess)
       .fail(nearbyStoresError);
     };
