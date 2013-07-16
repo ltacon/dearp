@@ -321,7 +321,7 @@
           phoneNumber.setAttribute('class', 'phone');
 
           var numberFormat = function(number) {
-            return number.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2 - $3");
+            return number.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2-$3");
           }
 
           var phoneNumberFormat = numberFormat(store.mainPhone);
