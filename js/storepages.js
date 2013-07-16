@@ -361,10 +361,10 @@
 
       $.ajax({
         url: "http://intense-coast-8013.herokuapp.com/",
-          dataType: 'jsonp',
-          success: function(data) {
-	      ipSuccess(data);
-	  }
+        dataType: 'jsonp',
+        success: function(data) {
+	  ipSuccess(data);
+	}
       });
     };
 })(window, document);
