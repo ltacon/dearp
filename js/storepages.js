@@ -67,7 +67,7 @@
         $(".search-link").attr("href", "search/?query=" + location);   
 
         var zipcode = window.location.href.substring(window.location.href.lastIndexOf('=') + 1);
-        $(".search-zip-code").html(zipcode);
+        $(".search-zip-code").val(zipcode);
       }
    
       $("input.zip-city-state").change(displayVals);
