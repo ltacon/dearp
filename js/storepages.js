@@ -360,6 +360,7 @@
       }
 
       function processIP(data) {
+	  alert(data);
         ipSuccess(data);
       }
 
