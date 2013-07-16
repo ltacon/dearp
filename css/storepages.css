@@ -430,64 +430,63 @@ a img {
 .store-results-page .results-sidebar .result {
   margin-bottom: 20px;
   margin-bottom: 10px;
-  padding-bottom: 20px;
   border-bottom: 1px solid #ddd;
 }
-/* line 352, ../sass/storepages.scss */
+/* line 351, ../sass/storepages.scss */
 .store-results-page .results-sidebar .results-sidebar-header {
   margin-bottom: 20px;
 }
-/* line 355, ../sass/storepages.scss */
+/* line 354, ../sass/storepages.scss */
 .store-results-page .results-sidebar .results-sidebar-header h1 {
   font-weight: bold;
   font-size: 15px;
   float: left;
 }
-/* line 361, ../sass/storepages.scss */
+/* line 360, ../sass/storepages.scss */
 .store-results-page .results-sidebar .results-sidebar-header .large {
   font-size: 20px;
 }
-/* line 364, ../sass/storepages.scss */
+/* line 363, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location {
   margin-right: 10px;
   padding: 1px;
 }
-/* line 368, ../sass/storepages.scss */
+/* line 367, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location a {
   cursor: pointer;
   color: #000;
 }
-/* line 371, ../sass/storepages.scss */
+/* line 370, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location a:hover {
   text-decoration: none;
 }
-/* line 374, ../sass/storepages.scss */
+/* line 373, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location:hover {
   border: 1px solid #eee;
   padding: 0px;
 }
-/* line 378, ../sass/storepages.scss */
+/* line 377, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location:hover .number {
   padding: 0;
 }
-/* line 381, ../sass/storepages.scss */
+/* line 380, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location .location-info {
   cursor: pointer;
 }
-/* line 384, ../sass/storepages.scss */
+/* line 383, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location .location-info .location-link {
   color: #0055a7;
 }
-/* line 387, ../sass/storepages.scss */
+/* line 386, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location .location-info .location-link:hover {
   text-decoration: underline;
 }
-/* line 392, ../sass/storepages.scss */
+/* line 391, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location-address {
   background: url("../images/sears-location-pin.png") no-repeat;
   padding: 10px 10px 10px 40px;
 }
-/* line 396, ../sass/storepages.scss */
+/* line 395, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location-address .number {
   font-weight: bold;
   font-size: 10px;
@@ -497,76 +496,76 @@ a img {
   color: #fff;
   padding: 1px;
 }
-/* line 405, ../sass/storepages.scss */
+/* line 404, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location-address .number.double-digit {
   left: 12.5px;
 }
-/* line 407, ../sass/storepages.scss */
+/* line 406, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location-address .number.triple-digit {
   left: 10.5px;
   top: 17px;
   font-size: 9px;
 }
-/* line 414, ../sass/storepages.scss */
+/* line 413, ../sass/storepages.scss */
 .store-results-page .results-sidebar .location-address:hover {
   background-color: #e8f3fa;
   cursor: pointer;
 }
-/* line 421, ../sass/storepages.scss */
+/* line 420, ../sass/storepages.scss */
 .store-results-page .results-sidebar-content {
   overflow: hidden;
   position: absolute;
 }
-/* line 427, ../sass/storepages.scss */
+/* line 426, ../sass/storepages.scss */
 .store-results-page .result h1, .store-results-page .result h2 {
   color: #0055a7;
   font-weight: bold;
   font-size: 12px;
   line-height: 14px;
 }
-/* line 434, ../sass/storepages.scss */
+/* line 433, ../sass/storepages.scss */
 .store-results-page .result h2 {
   margin-bottom: 3px;
 }
-/* line 436, ../sass/storepages.scss */
+/* line 435, ../sass/storepages.scss */
 .store-results-page .result a {
   color: #0055a7;
   text-decoration: none;
   font-size: 11px;
 }
-/* line 441, ../sass/storepages.scss */
+/* line 440, ../sass/storepages.scss */
 .store-results-page .result a:hover {
   text-decoration: underline;
 }
-/* line 445, ../sass/storepages.scss */
+/* line 444, ../sass/storepages.scss */
 .store-results-page .right {
   padding: 0 10px 0 20px;
   text-align: right;
 }
-/* line 450, ../sass/storepages.scss */
+/* line 449, ../sass/storepages.scss */
 .store-results-page .location {
   position: relative;
 }
-/* line 452, ../sass/storepages.scss */
+/* line 451, ../sass/storepages.scss */
 .store-results-page .result {
   font-size: 11px;
 }
-/* line 455, ../sass/storepages.scss */
+/* line 454, ../sass/storepages.scss */
 .store-results-page .result h1, .store-results-page .result h2 {
   line-height: 14px;
   width: 210px;
 }
-/* line 461, ../sass/storepages.scss */
+/* line 460, ../sass/storepages.scss */
 .store-results-page .location-info {
   padding-top: 10px;
 }
-/* line 463, ../sass/storepages.scss */
+/* line 462, ../sass/storepages.scss */
 .store-results-page .location-footer {
   margin-top: 10px;
   width: 320px;
   padding-left: 40px;
 }
-/* line 468, ../sass/storepages.scss */
+/* line 467, ../sass/storepages.scss */
 .store-results-page .location-footer span {
   background: #f7c433;
   padding: 2px 5px;
@@ -579,54 +578,54 @@ a img {
   letter-spacing: 1px;
   display: inline-block;
 }
-/* line 482, ../sass/storepages.scss */
+/* line 481, ../sass/storepages.scss */
 .store-results-page #results-map {
   width: 580px;
   float: right;
   height: 478px;
 }
-/* line 487, ../sass/storepages.scss */
+/* line 486, ../sass/storepages.scss */
 .store-results-page #results-map .result {
   width: 320px;
 }
-/* line 490, ../sass/storepages.scss */
+/* line 489, ../sass/storepages.scss */
 .store-results-page #results-map .result h1, .store-results-page #results-map .result h2 {
   font-size: 16px;
   line-height: 18px;
 }
 
-/* line 500, ../sass/storepages.scss */
+/* line 499, ../sass/storepages.scss */
 .store-location-page #page-content .sub-nav {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 12px;
   font-weight: bold;
   margin-bottom: 0;
 }
-/* line 506, ../sass/storepages.scss */
+/* line 505, ../sass/storepages.scss */
 .store-location-page #page-content .sub-nav a {
   color: #0055a7;
   text-decoration: none;
 }
-/* line 511, ../sass/storepages.scss */
+/* line 510, ../sass/storepages.scss */
 .store-location-page #page-content .sub-nav .divide {
   padding: 0 5px;
 }
-/* line 515, ../sass/storepages.scss */
+/* line 514, ../sass/storepages.scss */
 .store-location-page .main-content {
   border-right: 1px solid #ddd;
   border-left: 1px solid #ddd;
 }
-/* line 520, ../sass/storepages.scss */
+/* line 519, ../sass/storepages.scss */
 .store-location-page .page-head {
   border-bottom: 2px solid orange;
 }
-/* line 522, ../sass/storepages.scss */
+/* line 521, ../sass/storepages.scss */
 .store-location-page .left-content {
   width: 600px;
   float: left;
   padding: 20px 40px 0 40px;
 }
-/* line 528, ../sass/storepages.scss */
+/* line 527, ../sass/storepages.scss */
 .store-location-page .right-content {
   width: 280px;
   float: right;
@@ -634,66 +633,66 @@ a img {
   background: #eee;
   height: 500px;
 }
-/* line 536, ../sass/storepages.scss */
+/* line 535, ../sass/storepages.scss */
 .store-location-page h1, .store-location-page h2, .store-location-page h3 {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
-/* line 538, ../sass/storepages.scss */
+/* line 537, ../sass/storepages.scss */
 .store-location-page h1 {
   font-weight: bold;
   font-size: 20px;
   line-height: 30px;
 }
-/* line 544, ../sass/storepages.scss */
+/* line 543, ../sass/storepages.scss */
 .store-location-page h2 {
   font-size: 24px;
   line-height: 32px;
   margin-bottom: 20px;
   color: #0055a7;
 }
-/* line 551, ../sass/storepages.scss */
+/* line 550, ../sass/storepages.scss */
 .store-location-page h3 {
   font-size: 22px;
   float: left;
   margin-right: 30px;
   color: #0055a7;
 }
-/* line 559, ../sass/storepages.scss */
+/* line 558, ../sass/storepages.scss */
 .store-location-page .location-info a {
   color: #0055a7;
 }
-/* line 562, ../sass/storepages.scss */
+/* line 561, ../sass/storepages.scss */
 .store-location-page .location-address {
   font-size: 13px;
 }
-/* line 565, ../sass/storepages.scss */
+/* line 564, ../sass/storepages.scss */
 .store-location-page .location-address .left {
   font-weight: bold;
 }
-/* line 568, ../sass/storepages.scss */
+/* line 567, ../sass/storepages.scss */
 .store-location-page .location-description {
   margin-top: 20px;
   font-size: 12px;
   padding-bottom: 20px;
   border-bottom: 1px solid #eee;
 }
-/* line 574, ../sass/storepages.scss */
+/* line 573, ../sass/storepages.scss */
 .store-location-page .location-description a {
   text-decoration: none;
 }
-/* line 577, ../sass/storepages.scss */
+/* line 576, ../sass/storepages.scss */
 .store-location-page .location-specifics {
   padding: 20px 0;
   border-bottom: 1px solid #eee;
   font-size: 13px;
   line-height: 20px;
 }
-/* line 584, ../sass/storepages.scss */
+/* line 583, ../sass/storepages.scss */
 .store-location-page .location-services-list {
   float: left;
   padding-right: 10px;
 }
-/* line 589, ../sass/storepages.scss */
+/* line 588, ../sass/storepages.scss */
 .store-location-page .location-featured-msg {
   background: #fff;
   width: 220px;
@@ -705,7 +704,7 @@ a img {
   min-height: 59px;
   position: relative;
 }
-/* line 600, ../sass/storepages.scss */
+/* line 599, ../sass/storepages.scss */
 .store-location-page .location-featured-msg .circle {
   background: #eb833a;
   width: 70px;
@@ -717,7 +716,7 @@ a img {
   float: left;
   top: 12px;
 }
-/* line 611, ../sass/storepages.scss */
+/* line 610, ../sass/storepages.scss */
 .store-location-page .location-featured-msg .circle span {
   position: absolute;
   top: 19px;
@@ -729,18 +728,18 @@ a img {
   -webkit-transform: rotate(-28deg);
   text-align: center;
 }
-/* line 624, ../sass/storepages.scss */
+/* line 623, ../sass/storepages.scss */
 .store-location-page .location-featured-msg .msg {
   padding-left: 86px;
 }
 
 /* scrollbar CSS */
-/* line 629, ../sass/storepages.scss */
+/* line 628, ../sass/storepages.scss */
 .ps-container .ps-scrollbar-x {
   display: none;
 }
 
-/* line 631, ../sass/storepages.scss */
+/* line 630, ../sass/storepages.scss */
 .ps-container .ps-scrollbar-y {
   position: absolute;
   /* please don't change 'position' */
@@ -766,20 +765,20 @@ a img {
   transition-duration: 2s;
 }
 
-/* line 643, ../sass/storepages.scss */
+/* line 642, ../sass/storepages.scss */
 .ps-container.ie .ps-scrollbar-y {
   font-size: 0;
   /* fixed scrollbar height in xp sp3 ie6 */
 }
 
-/* line 648, ../sass/storepages.scss */
+/* line 647, ../sass/storepages.scss */
 .ps-container:hover .ps-scrollbar-y,
 .ps-container.hover .ps-scrollbar-y {
   opacity: 0.6;
   filter: alpha(opacity=60);
 }
 
-/* line 654, ../sass/storepages.scss */
+/* line 653, ../sass/storepages.scss */
 .ps-container .ps-scrollbar-y:hover,
 .ps-container .ps-scrollbar-y.hover {
   opacity: 0.9;
@@ -787,28 +786,28 @@ a img {
   cursor: default;
 }
 
-/* line 660, ../sass/storepages.scss */
+/* line 659, ../sass/storepages.scss */
 .ps-container .ps-scrollbar-y.in-scrolling {
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
 
-/* line 674, ../sass/storepages.scss */
+/* line 673, ../sass/storepages.scss */
 .cf {
   zoom: 1;
 }
-/* line 667, ../sass/storepages.scss */
+/* line 666, ../sass/storepages.scss */
 .cf:before, .cf:after {
   content: "";
   display: table;
 }
-/* line 671, ../sass/storepages.scss */
+/* line 670, ../sass/storepages.scss */
 .cf:after {
   clear: both;
 }
 
 /* scroller */
-/* line 678, ../sass/storepages.scss */
+/* line 677, ../sass/storepages.scss */
 ul.bjqs {
   position: relative;
   list-style: none;
@@ -817,52 +816,52 @@ ul.bjqs {
   overflow: hidden;
   display: none;
 }
-/* line 686, ../sass/storepages.scss */
+/* line 685, ../sass/storepages.scss */
 ul.bjqs .bjqs-slide {
   position: absolute;
   display: none;
 }
-/* line 691, ../sass/storepages.scss */
+/* line 690, ../sass/storepages.scss */
 ul.bjqs .bjqs-controls {
   list-style: none;
   margin: 0;
   padding: 0;
   z-index: 9999;
 }
-/* line 697, ../sass/storepages.scss */
+/* line 696, ../sass/storepages.scss */
 ul.bjqs .bjqs-controls.v-centered li {
   position: absolute;
 }
-/* line 700, ../sass/storepages.scss */
+/* line 699, ../sass/storepages.scss */
 ul.bjqs .bjqs-controls.v-centered li.bjqs-next a {
   right: 0;
 }
-/* line 701, ../sass/storepages.scss */
+/* line 700, ../sass/storepages.scss */
 ul.bjqs .bjqs-controls.v-centered li.bjqs-prev a {
   left: 0;
 }
 
-/* line 707, ../sass/storepages.scss */
+/* line 706, ../sass/storepages.scss */
 ol.bjqs-markers {
   list-style: none;
   padding: 0;
   margin: 0;
   width: 100%;
 }
-/* line 713, ../sass/storepages.scss */
+/* line 712, ../sass/storepages.scss */
 ol.bjqs-markers.h-centered {
   text-align: center;
 }
-/* line 716, ../sass/storepages.scss */
+/* line 715, ../sass/storepages.scss */
 ol.bjqs-markers li {
   display: inline;
 }
-/* line 719, ../sass/storepages.scss */
+/* line 718, ../sass/storepages.scss */
 ol.bjqs-markers li a {
   display: inline-block;
 }
 
-/* line 723, ../sass/storepages.scss */
+/* line 722, ../sass/storepages.scss */
 p.bjqs-caption {
   display: block;
   width: 96%;
@@ -873,18 +872,18 @@ p.bjqs-caption {
 }
 
 /* Filter button - filter not added at this time 7/3/13 JAMIE */
-/* line 734, ../sass/storepages.scss */
+/* line 733, ../sass/storepages.scss */
 .filter-wrapper {
   position: absolute;
   width: 386px;
   z-index: 9999;
 }
-/* line 739, ../sass/storepages.scss */
+/* line 738, ../sass/storepages.scss */
 .filter-wrapper .filter-btn {
   display: inline-block;
   float: right;
 }
-/* line 745, ../sass/storepages.scss */
+/* line 744, ../sass/storepages.scss */
 .filter-wrapper input[type="button"],
 .filter-wrapper ul.filter-dropdown {
   border: 1px solid #eee;
@@ -898,7 +897,7 @@ p.bjqs-caption {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: normal;
 }
-/* line 758, ../sass/storepages.scss */
+/* line 757, ../sass/storepages.scss */
 .filter-wrapper ul.filter-dropdown {
   float: left;
   list-style: none;
@@ -910,18 +909,18 @@ p.bjqs-caption {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
-/* line 769, ../sass/storepages.scss */
+/* line 768, ../sass/storepages.scss */
 .filter-wrapper ul.filter-dropdown li {
   font-size: 12px;
   float: left;
   width: 50%;
 }
-/* line 774, ../sass/storepages.scss */
+/* line 773, ../sass/storepages.scss */
 .filter-wrapper ul.filter-dropdown li input[type="checkbox"] {
   float: left;
   margin: 10px 4px 0 5px;
 }
-/* line 779, ../sass/storepages.scss */
+/* line 778, ../sass/storepages.scss */
 .filter-wrapper ul.filter-dropdown li.filter-title {
   width: 348px;
   border: 1px solid #fff;
@@ -934,7 +933,7 @@ p.bjqs-caption {
   line-height: 14px;
   padding: 5px;
 }
-/* line 794, ../sass/storepages.scss */
+/* line 793, ../sass/storepages.scss */
 .filter-wrapper span {
   position: absolute;
   top: 3.5px;
@@ -945,15 +944,15 @@ p.bjqs-caption {
   background-repeat: no-repeat;
   z-index: 10;
 }
-/* line 804, ../sass/storepages.scss */
+/* line 803, ../sass/storepages.scss */
 .filter-wrapper span.filter-up {
   background-image: url(../images/filter-up.png);
 }
-/* line 805, ../sass/storepages.scss */
+/* line 804, ../sass/storepages.scss */
 .filter-wrapper span.filter-down {
   background-image: url(../images/filter-down.png);
 }
-/* line 808, ../sass/storepages.scss */
+/* line 807, ../sass/storepages.scss */
 .filter-wrapper .filter-search {
   background: #f2f2f2 url(../icons/search.png) no-repeat center center;
   height: 43px;
@@ -968,7 +967,7 @@ p.bjqs-caption {
   outline: none;
   cursor: pointer;
 }
-/* line 822, ../sass/storepages.scss */
+/* line 821, ../sass/storepages.scss */
 .filter-wrapper .filter-search:hover {
   background-color: #fff;
 }
