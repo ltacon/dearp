@@ -64,7 +64,7 @@
     var searchLink = function() {
       function displayVals() {
         var location = $(".zip-city-state").val();
-        $(".search-link").attr("href", "search/?query=" + location);   
+        $(".result-search-link").attr("href", "http://stores.dearp1.com/search/?query=" + location);   
 
         var zipcode = window.location.href.substring(window.location.href.lastIndexOf('=') + 1);
         $(".search-zip-code").text(unescape(zipcode).replace(/\+/g," "));
@@ -287,6 +287,15 @@
         showcontrols  : false,
         showmarkers   : false
       });
+
+      /* For search link */
+      function displayVals() {
+        var location = $(".zip-city-state").val();
+        $(".search-link").attr("href", "search/?query=" + location);          
+      }
+   
+      $("input.zip-city-state").change(displayVals);
+      displayVals();
     };
 
     /**
